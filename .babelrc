@@ -1,0 +1,18 @@
+{
+  "presets": ["@babel/preset-flow", "@babel/preset-react"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "events": ["./src/react-events"],
+          "react-stream": ["./src/react-stream"],
+          "react-reconciler": ["./src/react-reconciler"],
+          "scheduler": ["./src/react-scheduler"],
+          "shared": ["./src/react-shared"]
+        }
+      }
+    ]
+  ]
+}
