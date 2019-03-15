@@ -7,7 +7,7 @@
  * @flow
  */
 
-import {precacheFiberNode, updateFiberProps} from './ReactDOMComponentTree';
+import {precacheFiberNode, updateFiberProps} from './ReactDOMComponentTree.js';
 import {
   createElement,
   createTextNode,
@@ -22,25 +22,25 @@ import {
   warnForDeletedHydratableText,
   warnForInsertedHydratedElement,
   warnForInsertedHydratedText,
-} from './ReactDOMComponent';
-import {getSelectionInformation, restoreSelection} from './ReactInputSelection';
-import setTextContent from './setTextContent';
-import {validateDOMNesting, updatedAncestorInfo} from './validateDOMNesting';
+} from './ReactDOMComponent.js';
+import {getSelectionInformation, restoreSelection} from './ReactInputSelection.js';
+import setTextContent from './setTextContent.js';
+import {validateDOMNesting, updatedAncestorInfo} from './validateDOMNesting.js';
 import {
   isEnabled as ReactBrowserEventEmitterIsEnabled,
   setEnabled as ReactBrowserEventEmitterSetEnabled,
-} from '../events/ReactBrowserEventEmitter';
-import {getChildNamespace} from '../shared/DOMNamespaces';
+} from '../events/ReactBrowserEventEmitter.js';
+import {getChildNamespace} from '../shared/DOMNamespaces.js';
 import {
   ELEMENT_NODE,
   TEXT_NODE,
   COMMENT_NODE,
   DOCUMENT_NODE,
   DOCUMENT_FRAGMENT_NODE,
-} from '../shared/HTMLNodeType';
-import dangerousStyleValue from '../shared/dangerousStyleValue';
+} from '../shared/HTMLNodeType.js';
+import dangerousStyleValue from '../shared/dangerousStyleValue.js';
 
-import type {DOMContainer} from './ReactDOM';
+import type {DOMContainer} from './ReactDOM.js';
 
 export type Type = string;
 export type Props = {
@@ -73,14 +73,14 @@ export type NoTimeout = -1;
 import {
   unstable_scheduleCallback as scheduleDeferredCallback,
   unstable_cancelCallback as cancelDeferredCallback,
-} from 'scheduler';
-import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags';
+} from 'scheduler.js';
+import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags.js';
 export {
   unstable_now as now,
   unstable_scheduleCallback as scheduleDeferredCallback,
   unstable_shouldYield as shouldYield,
   unstable_cancelCallback as cancelDeferredCallback,
-} from 'scheduler';
+} from 'scheduler.js';
 
 let SUPPRESS_HYDRATION_WARNING;
 if (__DEV__) {
@@ -106,7 +106,7 @@ function shouldAutoFocusHostComponent(type: string, props: Props): boolean {
   return false;
 }
 
-export * from 'shared/HostConfigWithNoPersistence';
+export * from 'shared/HostConfigWithNoPersistence.js';
 
 export function getRootHostContext(
   rootContainerInstance: Container,

@@ -18,7 +18,7 @@ import {
   REACT_SUSPENSE_TYPE,
   REACT_MEMO_TYPE,
   REACT_LAZY_TYPE,
-} from 'shared/ReactSymbols';
+} from 'shared/ReactSymbols.js';
 
 export default function isValidElementType(type: mixed) {
   return (

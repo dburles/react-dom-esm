@@ -7,8 +7,8 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
-import invokeGuardedCallbackImpl from './invokeGuardedCallbackImpl';
+import invariant from 'shared/invariant.js';
+import invokeGuardedCallbackImpl from './invokeGuardedCallbackImpl.js';
 
 // Used by Fiber to simulate a try-catch.
 let hasError: boolean = false;

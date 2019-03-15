@@ -16,8 +16,8 @@ import {
   isAttributeNameSafe,
   shouldIgnoreAttribute,
   shouldRemoveAttribute,
-} from '../shared/DOMProperty';
-import quoteAttributeValueForBrowser from './quoteAttributeValueForBrowser';
+} from '../shared/DOMProperty.js';
+import quoteAttributeValueForBrowser from './quoteAttributeValueForBrowser.js';
 
 /**
  * Operations for dealing with DOM properties.

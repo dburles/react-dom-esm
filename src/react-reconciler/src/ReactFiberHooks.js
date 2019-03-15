@@ -7,40 +7,40 @@
  * @flow
  */
 
-import type {ReactContext} from 'shared/ReactTypes';
-import type {SideEffectTag} from 'shared/ReactSideEffectTags';
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {HookEffectTag} from './ReactHookEffectTags';
+import type {ReactContext} from 'shared/ReactTypes.js';
+import type {SideEffectTag} from 'shared/ReactSideEffectTags.js';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {HookEffectTag} from './ReactHookEffectTags.js';
 
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
-import {NoWork} from './ReactFiberExpirationTime';
-import {readContext} from './ReactFiberNewContext';
+import {NoWork} from './ReactFiberExpirationTime.js';
+import {readContext} from './ReactFiberNewContext.js';
 import {
   Update as UpdateEffect,
   Passive as PassiveEffect,
-} from 'shared/ReactSideEffectTags';
+} from 'shared/ReactSideEffectTags.js';
 import {
   NoEffect as NoHookEffect,
   UnmountMutation,
   MountLayout,
   UnmountPassive,
   MountPassive,
-} from './ReactHookEffectTags';
+} from './ReactHookEffectTags.js';
 import {
   scheduleWork,
   warnIfNotCurrentlyBatchingInDev,
   computeExpirationForFiber,
   flushPassiveEffects,
   requestCurrentTime,
-} from './ReactFiberScheduler';
+} from './ReactFiberScheduler.js';
 
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
-import getComponentName from 'shared/getComponentName';
-import is from 'shared/objectIs';
-import {markWorkInProgressReceivedUpdate} from './ReactFiberBeginWork';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
+import getComponentName from 'shared/getComponentName.js';
+import is from 'shared/objectIs.js';
+import {markWorkInProgressReceivedUpdate} from './ReactFiberBeginWork.js';
 
 const {ReactCurrentDispatcher} = ReactSharedInternals;
 

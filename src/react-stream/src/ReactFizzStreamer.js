@@ -7,8 +7,8 @@
  * @flow
  */
 
-import type {Destination} from './ReactFizzHostConfig';
-import type {ReactNodeList} from 'shared/ReactTypes';
+import type {Destination} from './ReactFizzHostConfig.js';
+import type {ReactNodeList} from 'shared/ReactTypes.js';
 
 import {
   scheduleWork,
@@ -17,9 +17,9 @@ import {
   completeWriting,
   flushBuffered,
   close,
-} from './ReactFizzHostConfig';
-import {formatChunk} from './ReactFizzFormatConfig';
-import {REACT_ELEMENT_TYPE} from 'shared/ReactSymbols';
+} from './ReactFizzHostConfig.js';
+import {formatChunk} from './ReactFizzFormatConfig.js';
+import {REACT_ELEMENT_TYPE} from 'shared/ReactSymbols.js';
 
 type OpaqueRequest = {
   destination: Destination,

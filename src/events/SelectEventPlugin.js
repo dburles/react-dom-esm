@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {accumulateTwoPhaseDispatches} from 'events/EventPropagators';
-import {canUseDOM} from 'shared/ExecutionEnvironment';
-import SyntheticEvent from 'events/SyntheticEvent';
-import isTextInputElement from 'shared/isTextInputElement';
-import shallowEqual from 'shared/shallowEqual';
+import {accumulateTwoPhaseDispatches} from 'events/EventPropagators.js';
+import {canUseDOM} from 'shared/ExecutionEnvironment.js';
+import SyntheticEvent from 'events/SyntheticEvent.js';
+import isTextInputElement from 'shared/isTextInputElement.js';
+import shallowEqual from 'shared/shallowEqual.js';
 
 import {
   TOP_BLUR,
@@ -21,12 +21,12 @@ import {
   TOP_MOUSE_DOWN,
   TOP_MOUSE_UP,
   TOP_SELECTION_CHANGE,
-} from './DOMTopLevelEventTypes';
-import {isListeningToAllDependencies} from './ReactBrowserEventEmitter';
-import getActiveElement from '../client/getActiveElement';
-import {getNodeFromInstance} from '../client/ReactDOMComponentTree';
-import {hasSelectionCapabilities} from '../client/ReactInputSelection';
-import {DOCUMENT_NODE} from '../shared/HTMLNodeType';
+} from './DOMTopLevelEventTypes.js';
+import {isListeningToAllDependencies} from './ReactBrowserEventEmitter.js';
+import getActiveElement from '../client/getActiveElement.js';
+import {getNodeFromInstance} from '../client/ReactDOMComponentTree.js';
+import {hasSelectionCapabilities} from '../client/ReactInputSelection.js';
+import {DOCUMENT_NODE} from '../shared/HTMLNodeType.js';
 
 const skipSelectionChangeEvent =
   canUseDOM && 'documentMode' in document && document.documentMode <= 11;

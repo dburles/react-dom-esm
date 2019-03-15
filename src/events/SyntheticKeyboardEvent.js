@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import SyntheticUIEvent from './SyntheticUIEvent';
-import getEventCharCode from './getEventCharCode';
-import getEventKey from './getEventKey';
-import getEventModifierState from './getEventModifierState';
+import SyntheticUIEvent from './SyntheticUIEvent.js';
+import getEventCharCode from './getEventCharCode.js';
+import getEventKey from './getEventKey.js';
+import getEventModifierState from './getEventModifierState.js';
 
 /**
  * @interface KeyboardEvent

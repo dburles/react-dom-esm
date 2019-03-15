@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import warningWithoutStack from 'shared/warningWithoutStack';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.

@@ -7,9 +7,9 @@
  * @flow
  */
 
-import type {CapturedError} from './ReactCapturedValue';
+import type {CapturedError} from './ReactCapturedValue.js';
 
-import {showErrorDialog} from './ReactFiberErrorDialog';
+import {showErrorDialog} from './ReactFiberErrorDialog.js';
 
 export function logCapturedError(capturedError: CapturedError): void {
   const logError = showErrorDialog(capturedError);

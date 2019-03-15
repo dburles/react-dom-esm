@@ -7,10 +7,10 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
-import typeof * as FeatureFlagsType from 'shared/ReactFeatureFlags';
-import typeof * as FeatureFlagsShimType from './ReactFeatureFlags.native-oss';
+import typeof * as FeatureFlagsType from 'shared/ReactFeatureFlags.js';
+import typeof * as FeatureFlagsShimType from './ReactFeatureFlags.native-oss.js';
 
 export const debugRenderPhaseSideEffects = false;
 export const debugRenderPhaseSideEffectsForStrictMode = false;

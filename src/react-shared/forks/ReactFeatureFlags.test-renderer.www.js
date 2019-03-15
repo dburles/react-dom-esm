@@ -7,10 +7,10 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
-import typeof * as FeatureFlagsType from 'shared/ReactFeatureFlags';
-import typeof * as PersistentFeatureFlagsType from './ReactFeatureFlags.persistent';
+import typeof * as FeatureFlagsType from 'shared/ReactFeatureFlags.js';
+import typeof * as PersistentFeatureFlagsType from './ReactFeatureFlags.persistent.js';
 
 export const debugRenderPhaseSideEffects = false;
 export const debugRenderPhaseSideEffectsForStrictMode = false;

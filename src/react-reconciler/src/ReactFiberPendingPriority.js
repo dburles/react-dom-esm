@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {FiberRoot} from './ReactFiberRoot';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+import type {FiberRoot} from './ReactFiberRoot.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
-import {NoWork} from './ReactFiberExpirationTime';
+import {NoWork} from './ReactFiberExpirationTime.js';
 
 // TODO: Offscreen updates should never suspend. However, a promise that
 // suspended inside an offscreen subtree should be able to ping at the priority

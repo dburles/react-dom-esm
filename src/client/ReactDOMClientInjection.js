@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {injection as EventPluginHubInjection} from 'events/EventPluginHub';
-import {setComponentTree} from 'events/EventPluginUtils';
+import {injection as EventPluginHubInjection} from 'events/EventPluginHub.js';
+import {setComponentTree} from 'events/EventPluginUtils.js';
 
 import {
   getFiberCurrentPropsFromNode,
   getInstanceFromNode,
   getNodeFromInstance,
-} from './ReactDOMComponentTree';
-import BeforeInputEventPlugin from '../events/BeforeInputEventPlugin';
-import ChangeEventPlugin from '../events/ChangeEventPlugin';
-import DOMEventPluginOrder from '../events/DOMEventPluginOrder';
-import EnterLeaveEventPlugin from '../events/EnterLeaveEventPlugin';
-import SelectEventPlugin from '../events/SelectEventPlugin';
-import SimpleEventPlugin from '../events/SimpleEventPlugin';
+} from './ReactDOMComponentTree.js';
+import BeforeInputEventPlugin from '../events/BeforeInputEventPlugin.js';
+import ChangeEventPlugin from '../events/ChangeEventPlugin.js';
+import DOMEventPluginOrder from '../events/DOMEventPluginOrder.js';
+import EnterLeaveEventPlugin from '../events/EnterLeaveEventPlugin.js';
+import SelectEventPlugin from '../events/SelectEventPlugin.js';
+import SimpleEventPlugin from '../events/SimpleEventPlugin.js';
 
 /**
  * Inject modules for resolving DOM hierarchy and plugin ordering.

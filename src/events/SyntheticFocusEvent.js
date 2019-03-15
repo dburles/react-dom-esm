@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import SyntheticUIEvent from './SyntheticUIEvent';
+import SyntheticUIEvent from './SyntheticUIEvent.js';
 
 /**
  * @interface FocusEvent

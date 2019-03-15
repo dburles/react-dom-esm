@@ -7,4 +7,4 @@
  * @flow
  */
 
-export * from 'react-dom/src/server/ReactDOMFizzServerFormatConfig';
+export * from 'react-dom/src/server/ReactDOMFizzServerFormatConfig.js';

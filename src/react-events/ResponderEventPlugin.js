@@ -5,22 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {getLowestCommonAncestor, isAncestor} from 'shared/ReactTreeTraversal';
+import {getLowestCommonAncestor, isAncestor} from 'shared/ReactTreeTraversal.js';
 
 import {
   executeDirectDispatch,
   hasDispatches,
   executeDispatchesInOrderStopAtTrue,
   getInstanceFromNode,
-} from './EventPluginUtils';
+} from './EventPluginUtils.js';
 import {
   accumulateDirectDispatches,
   accumulateTwoPhaseDispatches,
   accumulateTwoPhaseDispatchesSkipTarget,
-} from './EventPropagators';
-import ResponderSyntheticEvent from './ResponderSyntheticEvent';
-import ResponderTouchHistoryStore from './ResponderTouchHistoryStore';
-import accumulate from './accumulate';
+} from './EventPropagators.js';
+import ResponderSyntheticEvent from './ResponderSyntheticEvent.js';
+import ResponderTouchHistoryStore from './ResponderTouchHistoryStore.js';
+import accumulate from './accumulate.js';
 import {
   TOP_SCROLL,
   TOP_SELECTION_CHANGE,
@@ -31,7 +31,7 @@ import {
   startDependencies,
   moveDependencies,
   endDependencies,
-} from './ResponderTopLevelEventTypes';
+} from './ResponderTopLevelEventTypes.js';
 
 /**
  * Instance of element that should respond to touch/move types of interactions,

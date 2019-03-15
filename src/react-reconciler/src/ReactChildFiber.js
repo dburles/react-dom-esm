@@ -7,29 +7,29 @@
  * @flow
  */
 
-import type {ReactElement} from 'shared/ReactElementType';
-import type {ReactPortal} from 'shared/ReactTypes';
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+import type {ReactElement} from 'shared/ReactElementType.js';
+import type {ReactPortal} from 'shared/ReactTypes.js';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
-import getComponentName from 'shared/getComponentName';
-import {Placement, Deletion} from 'shared/ReactSideEffectTags';
+import getComponentName from 'shared/getComponentName.js';
+import {Placement, Deletion} from 'shared/ReactSideEffectTags.js';
 import {
   getIteratorFn,
   REACT_ELEMENT_TYPE,
   REACT_FRAGMENT_TYPE,
   REACT_PORTAL_TYPE,
-} from 'shared/ReactSymbols';
+} from 'shared/ReactSymbols.js';
 import {
   FunctionComponent,
   ClassComponent,
   HostText,
   HostPortal,
   Fragment,
-} from 'shared/ReactWorkTags';
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
-import warningWithoutStack from 'shared/warningWithoutStack';
+} from 'shared/ReactWorkTags.js';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 import {
   createWorkInProgress,
@@ -37,13 +37,13 @@ import {
   createFiberFromFragment,
   createFiberFromText,
   createFiberFromPortal,
-} from './ReactFiber';
-import {emptyRefsObject} from './ReactFiberClassComponent';
+} from './ReactFiber.js';
+import {emptyRefsObject} from './ReactFiberClassComponent.js';
 import {
   getCurrentFiberStackInDev,
   getStackByFiberInDevAndProd,
-} from './ReactCurrentFiber';
-import {StrictMode} from './ReactTypeOfMode';
+} from './ReactCurrentFiber.js';
+import {StrictMode} from './ReactTypeOfMode.js';
 
 let didWarnAboutMaps;
 let didWarnAboutGenerators;

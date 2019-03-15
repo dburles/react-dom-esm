@@ -10,32 +10,32 @@
 import type {
   TopLevelType,
   DOMTopLevelEventType,
-} from 'events/TopLevelEventTypes';
+} from 'events/TopLevelEventTypes.js';
 import type {
   DispatchConfig,
   ReactSyntheticEvent,
-} from 'events/ReactSyntheticEventType';
-import type {Fiber} from 'react-reconciler/src/ReactFiber';
-import type {EventTypes, PluginModule} from 'events/PluginModuleType';
+} from 'events/ReactSyntheticEventType.js';
+import type {Fiber} from 'react-reconciler/src/ReactFiber.js';
+import type {EventTypes, PluginModule} from 'events/PluginModuleType.js';
 
-import {accumulateTwoPhaseDispatches} from 'events/EventPropagators';
-import SyntheticEvent from 'events/SyntheticEvent';
+import {accumulateTwoPhaseDispatches} from 'events/EventPropagators.js';
+import SyntheticEvent from 'events/SyntheticEvent.js';
 
-import * as DOMTopLevelEventTypes from './DOMTopLevelEventTypes';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import * as DOMTopLevelEventTypes from './DOMTopLevelEventTypes.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
-import SyntheticAnimationEvent from './SyntheticAnimationEvent';
-import SyntheticClipboardEvent from './SyntheticClipboardEvent';
-import SyntheticFocusEvent from './SyntheticFocusEvent';
-import SyntheticKeyboardEvent from './SyntheticKeyboardEvent';
-import SyntheticMouseEvent from './SyntheticMouseEvent';
-import SyntheticPointerEvent from './SyntheticPointerEvent';
-import SyntheticDragEvent from './SyntheticDragEvent';
-import SyntheticTouchEvent from './SyntheticTouchEvent';
-import SyntheticTransitionEvent from './SyntheticTransitionEvent';
-import SyntheticUIEvent from './SyntheticUIEvent';
-import SyntheticWheelEvent from './SyntheticWheelEvent';
-import getEventCharCode from './getEventCharCode';
+import SyntheticAnimationEvent from './SyntheticAnimationEvent.js';
+import SyntheticClipboardEvent from './SyntheticClipboardEvent.js';
+import SyntheticFocusEvent from './SyntheticFocusEvent.js';
+import SyntheticKeyboardEvent from './SyntheticKeyboardEvent.js';
+import SyntheticMouseEvent from './SyntheticMouseEvent.js';
+import SyntheticPointerEvent from './SyntheticPointerEvent.js';
+import SyntheticDragEvent from './SyntheticDragEvent.js';
+import SyntheticTouchEvent from './SyntheticTouchEvent.js';
+import SyntheticTransitionEvent from './SyntheticTransitionEvent.js';
+import SyntheticUIEvent from './SyntheticUIEvent.js';
+import SyntheticWheelEvent from './SyntheticWheelEvent.js';
+import getEventCharCode from './getEventCharCode.js';
 
 /**
  * Turns

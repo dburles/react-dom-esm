@@ -7,17 +7,17 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {FiberRoot} from './ReactFiberRoot';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {CapturedValue} from './ReactCapturedValue';
-import type {Update} from './ReactUpdateQueue';
-import type {Thenable} from './ReactFiberScheduler';
-import type {SuspenseState} from './ReactFiberSuspenseComponent';
+import type {Fiber} from './ReactFiber.js';
+import type {FiberRoot} from './ReactFiberRoot.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {CapturedValue} from './ReactCapturedValue.js';
+import type {Update} from './ReactUpdateQueue.js';
+import type {Thenable} from './ReactFiberScheduler.js';
+import type {SuspenseState} from './ReactFiberSuspenseComponent.js';
 
-import {unstable_wrap as Schedule_tracing_wrap} from 'scheduler/tracing';
-import getComponentName from 'shared/getComponentName';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import {unstable_wrap as Schedule_tracing_wrap} from 'scheduler/tracing.js';
+import getComponentName from 'shared/getComponentName.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 import {
   ClassComponent,
   HostRoot,
@@ -27,38 +27,38 @@ import {
   SuspenseComponent,
   DehydratedSuspenseComponent,
   IncompleteClassComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 import {
   DidCapture,
   Incomplete,
   NoEffect,
   ShouldCapture,
   LifecycleEffectMask,
-} from 'shared/ReactSideEffectTags';
+} from 'shared/ReactSideEffectTags.js';
 import {
   enableSchedulerTracing,
   enableSuspenseServerRenderer,
-} from 'shared/ReactFeatureFlags';
-import {ConcurrentMode} from './ReactTypeOfMode';
-import {shouldCaptureSuspense} from './ReactFiberSuspenseComponent';
+} from 'shared/ReactFeatureFlags.js';
+import {ConcurrentMode} from './ReactTypeOfMode.js';
+import {shouldCaptureSuspense} from './ReactFiberSuspenseComponent.js';
 
-import {createCapturedValue} from './ReactCapturedValue';
+import {createCapturedValue} from './ReactCapturedValue.js';
 import {
   enqueueCapturedUpdate,
   createUpdate,
   CaptureUpdate,
   ForceUpdate,
   enqueueUpdate,
-} from './ReactUpdateQueue';
-import {logError} from './ReactFiberCommitWork';
-import {getStackByFiberInDevAndProd} from './ReactCurrentFiber';
-import {popHostContainer, popHostContext} from './ReactFiberHostContext';
+} from './ReactUpdateQueue.js';
+import {logError} from './ReactFiberCommitWork.js';
+import {getStackByFiberInDevAndProd} from './ReactCurrentFiber.js';
+import {popHostContainer, popHostContext} from './ReactFiberHostContext.js';
 import {
   isContextProvider as isLegacyContextProvider,
   popContext as popLegacyContext,
   popTopLevelContextObject as popTopLevelLegacyContextObject,
-} from './ReactFiberContext';
-import {popProvider} from './ReactFiberNewContext';
+} from './ReactFiberContext.js';
+import {popProvider} from './ReactFiberNewContext.js';
 import {
   renderDidSuspend,
   renderDidError,
@@ -67,16 +67,16 @@ import {
   isAlreadyFailedLegacyErrorBoundary,
   pingSuspendedRoot,
   retryTimedOutBoundary,
-} from './ReactFiberScheduler';
+} from './ReactFiberScheduler.js';
 
-import invariant from 'shared/invariant';
-import maxSigned31BitInt from './maxSigned31BitInt';
+import invariant from 'shared/invariant.js';
+import maxSigned31BitInt from './maxSigned31BitInt.js';
 import {
   Sync,
   expirationTimeToMs,
   LOW_PRIORITY_EXPIRATION,
-} from './ReactFiberExpirationTime';
-import {findEarliestOutstandingPriorityLevel} from './ReactFiberPendingPriority';
+} from './ReactFiberExpirationTime.js';
+import {findEarliestOutstandingPriorityLevel} from './ReactFiberPendingPriority.js';
 
 const PossiblyWeakSet = typeof WeakSet === 'function' ? WeakSet : Set;
 const PossiblyWeakMap = typeof WeakMap === 'function' ? WeakMap : Map;

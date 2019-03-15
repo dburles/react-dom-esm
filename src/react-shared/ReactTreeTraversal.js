@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {HostComponent} from './ReactWorkTags';
+import {HostComponent} from './ReactWorkTags.js';
 
 function getParent(inst) {
   do {

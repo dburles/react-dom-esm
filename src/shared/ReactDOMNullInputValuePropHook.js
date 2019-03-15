@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import warning from 'shared/warning';
+import warning from 'shared/warning.js';
 
 let didWarnValueNull = false;
 

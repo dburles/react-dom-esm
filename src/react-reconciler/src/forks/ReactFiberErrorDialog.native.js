@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {CapturedError} from '../ReactCapturedValue';
+import type {CapturedError} from '../ReactCapturedValue.js';
 
 // Module provided by RN:
-import ExceptionsManager from 'ExceptionsManager';
+import ExceptionsManager from 'ExceptionsManager.js';
 
 /**
  * Intercept lifecycle errors and ensure they are shown with the correct stack

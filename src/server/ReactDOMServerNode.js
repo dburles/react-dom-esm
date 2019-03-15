@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import ReactVersion from 'shared/ReactVersion';
+import ReactVersion from 'shared/ReactVersion.js';
 
-import {renderToString, renderToStaticMarkup} from './ReactDOMStringRenderer';
+import {renderToString, renderToStaticMarkup} from './ReactDOMStringRenderer.js';
 import {
   renderToNodeStream,
   renderToStaticNodeStream,
-} from './ReactDOMNodeStreamRenderer';
+} from './ReactDOMNodeStreamRenderer.js';
 
 // Note: when changing this, also consider https://github.com/facebook/react/issues/11526
 export default {

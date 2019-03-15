@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {shorthandToLonghand} from './CSSShorthandProperty';
+import {shorthandToLonghand} from './CSSShorthandProperty.js';
 
-import dangerousStyleValue from './dangerousStyleValue';
-import hyphenateStyleName from './hyphenateStyleName';
-import warnValidStyle from './warnValidStyle';
-import warning from 'shared/warning';
+import dangerousStyleValue from './dangerousStyleValue.js';
+import hyphenateStyleName from './hyphenateStyleName.js';
+import warnValidStyle from './warnValidStyle.js';
+import warning from 'shared/warning.js';
 
-import {warnAboutShorthandPropertyCollision} from 'shared/ReactFeatureFlags';
+import {warnAboutShorthandPropertyCollision} from 'shared/ReactFeatureFlags.js';
 
 /**
  * Operations for dealing with CSS properties.

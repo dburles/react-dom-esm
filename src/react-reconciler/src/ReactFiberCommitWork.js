@@ -14,21 +14,21 @@ import type {
   Container,
   ChildSet,
   UpdatePayload,
-} from './ReactFiberHostConfig';
-import type {Fiber} from './ReactFiber';
-import type {FiberRoot} from './ReactFiberRoot';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {CapturedValue, CapturedError} from './ReactCapturedValue';
-import type {SuspenseState} from './ReactFiberSuspenseComponent';
-import type {FunctionComponentUpdateQueue} from './ReactFiberHooks';
-import type {Thenable} from './ReactFiberScheduler';
+} from './ReactFiberHostConfig.js';
+import type {Fiber} from './ReactFiber.js';
+import type {FiberRoot} from './ReactFiberRoot.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {CapturedValue, CapturedError} from './ReactCapturedValue.js';
+import type {SuspenseState} from './ReactFiberSuspenseComponent.js';
+import type {FunctionComponentUpdateQueue} from './ReactFiberHooks.js';
+import type {Thenable} from './ReactFiberScheduler.js';
 
-import {unstable_wrap as Schedule_tracing_wrap} from 'scheduler/tracing';
+import {unstable_wrap as Schedule_tracing_wrap} from 'scheduler/tracing.js';
 import {
   enableSchedulerTracing,
   enableProfilerTimer,
   enableSuspenseServerRenderer,
-} from 'shared/ReactFeatureFlags';
+} from 'shared/ReactFeatureFlags.js';
 import {
   FunctionComponent,
   ForwardRef,
@@ -43,31 +43,31 @@ import {
   IncompleteClassComponent,
   MemoComponent,
   SimpleMemoComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 import {
   invokeGuardedCallback,
   hasCaughtError,
   clearCaughtError,
-} from 'shared/ReactErrorUtils';
+} from 'shared/ReactErrorUtils.js';
 import {
   ContentReset,
   Placement,
   Snapshot,
   Update,
-} from 'shared/ReactSideEffectTags';
-import getComponentName from 'shared/getComponentName';
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import warning from 'shared/warning';
+} from 'shared/ReactSideEffectTags.js';
+import getComponentName from 'shared/getComponentName.js';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import warning from 'shared/warning.js';
 
-import {NoWork} from './ReactFiberExpirationTime';
-import {onCommitUnmount} from './ReactFiberDevToolsHook';
-import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf';
-import {getStackByFiberInDevAndProd} from './ReactCurrentFiber';
-import {logCapturedError} from './ReactFiberErrorLogger';
-import {resolveDefaultProps} from './ReactFiberLazyComponent';
-import {getCommitTime} from './ReactProfilerTimer';
-import {commitUpdateQueue} from './ReactUpdateQueue';
+import {NoWork} from './ReactFiberExpirationTime.js';
+import {onCommitUnmount} from './ReactFiberDevToolsHook.js';
+import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf.js';
+import {getStackByFiberInDevAndProd} from './ReactCurrentFiber.js';
+import {logCapturedError} from './ReactFiberErrorLogger.js';
+import {resolveDefaultProps} from './ReactFiberLazyComponent.js';
+import {getCommitTime} from './ReactProfilerTimer.js';
+import {commitUpdateQueue} from './ReactUpdateQueue.js';
 import {
   getPublicInstance,
   supportsMutation,
@@ -90,12 +90,12 @@ import {
   hideTextInstance,
   unhideInstance,
   unhideTextInstance,
-} from './ReactFiberHostConfig';
+} from './ReactFiberHostConfig.js';
 import {
   captureCommitPhaseError,
   requestCurrentTime,
   retryTimedOutBoundary,
-} from './ReactFiberScheduler';
+} from './ReactFiberScheduler.js';
 import {
   NoEffect as NoHookEffect,
   UnmountSnapshot,
@@ -105,8 +105,8 @@ import {
   MountLayout,
   UnmountPassive,
   MountPassive,
-} from './ReactHookEffectTags';
-import {didWarnAboutReassigningProps} from './ReactFiberBeginWork';
+} from './ReactHookEffectTags.js';
+import {didWarnAboutReassigningProps} from './ReactFiberBeginWork.js';
 
 let didWarnAboutUndefinedSnapshotBeforeUpdate: Set<mixed> | null = null;
 if (__DEV__) {

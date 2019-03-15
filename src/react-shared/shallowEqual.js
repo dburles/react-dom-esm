@@ -7,7 +7,7 @@
  * @flow
  */
 
-import is from './objectIs';
+import is from './objectIs.js';
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 

@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 
-import {enableUserTimingAPI} from 'shared/ReactFeatureFlags';
-import getComponentName from 'shared/getComponentName';
+import {enableUserTimingAPI} from 'shared/ReactFeatureFlags.js';
+import getComponentName from 'shared/getComponentName.js';
 import {
   HostRoot,
   HostComponent,
@@ -22,7 +22,7 @@ import {
   Mode,
   SuspenseComponent,
   DehydratedSuspenseComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 
 type MeasurementPhase =
   | 'componentWillMount'

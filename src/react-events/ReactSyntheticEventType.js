@@ -8,8 +8,8 @@
  * @flow
  */
 
-import type {Fiber} from 'react-reconciler/src/ReactFiber';
-import type {TopLevelType} from './TopLevelEventTypes';
+import type {Fiber} from 'react-reconciler/src/ReactFiber.js';
+import type {TopLevelType} from './TopLevelEventTypes.js';
 
 export type DispatchConfig = {
   dependencies: Array<TopLevelType>,

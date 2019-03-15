@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {canUseDOM} from 'shared/ExecutionEnvironment';
+import {canUseDOM} from 'shared/ExecutionEnvironment.js';
 
 /**
  * Checks if an event is supported in the current execution environment.

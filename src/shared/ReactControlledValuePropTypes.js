@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import checkPropTypes from 'prop-types/checkPropTypes';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+import checkPropTypes from 'prop-types/checkPropTypes.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
 let ReactDebugCurrentFrame = null;
 

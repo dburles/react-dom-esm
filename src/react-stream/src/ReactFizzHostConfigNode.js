@@ -7,7 +7,7 @@
  * @flow
  */
 
-import type {Writable} from 'stream';
+import type {Writable} from 'stream.js';
 
 type MightBeFlushable = {flush?: () => void};
 

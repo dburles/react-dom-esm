@@ -7,8 +7,8 @@
  * @flow
  */
 
-import {Namespaces} from '../shared/DOMNamespaces';
-import createMicrosoftUnsafeLocalFunction from '../shared/createMicrosoftUnsafeLocalFunction';
+import {Namespaces} from '../shared/DOMNamespaces.js';
+import createMicrosoftUnsafeLocalFunction from '../shared/createMicrosoftUnsafeLocalFunction.js';
 
 // SVG temp container for IE lacking innerHTML
 let reusableSVGContainer;

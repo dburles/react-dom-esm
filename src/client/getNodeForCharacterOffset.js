@@ -7,7 +7,7 @@
  * @flow
  */
 
-import {TEXT_NODE} from '../shared/HTMLNodeType';
+import {TEXT_NODE} from '../shared/HTMLNodeType.js';
 
 /**
  * Given any node return the first leaf node without children.

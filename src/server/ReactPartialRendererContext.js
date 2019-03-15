@@ -7,14 +7,14 @@
  * @flow
  */
 
-import type {ThreadID} from './ReactThreadIDAllocator';
-import type {ReactContext} from 'shared/ReactTypes';
+import type {ThreadID} from './ReactThreadIDAllocator.js';
+import type {ReactContext} from 'shared/ReactTypes.js';
 
-import {REACT_CONTEXT_TYPE} from 'shared/ReactSymbols';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
-import getComponentName from 'shared/getComponentName';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import checkPropTypes from 'prop-types/checkPropTypes';
+import {REACT_CONTEXT_TYPE} from 'shared/ReactSymbols.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
+import getComponentName from 'shared/getComponentName.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import checkPropTypes from 'prop-types/checkPropTypes.js';
 
 let ReactDebugCurrentFrame;
 if (__DEV__) {

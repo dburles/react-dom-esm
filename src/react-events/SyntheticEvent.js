@@ -7,8 +7,8 @@
 
 /* eslint valid-typeof: 0 */
 
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 const EVENT_POOL_SIZE = 10;
 

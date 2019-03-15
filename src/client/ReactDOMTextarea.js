@@ -7,13 +7,13 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
 
-import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes';
-import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber';
-import {getToStringValue, toString} from './ToStringValue';
-import type {ToStringValue} from './ToStringValue';
+import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes.js';
+import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber.js';
+import {getToStringValue, toString} from './ToStringValue.js';
+import type {ToStringValue} from './ToStringValue.js';
 
 let didWarnValDefaultVal = false;
 

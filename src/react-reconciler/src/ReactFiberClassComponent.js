@@ -7,28 +7,28 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
-import React from 'react';
-import {Update, Snapshot} from 'shared/ReactSideEffectTags';
+import React from 'react.js';
+import {Update, Snapshot} from 'shared/ReactSideEffectTags.js';
 import {
   debugRenderPhaseSideEffects,
   debugRenderPhaseSideEffectsForStrictMode,
   warnAboutDeprecatedLifecycles,
-} from 'shared/ReactFeatureFlags';
-import ReactStrictModeWarnings from './ReactStrictModeWarnings';
-import {isMounted} from 'react-reconciler/reflection';
-import {get as getInstance, set as setInstance} from 'shared/ReactInstanceMap';
-import shallowEqual from 'shared/shallowEqual';
-import getComponentName from 'shared/getComponentName';
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import {REACT_CONTEXT_TYPE} from 'shared/ReactSymbols';
+} from 'shared/ReactFeatureFlags.js';
+import ReactStrictModeWarnings from './ReactStrictModeWarnings.js';
+import {isMounted} from 'react-reconciler/reflection.js';
+import {get as getInstance, set as setInstance} from 'shared/ReactInstanceMap.js';
+import shallowEqual from 'shared/shallowEqual.js';
+import getComponentName from 'shared/getComponentName.js';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import {REACT_CONTEXT_TYPE} from 'shared/ReactSymbols.js';
 
-import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf';
-import {resolveDefaultProps} from './ReactFiberLazyComponent';
-import {StrictMode} from './ReactTypeOfMode';
+import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf.js';
+import {resolveDefaultProps} from './ReactFiberLazyComponent.js';
+import {StrictMode} from './ReactTypeOfMode.js';
 
 import {
   enqueueUpdate,
@@ -38,22 +38,22 @@ import {
   createUpdate,
   ReplaceState,
   ForceUpdate,
-} from './ReactUpdateQueue';
-import {NoWork} from './ReactFiberExpirationTime';
+} from './ReactUpdateQueue.js';
+import {NoWork} from './ReactFiberExpirationTime.js';
 import {
   cacheContext,
   getMaskedContext,
   getUnmaskedContext,
   hasContextChanged,
   emptyContextObject,
-} from './ReactFiberContext';
-import {readContext} from './ReactFiberNewContext';
+} from './ReactFiberContext.js';
+import {readContext} from './ReactFiberNewContext.js';
 import {
   requestCurrentTime,
   computeExpirationForFiber,
   scheduleWork,
   flushPassiveEffects,
-} from './ReactFiberScheduler';
+} from './ReactFiberScheduler.js';
 
 const fakeInternalInstance = {};
 const isArray = Array.isArray;

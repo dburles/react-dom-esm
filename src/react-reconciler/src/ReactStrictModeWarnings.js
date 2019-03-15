@@ -7,14 +7,14 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 
-import {getStackByFiberInDevAndProd} from './ReactCurrentFiber';
+import {getStackByFiberInDevAndProd} from './ReactCurrentFiber.js';
 
-import getComponentName from 'shared/getComponentName';
-import {StrictMode} from './ReactTypeOfMode';
-import lowPriorityWarning from 'shared/lowPriorityWarning';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import getComponentName from 'shared/getComponentName.js';
+import {StrictMode} from './ReactTypeOfMode.js';
+import lowPriorityWarning from 'shared/lowPriorityWarning.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 type LIFECYCLE =
   | 'UNSAFE_componentWillMount'

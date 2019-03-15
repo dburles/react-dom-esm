@@ -7,9 +7,9 @@
  * @flow
  */
 
-import type {LazyComponent} from 'shared/ReactLazyComponent';
+import type {LazyComponent} from 'shared/ReactLazyComponent.js';
 
-import warningWithoutStack from 'shared/warningWithoutStack';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 import {
   REACT_CONCURRENT_MODE_TYPE,
   REACT_CONTEXT_TYPE,
@@ -22,8 +22,8 @@ import {
   REACT_STRICT_MODE_TYPE,
   REACT_SUSPENSE_TYPE,
   REACT_LAZY_TYPE,
-} from 'shared/ReactSymbols';
-import {refineResolvedLazyComponent} from 'shared/ReactLazyComponent';
+} from 'shared/ReactSymbols.js';
+import {refineResolvedLazyComponent} from 'shared/ReactLazyComponent.js';
 
 function getWrappedName(
   outerType: mixed,

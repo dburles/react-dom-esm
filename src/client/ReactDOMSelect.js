@@ -8,11 +8,11 @@
  */
 
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber';
-import warning from 'shared/warning';
+import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber.js';
+import warning from 'shared/warning.js';
 
-import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes';
-import {getToStringValue, toString} from './ToStringValue';
+import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes.js';
+import {getToStringValue, toString} from './ToStringValue.js';
 
 let didWarnValueDefaultValue;
 

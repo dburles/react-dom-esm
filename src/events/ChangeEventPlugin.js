@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {runEventsInBatch} from 'events/EventPluginHub';
-import {accumulateTwoPhaseDispatches} from 'events/EventPropagators';
-import {enqueueStateRestore} from 'events/ReactControlledComponent';
-import {batchedUpdates} from 'events/ReactGenericBatching';
-import SyntheticEvent from 'events/SyntheticEvent';
-import isTextInputElement from 'shared/isTextInputElement';
-import {canUseDOM} from 'shared/ExecutionEnvironment';
+import {runEventsInBatch} from 'events/EventPluginHub.js';
+import {accumulateTwoPhaseDispatches} from 'events/EventPropagators.js';
+import {enqueueStateRestore} from 'events/ReactControlledComponent.js';
+import {batchedUpdates} from 'events/ReactGenericBatching.js';
+import SyntheticEvent from 'events/SyntheticEvent.js';
+import isTextInputElement from 'shared/isTextInputElement.js';
+import {canUseDOM} from 'shared/ExecutionEnvironment.js';
 
 import {
   TOP_BLUR,
@@ -22,13 +22,13 @@ import {
   TOP_KEY_DOWN,
   TOP_KEY_UP,
   TOP_SELECTION_CHANGE,
-} from './DOMTopLevelEventTypes';
-import getEventTarget from './getEventTarget';
-import isEventSupported from './isEventSupported';
-import {getNodeFromInstance} from '../client/ReactDOMComponentTree';
-import {updateValueIfChanged} from '../client/inputValueTracking';
-import {setDefaultValue} from '../client/ReactDOMInput';
-import {disableInputAttributeSyncing} from 'shared/ReactFeatureFlags';
+} from './DOMTopLevelEventTypes.js';
+import getEventTarget from './getEventTarget.js';
+import isEventSupported from './isEventSupported.js';
+import {getNodeFromInstance} from '../client/ReactDOMComponentTree.js';
+import {updateValueIfChanged} from '../client/inputValueTracking.js';
+import {setDefaultValue} from '../client/ReactDOMInput.js';
+import {disableInputAttributeSyncing} from 'shared/ReactFeatureFlags.js';
 
 const eventTypes = {
   change: {

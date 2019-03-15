@@ -7,13 +7,13 @@
  * @flow
  */
 
-import type {ReactNodeList} from 'shared/ReactTypes';
+import type {ReactNodeList} from 'shared/ReactTypes.js';
 
 import {
   createRequest,
   startWork,
   startFlowing,
-} from 'react-stream/inline.dom-browser';
+} from 'react-stream/inline.dom-browser.js';
 
 function renderToReadableStream(children: ReactNodeList): ReadableStream {
   let request;

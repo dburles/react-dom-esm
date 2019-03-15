@@ -5,22 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {findCurrentFiberUsingSlowPath} from 'react-reconciler/reflection';
-import {get as getInstance} from 'shared/ReactInstanceMap';
+import React from 'react.js';
+import ReactDOM from 'react-dom.js';
+import {findCurrentFiberUsingSlowPath} from 'react-reconciler/reflection.js';
+import {get as getInstance} from 'shared/ReactInstanceMap.js';
 import {
   ClassComponent,
   FunctionComponent,
   HostComponent,
   HostText,
-} from 'shared/ReactWorkTags';
-import SyntheticEvent from 'events/SyntheticEvent';
-import invariant from 'shared/invariant';
-import lowPriorityWarning from 'shared/lowPriorityWarning';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import {ELEMENT_NODE} from '../shared/HTMLNodeType';
-import * as DOMTopLevelEventTypes from '../events/DOMTopLevelEventTypes';
+} from 'shared/ReactWorkTags.js';
+import SyntheticEvent from 'events/SyntheticEvent.js';
+import invariant from 'shared/invariant.js';
+import lowPriorityWarning from 'shared/lowPriorityWarning.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import {ELEMENT_NODE} from '../shared/HTMLNodeType.js';
+import * as DOMTopLevelEventTypes from '../events/DOMTopLevelEventTypes.js';
 
 // for .act's return value
 type Thenable = {

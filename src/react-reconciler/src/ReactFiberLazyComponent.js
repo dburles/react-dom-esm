@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {LazyComponent, Thenable} from 'shared/ReactLazyComponent';
+import type {LazyComponent, Thenable} from 'shared/ReactLazyComponent.js';
 
-import {Resolved, Rejected, Pending} from 'shared/ReactLazyComponent';
-import warning from 'shared/warning';
+import {Resolved, Rejected, Pending} from 'shared/ReactLazyComponent.js';
+import warning from 'shared/warning.js';
 
 export function resolveDefaultProps(Component: any, baseProps: Object): Object {
   if (Component && Component.defaultProps) {

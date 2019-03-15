@@ -9,12 +9,12 @@ import {
   getParentInstance,
   traverseTwoPhase,
   traverseEnterLeave,
-} from 'shared/ReactTreeTraversal';
-import warningWithoutStack from 'shared/warningWithoutStack';
+} from 'shared/ReactTreeTraversal.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
-import {getListener} from './EventPluginHub';
-import accumulateInto from './accumulateInto';
-import forEachAccumulated from './forEachAccumulated';
+import {getListener} from './EventPluginHub.js';
+import accumulateInto from './accumulateInto.js';
+import forEachAccumulated from './forEachAccumulated.js';
 
 type PropagationPhases = 'bubbled' | 'captured';
 

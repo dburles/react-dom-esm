@@ -7,13 +7,13 @@
  * @flow
  */
 
-import type {ReactNodeList} from 'shared/ReactTypes';
+import type {ReactNodeList} from 'shared/ReactTypes.js';
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
 import type {
   FiberRoot,
   Batch as FiberRootBatch,
-} from 'react-reconciler/src/ReactFiberRoot';
+} from 'react-reconciler/src/ReactFiberRoot.js';
 
 import '../shared/checkReact';
 import './ReactDOMClientInjection';
@@ -35,48 +35,48 @@ import {
   getPublicRootInstance,
   findHostInstance,
   findHostInstanceWithWarning,
-} from 'react-reconciler/inline.dom';
-import {createPortal as createPortalImpl} from 'shared/ReactPortal';
-import {canUseDOM} from 'shared/ExecutionEnvironment';
-import {setBatchingImplementation} from 'events/ReactGenericBatching';
+} from 'react-reconciler/inline.dom.js';
+import {createPortal as createPortalImpl} from 'shared/ReactPortal.js';
+import {canUseDOM} from 'shared/ExecutionEnvironment.js';
+import {setBatchingImplementation} from 'events/ReactGenericBatching.js';
 import {
   setRestoreImplementation,
   enqueueStateRestore,
   restoreStateIfNeeded,
-} from 'events/ReactControlledComponent';
+} from 'events/ReactControlledComponent.js';
 import {
   injection as EventPluginHubInjection,
   runEventsInBatch,
-} from 'events/EventPluginHub';
-import {eventNameDispatchConfigs} from 'events/EventPluginRegistry';
+} from 'events/EventPluginHub.js';
+import {eventNameDispatchConfigs} from 'events/EventPluginRegistry.js';
 import {
   accumulateTwoPhaseDispatches,
   accumulateDirectDispatches,
-} from 'events/EventPropagators';
-import {has as hasInstance} from 'shared/ReactInstanceMap';
-import ReactVersion from 'shared/ReactVersion';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
-import getComponentName from 'shared/getComponentName';
-import invariant from 'shared/invariant';
-import lowPriorityWarning from 'shared/lowPriorityWarning';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import {enableStableConcurrentModeAPIs} from 'shared/ReactFeatureFlags';
+} from 'events/EventPropagators.js';
+import {has as hasInstance} from 'shared/ReactInstanceMap.js';
+import ReactVersion from 'shared/ReactVersion.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
+import getComponentName from 'shared/getComponentName.js';
+import invariant from 'shared/invariant.js';
+import lowPriorityWarning from 'shared/lowPriorityWarning.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import {enableStableConcurrentModeAPIs} from 'shared/ReactFeatureFlags.js';
 
 import {
   getInstanceFromNode,
   getNodeFromInstance,
   getFiberCurrentPropsFromNode,
   getClosestInstanceFromNode,
-} from './ReactDOMComponentTree';
-import {restoreControlledState} from './ReactDOMComponent';
-import {dispatchEvent} from '../events/ReactDOMEventListener';
+} from './ReactDOMComponentTree.js';
+import {restoreControlledState} from './ReactDOMComponent.js';
+import {dispatchEvent} from '../events/ReactDOMEventListener.js';
 import {
   ELEMENT_NODE,
   COMMENT_NODE,
   DOCUMENT_NODE,
   DOCUMENT_FRAGMENT_NODE,
-} from '../shared/HTMLNodeType';
-import {ROOT_ATTRIBUTE_NAME} from '../shared/DOMProperty';
+} from '../shared/HTMLNodeType.js';
+import {ROOT_ATTRIBUTE_NAME} from '../shared/DOMProperty.js';
 
 const ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
 

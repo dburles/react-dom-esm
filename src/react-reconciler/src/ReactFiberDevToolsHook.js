@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {FiberRoot} from './ReactFiberRoot';
+import type {Fiber} from './ReactFiber.js';
+import type {FiberRoot} from './ReactFiberRoot.js';
 
-import warningWithoutStack from 'shared/warningWithoutStack';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 declare var __REACT_DEVTOOLS_GLOBAL_HOOK__: Object | void;
 

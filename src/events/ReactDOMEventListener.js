@@ -7,20 +7,20 @@
  * @flow
  */
 
-import type {AnyNativeEvent} from 'events/PluginModuleType';
-import type {Fiber} from 'react-reconciler/src/ReactFiber';
-import type {DOMTopLevelEventType} from 'events/TopLevelEventTypes';
+import type {AnyNativeEvent} from 'events/PluginModuleType.js';
+import type {Fiber} from 'react-reconciler/src/ReactFiber.js';
+import type {DOMTopLevelEventType} from 'events/TopLevelEventTypes.js';
 
-import {batchedUpdates, interactiveUpdates} from 'events/ReactGenericBatching';
-import {runExtractedEventsInBatch} from 'events/EventPluginHub';
-import {isFiberMounted} from 'react-reconciler/reflection';
-import {HostRoot} from 'shared/ReactWorkTags';
+import {batchedUpdates, interactiveUpdates} from 'events/ReactGenericBatching.js';
+import {runExtractedEventsInBatch} from 'events/EventPluginHub.js';
+import {isFiberMounted} from 'react-reconciler/reflection.js';
+import {HostRoot} from 'shared/ReactWorkTags.js';
 
-import {addEventBubbleListener, addEventCaptureListener} from './EventListener';
-import getEventTarget from './getEventTarget';
-import {getClosestInstanceFromNode} from '../client/ReactDOMComponentTree';
-import SimpleEventPlugin from './SimpleEventPlugin';
-import {getRawEventName} from './DOMTopLevelEventTypes';
+import {addEventBubbleListener, addEventCaptureListener} from './EventListener.js';
+import getEventTarget from './getEventTarget.js';
+import {getClosestInstanceFromNode} from '../client/ReactDOMComponentTree.js';
+import SimpleEventPlugin from './SimpleEventPlugin.js';
+import {getRawEventName} from './DOMTopLevelEventTypes.js';
 
 const {isInteractiveTopLevelEventType} = SimpleEventPlugin;
 

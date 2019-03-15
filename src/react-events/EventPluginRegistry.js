@@ -7,14 +7,14 @@
  * @flow
  */
 
-import type {DispatchConfig} from './ReactSyntheticEventType';
+import type {DispatchConfig} from './ReactSyntheticEventType.js';
 import type {
   AnyNativeEvent,
   PluginName,
   PluginModule,
-} from './PluginModuleType';
+} from './PluginModuleType.js';
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
 type NamesToPlugins = {[key: PluginName]: PluginModule<AnyNativeEvent>};
 type EventPluginOrder = null | Array<PluginName>;

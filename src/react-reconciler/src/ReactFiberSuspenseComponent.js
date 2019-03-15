@@ -7,8 +7,8 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
 export type SuspenseState = {|
   timedOutAt: ExpirationTime,

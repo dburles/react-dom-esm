@@ -11,4 +11,4 @@
 // TODO: real implementation.
 // console.log('Hello from Fire host config.');
 
-export * from '../client/ReactDOMHostConfig';
+export * from '../client/ReactDOMHostConfig.js';

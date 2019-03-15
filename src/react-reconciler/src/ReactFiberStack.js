@@ -7,9 +7,9 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 
-import warningWithoutStack from 'shared/warningWithoutStack';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 export type StackCursor<T> = {
   current: T,

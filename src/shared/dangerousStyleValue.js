@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {isUnitlessNumber} from './CSSProperty';
+import {isUnitlessNumber} from './CSSProperty.js';
 
 /**
  * Convert a value into the proper css writable value. The style name `name`

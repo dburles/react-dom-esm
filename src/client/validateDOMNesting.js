@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import warningWithoutStack from 'shared/warningWithoutStack';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-import {getCurrentFiberStackInDev} from 'react-reconciler/src/ReactCurrentFiber';
+import {getCurrentFiberStackInDev} from 'react-reconciler/src/ReactCurrentFiber.js';
 
 let validateDOMNesting = () => {};
 let updatedAncestorInfo = () => {};

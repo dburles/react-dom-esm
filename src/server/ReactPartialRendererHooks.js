@@ -7,15 +7,15 @@
  * @flow
  */
 
-import type {Dispatcher as DispatcherType} from 'react-reconciler/src/ReactFiberHooks';
-import type {ThreadID} from './ReactThreadIDAllocator';
-import type {ReactContext} from 'shared/ReactTypes';
+import type {Dispatcher as DispatcherType} from 'react-reconciler/src/ReactFiberHooks.js';
+import type {ThreadID} from './ReactThreadIDAllocator.js';
+import type {ReactContext} from 'shared/ReactTypes.js';
 
-import {validateContextBounds} from './ReactPartialRendererContext';
+import {validateContextBounds} from './ReactPartialRendererContext.js';
 
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
-import is from 'shared/objectIs';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
+import is from 'shared/objectIs.js';
 
 type BasicStateAction<S> = (S => S) | S;
 type Dispatch<A> = A => void;

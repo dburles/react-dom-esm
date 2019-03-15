@@ -7,4 +7,4 @@
  * @flow
  */
 
-export * from 'react-dom/src/fire/ReactFireHostConfig';
+export * from 'react-dom/src/fire/ReactFireHostConfig.js';

@@ -7,19 +7,19 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {StackCursor} from './ReactFiberStack';
+import type {Fiber} from './ReactFiber.js';
+import type {StackCursor} from './ReactFiberStack.js';
 
-import {isFiberMounted} from 'react-reconciler/reflection';
-import {ClassComponent, HostRoot} from 'shared/ReactWorkTags';
-import getComponentName from 'shared/getComponentName';
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import checkPropTypes from 'prop-types/checkPropTypes';
+import {isFiberMounted} from 'react-reconciler/reflection.js';
+import {ClassComponent, HostRoot} from 'shared/ReactWorkTags.js';
+import getComponentName from 'shared/getComponentName.js';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import checkPropTypes from 'prop-types/checkPropTypes.js';
 
-import {setCurrentPhase, getCurrentFiberStackInDev} from './ReactCurrentFiber';
-import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf';
-import {createCursor, push, pop} from './ReactFiberStack';
+import {setCurrentPhase, getCurrentFiberStackInDev} from './ReactCurrentFiber.js';
+import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf.js';
+import {createCursor, push, pop} from './ReactFiberStack.js';
 
 let warnedAboutMissingGetChildContext;
 

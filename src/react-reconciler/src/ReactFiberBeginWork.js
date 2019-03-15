@@ -7,13 +7,13 @@
  * @flow
  */
 
-import type {ReactProviderType, ReactContext} from 'shared/ReactTypes';
-import type {Fiber} from './ReactFiber';
-import type {FiberRoot} from './ReactFiberRoot';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {SuspenseState} from './ReactFiberSuspenseComponent';
+import type {ReactProviderType, ReactContext} from 'shared/ReactTypes.js';
+import type {Fiber} from './ReactFiber.js';
+import type {FiberRoot} from './ReactFiberRoot.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {SuspenseState} from './ReactFiberSuspenseComponent.js';
 
-import checkPropTypes from 'prop-types/checkPropTypes';
+import checkPropTypes from 'prop-types/checkPropTypes.js';
 
 import {
   IndeterminateComponent,
@@ -35,7 +35,7 @@ import {
   SimpleMemoComponent,
   LazyComponent,
   IncompleteClassComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 import {
   NoEffect,
   PerformedWork,
@@ -45,56 +45,56 @@ import {
   Update,
   Ref,
   Deletion,
-} from 'shared/ReactSideEffectTags';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+} from 'shared/ReactSideEffectTags.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 import {
   debugRenderPhaseSideEffects,
   debugRenderPhaseSideEffectsForStrictMode,
   enableProfilerTimer,
   enableSuspenseServerRenderer,
-} from 'shared/ReactFeatureFlags';
-import invariant from 'shared/invariant';
-import shallowEqual from 'shared/shallowEqual';
-import getComponentName from 'shared/getComponentName';
-import ReactStrictModeWarnings from './ReactStrictModeWarnings';
-import {refineResolvedLazyComponent} from 'shared/ReactLazyComponent';
-import {REACT_LAZY_TYPE} from 'shared/ReactSymbols';
-import warning from 'shared/warning';
-import warningWithoutStack from 'shared/warningWithoutStack';
+} from 'shared/ReactFeatureFlags.js';
+import invariant from 'shared/invariant.js';
+import shallowEqual from 'shared/shallowEqual.js';
+import getComponentName from 'shared/getComponentName.js';
+import ReactStrictModeWarnings from './ReactStrictModeWarnings.js';
+import {refineResolvedLazyComponent} from 'shared/ReactLazyComponent.js';
+import {REACT_LAZY_TYPE} from 'shared/ReactSymbols.js';
+import warning from 'shared/warning.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 import {
   setCurrentPhase,
   getCurrentFiberOwnerNameInDevOrNull,
   getCurrentFiberStackInDev,
-} from './ReactCurrentFiber';
-import {startWorkTimer, cancelWorkTimer} from './ReactDebugFiberPerf';
+} from './ReactCurrentFiber.js';
+import {startWorkTimer, cancelWorkTimer} from './ReactDebugFiberPerf.js';
 
 import {
   mountChildFibers,
   reconcileChildFibers,
   cloneChildFibers,
-} from './ReactChildFiber';
-import {processUpdateQueue} from './ReactUpdateQueue';
-import {NoWork, Never} from './ReactFiberExpirationTime';
+} from './ReactChildFiber.js';
+import {processUpdateQueue} from './ReactUpdateQueue.js';
+import {NoWork, Never} from './ReactFiberExpirationTime.js';
 import {
   ConcurrentMode,
   NoContext,
   ProfileMode,
   StrictMode,
-} from './ReactTypeOfMode';
+} from './ReactTypeOfMode.js';
 import {
   shouldSetTextContent,
   shouldDeprioritizeSubtree,
-} from './ReactFiberHostConfig';
-import {pushHostContext, pushHostContainer} from './ReactFiberHostContext';
+} from './ReactFiberHostConfig.js';
+import {pushHostContext, pushHostContainer} from './ReactFiberHostContext.js';
 import {
   pushProvider,
   propagateContextChange,
   readContext,
   prepareToReadContext,
   calculateChangedBits,
-} from './ReactFiberNewContext';
-import {resetHooks, renderWithHooks, bailoutHooks} from './ReactFiberHooks';
-import {stopProfilerTimerIfRunning} from './ReactProfilerTimer';
+} from './ReactFiberNewContext.js';
+import {resetHooks, renderWithHooks, bailoutHooks} from './ReactFiberHooks.js';
+import {stopProfilerTimerIfRunning} from './ReactProfilerTimer.js';
 import {
   getMaskedContext,
   getUnmaskedContext,
@@ -103,13 +103,13 @@ import {
   isContextProvider as isLegacyContextProvider,
   pushTopLevelContextObject,
   invalidateContextProvider,
-} from './ReactFiberContext';
+} from './ReactFiberContext.js';
 import {
   enterHydrationState,
   reenterHydrationStateFromDehydratedSuspenseInstance,
   resetHydrationState,
   tryToClaimNextHydratableInstance,
-} from './ReactFiberHydrationContext';
+} from './ReactFiberHydrationContext.js';
 import {
   adoptClassInstance,
   applyDerivedStateFromProps,
@@ -117,18 +117,18 @@ import {
   mountClassInstance,
   resumeMountClassInstance,
   updateClassInstance,
-} from './ReactFiberClassComponent';
+} from './ReactFiberClassComponent.js';
 import {
   readLazyComponentType,
   resolveDefaultProps,
-} from './ReactFiberLazyComponent';
+} from './ReactFiberLazyComponent.js';
 import {
   resolveLazyComponentTag,
   createFiberFromTypeAndProps,
   createFiberFromFragment,
   createWorkInProgress,
   isSimpleFunctionComponent,
-} from './ReactFiber';
+} from './ReactFiber.js';
 
 const ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
 

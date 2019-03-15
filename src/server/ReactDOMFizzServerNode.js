@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {ReactNodeList} from 'shared/ReactTypes';
-import type {Writable} from 'stream';
+import type {ReactNodeList} from 'shared/ReactTypes.js';
+import type {Writable} from 'stream.js';
 
-import {createRequest, startWork, startFlowing} from 'react-stream/inline.dom';
+import {createRequest, startWork, startFlowing} from 'react-stream/inline.dom.js';
 
 function createDrainHandler(destination, request) {
   return () => startFlowing(request, 0);

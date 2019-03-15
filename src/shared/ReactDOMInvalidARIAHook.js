@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import warning from 'shared/warning';
+import warning from 'shared/warning.js';
 
-import {ATTRIBUTE_NAME_CHAR} from './DOMProperty';
-import isCustomComponent from './isCustomComponent';
-import validAriaProperties from './validAriaProperties';
+import {ATTRIBUTE_NAME_CHAR} from './DOMProperty.js';
+import isCustomComponent from './isCustomComponent.js';
+import validAriaProperties from './validAriaProperties.js';
 
 const warnedProperties = {};
 const rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');

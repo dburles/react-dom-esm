@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {accumulateEnterLeaveDispatches} from 'events/EventPropagators';
+import {accumulateEnterLeaveDispatches} from 'events/EventPropagators.js';
 
 import {
   TOP_MOUSE_OUT,
   TOP_MOUSE_OVER,
   TOP_POINTER_OUT,
   TOP_POINTER_OVER,
-} from './DOMTopLevelEventTypes';
-import SyntheticMouseEvent from './SyntheticMouseEvent';
-import SyntheticPointerEvent from './SyntheticPointerEvent';
+} from './DOMTopLevelEventTypes.js';
+import SyntheticMouseEvent from './SyntheticMouseEvent.js';
+import SyntheticPointerEvent from './SyntheticPointerEvent.js';
 import {
   getClosestInstanceFromNode,
   getNodeFromInstance,
-} from '../client/ReactDOMComponentTree';
+} from '../client/ReactDOMComponentTree.js';
 
 const eventTypes = {
   mouseEnter: {

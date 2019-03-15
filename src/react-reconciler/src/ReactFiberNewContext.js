@@ -7,10 +7,10 @@
  * @flow
  */
 
-import type {ReactContext} from 'shared/ReactTypes';
-import type {Fiber} from './ReactFiber';
-import type {StackCursor} from './ReactFiberStack';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+import type {ReactContext} from 'shared/ReactTypes.js';
+import type {Fiber} from './ReactFiber.js';
+import type {StackCursor} from './ReactFiberStack.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
 export type ContextDependencyList = {
   first: ContextDependency<mixed>,
@@ -23,27 +23,27 @@ type ContextDependency<T> = {
   next: ContextDependency<mixed> | null,
 };
 
-import warningWithoutStack from 'shared/warningWithoutStack';
-import {isPrimaryRenderer} from './ReactFiberHostConfig';
-import {createCursor, push, pop} from './ReactFiberStack';
-import MAX_SIGNED_31_BIT_INT from './maxSigned31BitInt';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import {isPrimaryRenderer} from './ReactFiberHostConfig.js';
+import {createCursor, push, pop} from './ReactFiberStack.js';
+import MAX_SIGNED_31_BIT_INT from './maxSigned31BitInt.js';
 import {
   ContextProvider,
   ClassComponent,
   DehydratedSuspenseComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
-import is from 'shared/objectIs';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
+import is from 'shared/objectIs.js';
 import {
   createUpdate,
   enqueueUpdate,
   ForceUpdate,
-} from 'react-reconciler/src/ReactUpdateQueue';
-import {NoWork} from './ReactFiberExpirationTime';
-import {markWorkInProgressReceivedUpdate} from './ReactFiberBeginWork';
-import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags';
+} from 'react-reconciler/src/ReactUpdateQueue.js';
+import {NoWork} from './ReactFiberExpirationTime.js';
+import {markWorkInProgressReceivedUpdate} from './ReactFiberBeginWork.js';
+import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags.js';
 
 const valueCursor: StackCursor<mixed> = createCursor(null);
 

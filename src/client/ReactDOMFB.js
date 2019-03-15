@@ -7,13 +7,13 @@
  * @flow
  */
 
-import {findCurrentFiberUsingSlowPath} from 'react-reconciler/reflection';
-import {get as getInstance} from 'shared/ReactInstanceMap';
-import {addUserTimingListener} from 'shared/ReactFeatureFlags';
+import {findCurrentFiberUsingSlowPath} from 'react-reconciler/reflection.js';
+import {get as getInstance} from 'shared/ReactInstanceMap.js';
+import {addUserTimingListener} from 'shared/ReactFeatureFlags.js';
 
-import ReactDOM from './ReactDOM';
-import {isEnabled} from '../events/ReactBrowserEventEmitter';
-import {getClosestInstanceFromNode} from './ReactDOMComponentTree';
+import ReactDOM from './ReactDOM.js';
+import {isEnabled} from '../events/ReactBrowserEventEmitter.js';
+import {getClosestInstanceFromNode} from './ReactDOMComponentTree.js';
 
 Object.assign(
   (ReactDOM.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: any),

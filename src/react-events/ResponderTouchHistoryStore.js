@@ -7,10 +7,10 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
-import {isStartish, isMoveish, isEndish} from './ResponderTopLevelEventTypes';
+import {isStartish, isMoveish, isEndish} from './ResponderTopLevelEventTypes.js';
 
 /**
  * Tracks the position and time of each active touch by `touch.identifier`. We

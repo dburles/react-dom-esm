@@ -6,26 +6,26 @@
  * @flow
  */
 
-import {rethrowCaughtError} from 'shared/ReactErrorUtils';
-import invariant from 'shared/invariant';
+import {rethrowCaughtError} from 'shared/ReactErrorUtils.js';
+import invariant from 'shared/invariant.js';
 
 import {
   injectEventPluginOrder,
   injectEventPluginsByName,
   plugins,
-} from './EventPluginRegistry';
+} from './EventPluginRegistry.js';
 import {
   executeDispatchesInOrder,
   getFiberCurrentPropsFromNode,
-} from './EventPluginUtils';
-import accumulateInto from './accumulateInto';
-import forEachAccumulated from './forEachAccumulated';
+} from './EventPluginUtils.js';
+import accumulateInto from './accumulateInto.js';
+import forEachAccumulated from './forEachAccumulated.js';
 
-import type {PluginModule} from './PluginModuleType';
-import type {ReactSyntheticEvent} from './ReactSyntheticEventType';
-import type {Fiber} from 'react-reconciler/src/ReactFiber';
-import type {AnyNativeEvent} from './PluginModuleType';
-import type {TopLevelType} from './TopLevelEventTypes';
+import type {PluginModule} from './PluginModuleType.js';
+import type {ReactSyntheticEvent} from './ReactSyntheticEventType.js';
+import type {Fiber} from 'react-reconciler/src/ReactFiber.js';
+import type {AnyNativeEvent} from './PluginModuleType.js';
+import type {TopLevelType} from './TopLevelEventTypes.js';
 
 /**
  * Internal queue of events that have accumulated their dispatches and are

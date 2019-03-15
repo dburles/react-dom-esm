@@ -7,22 +7,22 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
-import {get as getInstance} from 'shared/ReactInstanceMap';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
-import getComponentName from 'shared/getComponentName';
+import {get as getInstance} from 'shared/ReactInstanceMap.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
+import getComponentName from 'shared/getComponentName.js';
 import {
   ClassComponent,
   HostComponent,
   HostRoot,
   HostPortal,
   HostText,
-} from 'shared/ReactWorkTags';
-import {NoEffect, Placement} from 'shared/ReactSideEffectTags';
+} from 'shared/ReactWorkTags.js';
+import {NoEffect, Placement} from 'shared/ReactSideEffectTags.js';
 
 const ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
 

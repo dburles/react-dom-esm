@@ -7,7 +7,7 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 import type {
   Instance,
   TextInstance,
@@ -15,7 +15,7 @@ import type {
   SuspenseInstance,
   Container,
   HostContext,
-} from './ReactFiberHostConfig';
+} from './ReactFiberHostConfig.js';
 
 import {
   HostComponent,
@@ -23,11 +23,11 @@ import {
   HostRoot,
   SuspenseComponent,
   DehydratedSuspenseComponent,
-} from 'shared/ReactWorkTags';
-import {Deletion, Placement} from 'shared/ReactSideEffectTags';
-import invariant from 'shared/invariant';
+} from 'shared/ReactWorkTags.js';
+import {Deletion, Placement} from 'shared/ReactSideEffectTags.js';
+import invariant from 'shared/invariant.js';
 
-import {createFiberFromHostInstanceForDeletion} from './ReactFiber';
+import {createFiberFromHostInstanceForDeletion} from './ReactFiber.js';
 import {
   shouldSetTextContent,
   supportsHydration,
@@ -49,8 +49,8 @@ import {
   didNotFindHydratableInstance,
   didNotFindHydratableTextInstance,
   didNotFindHydratableSuspenseInstance,
-} from './ReactFiberHostConfig';
-import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags';
+} from './ReactFiberHostConfig.js';
+import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags.js';
 
 // The deepest Fiber on the stack involved in a hydration context.
 // This may have been an insertion or a hydration.

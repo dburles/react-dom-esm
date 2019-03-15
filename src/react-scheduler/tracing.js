@@ -9,5 +9,5 @@
 
 'use strict';
 
-export * from './src/Tracing';
-export * from './src/TracingSubscriptions';
+export * from './src/Tracing.js';
+export * from './src/TracingSubscriptions.js';

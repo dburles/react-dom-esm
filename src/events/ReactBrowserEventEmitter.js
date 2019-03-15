@@ -7,7 +7,7 @@
  * @flow
  */
 
-import {registrationNameDependencies} from 'events/EventPluginRegistry';
+import {registrationNameDependencies} from 'events/EventPluginRegistry.js';
 import {
   TOP_BLUR,
   TOP_CANCEL,
@@ -19,14 +19,14 @@ import {
   TOP_SUBMIT,
   getRawEventName,
   mediaEventTypes,
-} from './DOMTopLevelEventTypes';
+} from './DOMTopLevelEventTypes.js';
 import {
   setEnabled,
   isEnabled,
   trapBubbledEvent,
   trapCapturedEvent,
-} from './ReactDOMEventListener';
-import isEventSupported from './isEventSupported';
+} from './ReactDOMEventListener.js';
+import isEventSupported from './isEventSupported.js';
 
 /**
  * Summary of `ReactBrowserEventEmitter` event handling:

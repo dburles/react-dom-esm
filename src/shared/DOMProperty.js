@@ -7,7 +7,7 @@
  * @flow
  */
 
-import warning from 'shared/warning';
+import warning from 'shared/warning.js';
 
 type PropertyType = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 

@@ -7,13 +7,13 @@
  * @flow
  */
 
-import type {DOMTopLevelEventType} from 'events/TopLevelEventTypes';
+import type {DOMTopLevelEventType} from 'events/TopLevelEventTypes.js';
 
 import {
   unsafeCastStringToDOMTopLevelType,
   unsafeCastDOMTopLevelTypeToString,
-} from 'events/TopLevelEventTypes';
-import getVendorPrefixedEventName from './getVendorPrefixedEventName';
+} from 'events/TopLevelEventTypes.js';
+import getVendorPrefixedEventName from './getVendorPrefixedEventName.js';
 
 /**
  * To identify top level events in ReactDOM, we use constants defined by this

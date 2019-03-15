@@ -8,7 +8,7 @@
 import {
   needsStateRestore,
   restoreStateIfNeeded,
-} from './ReactControlledComponent';
+} from './ReactControlledComponent.js';
 
 // Used as a way to call batchedUpdates when we don't have a reference to
 // the renderer. Such as when we're dispatching events or if third party

@@ -8,17 +8,17 @@
  */
 
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber';
-import {registrationNameModules} from 'events/EventPluginRegistry';
-import warning from 'shared/warning';
-import {canUseDOM} from 'shared/ExecutionEnvironment';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber.js';
+import {registrationNameModules} from 'events/EventPluginRegistry.js';
+import warning from 'shared/warning.js';
+import {canUseDOM} from 'shared/ExecutionEnvironment.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 import {
   getValueForAttribute,
   getValueForProperty,
   setValueForProperty,
-} from './DOMPropertyOperations';
+} from './DOMPropertyOperations.js';
 import {
   initWrapperState as ReactDOMInputInitWrapperState,
   getHostProps as ReactDOMInputGetHostProps,
@@ -26,29 +26,29 @@ import {
   updateChecked as ReactDOMInputUpdateChecked,
   updateWrapper as ReactDOMInputUpdateWrapper,
   restoreControlledState as ReactDOMInputRestoreControlledState,
-} from './ReactDOMInput';
+} from './ReactDOMInput.js';
 import {
   getHostProps as ReactDOMOptionGetHostProps,
   postMountWrapper as ReactDOMOptionPostMountWrapper,
   validateProps as ReactDOMOptionValidateProps,
-} from './ReactDOMOption';
+} from './ReactDOMOption.js';
 import {
   initWrapperState as ReactDOMSelectInitWrapperState,
   getHostProps as ReactDOMSelectGetHostProps,
   postMountWrapper as ReactDOMSelectPostMountWrapper,
   restoreControlledState as ReactDOMSelectRestoreControlledState,
   postUpdateWrapper as ReactDOMSelectPostUpdateWrapper,
-} from './ReactDOMSelect';
+} from './ReactDOMSelect.js';
 import {
   initWrapperState as ReactDOMTextareaInitWrapperState,
   getHostProps as ReactDOMTextareaGetHostProps,
   postMountWrapper as ReactDOMTextareaPostMountWrapper,
   updateWrapper as ReactDOMTextareaUpdateWrapper,
   restoreControlledState as ReactDOMTextareaRestoreControlledState,
-} from './ReactDOMTextarea';
-import {track} from './inputValueTracking';
-import setInnerHTML from './setInnerHTML';
-import setTextContent from './setTextContent';
+} from './ReactDOMTextarea.js';
+import {track} from './inputValueTracking.js';
+import setInnerHTML from './setInnerHTML.js';
+import setTextContent from './setTextContent.js';
 import {
   TOP_ERROR,
   TOP_INVALID,
@@ -56,27 +56,27 @@ import {
   TOP_RESET,
   TOP_SUBMIT,
   TOP_TOGGLE,
-} from '../events/DOMTopLevelEventTypes';
-import {listenTo, trapBubbledEvent} from '../events/ReactBrowserEventEmitter';
-import {mediaEventTypes} from '../events/DOMTopLevelEventTypes';
+} from '../events/DOMTopLevelEventTypes.js';
+import {listenTo, trapBubbledEvent} from '../events/ReactBrowserEventEmitter.js';
+import {mediaEventTypes} from '../events/DOMTopLevelEventTypes.js';
 import {
   createDangerousStringForStyles,
   setValueForStyles,
   validateShorthandPropertyCollisionInDev,
-} from '../shared/CSSPropertyOperations';
-import {Namespaces, getIntrinsicNamespace} from '../shared/DOMNamespaces';
+} from '../shared/CSSPropertyOperations.js';
+import {Namespaces, getIntrinsicNamespace} from '../shared/DOMNamespaces.js';
 import {
   getPropertyInfo,
   shouldIgnoreAttribute,
   shouldRemoveAttribute,
-} from '../shared/DOMProperty';
-import assertValidProps from '../shared/assertValidProps';
-import {DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE} from '../shared/HTMLNodeType';
-import isCustomComponent from '../shared/isCustomComponent';
-import possibleStandardNames from '../shared/possibleStandardNames';
-import {validateProperties as validateARIAProperties} from '../shared/ReactDOMInvalidARIAHook';
-import {validateProperties as validateInputProperties} from '../shared/ReactDOMNullInputValuePropHook';
-import {validateProperties as validateUnknownProperties} from '../shared/ReactDOMUnknownPropertyHook';
+} from '../shared/DOMProperty.js';
+import assertValidProps from '../shared/assertValidProps.js';
+import {DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE} from '../shared/HTMLNodeType.js';
+import isCustomComponent from '../shared/isCustomComponent.js';
+import possibleStandardNames from '../shared/possibleStandardNames.js';
+import {validateProperties as validateARIAProperties} from '../shared/ReactDOMInvalidARIAHook.js';
+import {validateProperties as validateInputProperties} from '../shared/ReactDOMNullInputValuePropHook.js';
+import {validateProperties as validateUnknownProperties} from '../shared/ReactDOMUnknownPropertyHook.js';
 
 let didWarnInvalidHydration = false;
 let didWarnShadyDOM = false;

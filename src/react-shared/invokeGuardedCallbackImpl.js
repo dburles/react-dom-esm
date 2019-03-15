@@ -7,7 +7,7 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
 let invokeGuardedCallbackImpl = function<A, B, C, D, E, F, Context>(
   name: string | null,

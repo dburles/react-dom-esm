@@ -7,7 +7,7 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
 // Renderers that don't support hydration
 // can re-export everything from this module.

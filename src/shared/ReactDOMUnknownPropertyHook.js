@@ -8,8 +8,8 @@
 import {
   registrationNameModules,
   possibleRegistrationNames,
-} from 'events/EventPluginRegistry';
-import warning from 'shared/warning';
+} from 'events/EventPluginRegistry.js';
+import warning from 'shared/warning.js';
 
 import {
   ATTRIBUTE_NAME_CHAR,
@@ -17,9 +17,9 @@ import {
   RESERVED,
   shouldRemoveAttributeWithWarning,
   getPropertyInfo,
-} from './DOMProperty';
-import isCustomComponent from './isCustomComponent';
-import possibleStandardNames from './possibleStandardNames';
+} from './DOMProperty.js';
+import isCustomComponent from './isCustomComponent.js';
+import possibleStandardNames from './possibleStandardNames.js';
 
 let validateProperty = () => {};
 

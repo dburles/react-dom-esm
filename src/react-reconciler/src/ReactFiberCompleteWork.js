@@ -7,17 +7,17 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {FiberRoot} from './ReactFiberRoot';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {FiberRoot} from './ReactFiberRoot.js';
 import type {
   Instance,
   Type,
   Props,
   Container,
   ChildSet,
-} from './ReactFiberHostConfig';
-import type {SuspenseState} from './ReactFiberSuspenseComponent';
+} from './ReactFiberHostConfig.js';
+import type {SuspenseState} from './ReactFiberSuspenseComponent.js';
 
 import {
   IndeterminateComponent,
@@ -39,7 +39,7 @@ import {
   SimpleMemoComponent,
   LazyComponent,
   IncompleteClassComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 import {
   Placement,
   Ref,
@@ -47,8 +47,8 @@ import {
   NoEffect,
   DidCapture,
   Deletion,
-} from 'shared/ReactSideEffectTags';
-import invariant from 'shared/invariant';
+} from 'shared/ReactSideEffectTags.js';
+import invariant from 'shared/invariant.js';
 
 import {
   createInstance,
@@ -65,26 +65,26 @@ import {
   createContainerChildSet,
   appendChildToContainerChildSet,
   finalizeContainerChildren,
-} from './ReactFiberHostConfig';
+} from './ReactFiberHostConfig.js';
 import {
   getRootHostContainer,
   popHostContext,
   getHostContext,
   popHostContainer,
-} from './ReactFiberHostContext';
+} from './ReactFiberHostContext.js';
 import {
   isContextProvider as isLegacyContextProvider,
   popContext as popLegacyContext,
   popTopLevelContextObject as popTopLevelLegacyContextObject,
-} from './ReactFiberContext';
-import {popProvider} from './ReactFiberNewContext';
+} from './ReactFiberContext.js';
+import {popProvider} from './ReactFiberNewContext.js';
 import {
   prepareToHydrateHostInstance,
   prepareToHydrateHostTextInstance,
   skipPastDehydratedSuspenseInstance,
   popHydrationState,
-} from './ReactFiberHydrationContext';
-import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags';
+} from './ReactFiberHydrationContext.js';
+import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags.js';
 
 function markUpdate(workInProgress: Fiber) {
   // Tag the fiber with an update effect. This turns a Placement into

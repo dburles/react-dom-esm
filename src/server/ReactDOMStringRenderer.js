@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import ReactPartialRenderer from './ReactPartialRenderer';
+import ReactPartialRenderer from './ReactPartialRenderer.js';
 
 /**
  * Render a ReactElement to its initial HTML. This should only be used on the

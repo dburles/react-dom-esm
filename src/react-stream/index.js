@@ -19,6 +19,6 @@
 
 'use strict';
 
-import * as ReactFizzStreamer from './src/ReactFizzStreamer';
+import * as ReactFizzStreamer from './src/ReactFizzStreamer.js';
 
 export default ReactFizzStreamer;

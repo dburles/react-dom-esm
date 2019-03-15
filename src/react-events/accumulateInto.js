@@ -7,7 +7,7 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
 /**
  * Accumulates items that must not be null or undefined into the first one. This

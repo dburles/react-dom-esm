@@ -7,7 +7,7 @@
  * @flow
  */
 
-import getEventCharCode from './getEventCharCode';
+import getEventCharCode from './getEventCharCode.js';
 
 /**
  * Normalization of deprecated HTML5 `key` values

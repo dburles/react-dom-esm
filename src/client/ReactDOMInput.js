@@ -8,18 +8,18 @@
  */
 
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber';
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
+import {getCurrentFiberOwnerNameInDevOrNull} from 'react-reconciler/src/ReactCurrentFiber.js';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
 
-import {setValueForProperty} from './DOMPropertyOperations';
-import {getFiberCurrentPropsFromNode} from './ReactDOMComponentTree';
-import {getToStringValue, toString} from './ToStringValue';
-import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes';
-import {updateValueIfChanged} from './inputValueTracking';
-import {disableInputAttributeSyncing} from 'shared/ReactFeatureFlags';
+import {setValueForProperty} from './DOMPropertyOperations.js';
+import {getFiberCurrentPropsFromNode} from './ReactDOMComponentTree.js';
+import {getToStringValue, toString} from './ToStringValue.js';
+import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes.js';
+import {updateValueIfChanged} from './inputValueTracking.js';
+import {disableInputAttributeSyncing} from 'shared/ReactFeatureFlags.js';
 
-import type {ToStringValue} from './ToStringValue';
+import type {ToStringValue} from './ToStringValue.js';
 
 type InputWithWrapperState = HTMLInputElement & {
   _wrapperState: {

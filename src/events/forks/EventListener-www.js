@@ -9,8 +9,8 @@
 
 const EventListenerWWW = require('EventListener');
 
-import typeof * as EventListenerType from '../EventListener';
-import typeof * as EventListenerShimType from './EventListener-www';
+import typeof * as EventListenerType from '../EventListener.js';
+import typeof * as EventListenerShimType from './EventListener-www.js';
 
 export function addEventBubbleListener(
   element: Element,

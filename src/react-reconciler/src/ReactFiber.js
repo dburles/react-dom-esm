@@ -7,20 +7,20 @@
  * @flow
  */
 
-import type {ReactElement, Source} from 'shared/ReactElementType';
-import type {ReactFragment, ReactPortal, RefObject} from 'shared/ReactTypes';
-import type {WorkTag} from 'shared/ReactWorkTags';
-import type {TypeOfMode} from './ReactTypeOfMode';
-import type {SideEffectTag} from 'shared/ReactSideEffectTags';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {UpdateQueue} from './ReactUpdateQueue';
-import type {ContextDependencyList} from './ReactFiberNewContext';
-import type {HookType} from './ReactFiberHooks';
+import type {ReactElement, Source} from 'shared/ReactElementType.js';
+import type {ReactFragment, ReactPortal, RefObject} from 'shared/ReactTypes.js';
+import type {WorkTag} from 'shared/ReactWorkTags.js';
+import type {TypeOfMode} from './ReactTypeOfMode.js';
+import type {SideEffectTag} from 'shared/ReactSideEffectTags.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {UpdateQueue} from './ReactUpdateQueue.js';
+import type {ContextDependencyList} from './ReactFiberNewContext.js';
+import type {HookType} from './ReactFiberHooks.js';
 
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import {enableProfilerTimer} from 'shared/ReactFeatureFlags';
-import {NoEffect} from 'shared/ReactSideEffectTags';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import {enableProfilerTimer} from 'shared/ReactFeatureFlags.js';
+import {NoEffect} from 'shared/ReactSideEffectTags.js';
 import {
   IndeterminateComponent,
   ClassComponent,
@@ -38,17 +38,17 @@ import {
   FunctionComponent,
   MemoComponent,
   LazyComponent,
-} from 'shared/ReactWorkTags';
-import getComponentName from 'shared/getComponentName';
+} from 'shared/ReactWorkTags.js';
+import getComponentName from 'shared/getComponentName.js';
 
-import {isDevToolsPresent} from './ReactFiberDevToolsHook';
-import {NoWork} from './ReactFiberExpirationTime';
+import {isDevToolsPresent} from './ReactFiberDevToolsHook.js';
+import {NoWork} from './ReactFiberExpirationTime.js';
 import {
   NoContext,
   ConcurrentMode,
   ProfileMode,
   StrictMode,
-} from './ReactTypeOfMode';
+} from './ReactTypeOfMode.js';
 import {
   REACT_FORWARD_REF_TYPE,
   REACT_FRAGMENT_TYPE,
@@ -60,7 +60,7 @@ import {
   REACT_SUSPENSE_TYPE,
   REACT_MEMO_TYPE,
   REACT_LAZY_TYPE,
-} from 'shared/ReactSymbols';
+} from 'shared/ReactSymbols.js';
 
 let hasBadMapPolyfill;
 

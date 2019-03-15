@@ -7,22 +7,22 @@
  * @flow
  */
 
-import type {ThreadID} from './ReactThreadIDAllocator';
-import type {ReactElement} from 'shared/ReactElementType';
-import type {ReactProvider, ReactContext} from 'shared/ReactTypes';
+import type {ThreadID} from './ReactThreadIDAllocator.js';
+import type {ReactElement} from 'shared/ReactElementType.js';
+import type {ReactProvider, ReactContext} from 'shared/ReactTypes.js';
 
-import React from 'react';
-import invariant from 'shared/invariant';
-import getComponentName from 'shared/getComponentName';
-import lowPriorityWarning from 'shared/lowPriorityWarning';
-import warning from 'shared/warning';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import describeComponentFrame from 'shared/describeComponentFrame';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+import React from 'react.js';
+import invariant from 'shared/invariant.js';
+import getComponentName from 'shared/getComponentName.js';
+import lowPriorityWarning from 'shared/lowPriorityWarning.js';
+import warning from 'shared/warning.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import describeComponentFrame from 'shared/describeComponentFrame.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 import {
   warnAboutDeprecatedLifecycles,
   enableSuspenseServerRenderer,
-} from 'shared/ReactFeatureFlags';
+} from 'shared/ReactFeatureFlags.js';
 
 import {
   REACT_FORWARD_REF_TYPE,
@@ -36,42 +36,42 @@ import {
   REACT_CONTEXT_TYPE,
   REACT_LAZY_TYPE,
   REACT_MEMO_TYPE,
-} from 'shared/ReactSymbols';
+} from 'shared/ReactSymbols.js';
 
 import {
   emptyObject,
   processContext,
   validateContextBounds,
-} from './ReactPartialRendererContext';
-import {allocThreadID, freeThreadID} from './ReactThreadIDAllocator';
+} from './ReactPartialRendererContext.js';
+import {allocThreadID, freeThreadID} from './ReactThreadIDAllocator.js';
 import {
   createMarkupForCustomAttribute,
   createMarkupForProperty,
   createMarkupForRoot,
-} from './DOMMarkupOperations';
-import escapeTextForBrowser from './escapeTextForBrowser';
+} from './DOMMarkupOperations.js';
+import escapeTextForBrowser from './escapeTextForBrowser.js';
 import {
   prepareToUseHooks,
   finishHooks,
   Dispatcher,
   currentThreadID,
   setCurrentThreadID,
-} from './ReactPartialRendererHooks';
+} from './ReactPartialRendererHooks.js';
 import {
   Namespaces,
   getIntrinsicNamespace,
   getChildNamespace,
-} from '../shared/DOMNamespaces';
-import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes';
-import assertValidProps from '../shared/assertValidProps';
-import dangerousStyleValue from '../shared/dangerousStyleValue';
-import hyphenateStyleName from '../shared/hyphenateStyleName';
-import isCustomComponent from '../shared/isCustomComponent';
-import omittedCloseTags from '../shared/omittedCloseTags';
-import warnValidStyle from '../shared/warnValidStyle';
-import {validateProperties as validateARIAProperties} from '../shared/ReactDOMInvalidARIAHook';
-import {validateProperties as validateInputProperties} from '../shared/ReactDOMNullInputValuePropHook';
-import {validateProperties as validateUnknownProperties} from '../shared/ReactDOMUnknownPropertyHook';
+} from '../shared/DOMNamespaces.js';
+import ReactControlledValuePropTypes from '../shared/ReactControlledValuePropTypes.js';
+import assertValidProps from '../shared/assertValidProps.js';
+import dangerousStyleValue from '../shared/dangerousStyleValue.js';
+import hyphenateStyleName from '../shared/hyphenateStyleName.js';
+import isCustomComponent from '../shared/isCustomComponent.js';
+import omittedCloseTags from '../shared/omittedCloseTags.js';
+import warnValidStyle from '../shared/warnValidStyle.js';
+import {validateProperties as validateARIAProperties} from '../shared/ReactDOMInvalidARIAHook.js';
+import {validateProperties as validateInputProperties} from '../shared/ReactDOMNullInputValuePropHook.js';
+import {validateProperties as validateUnknownProperties} from '../shared/ReactDOMUnknownPropertyHook.js';
 
 // Based on reading the React.Children implementation. TODO: type this somewhere?
 type ReactNode = string | number | ReactElement;

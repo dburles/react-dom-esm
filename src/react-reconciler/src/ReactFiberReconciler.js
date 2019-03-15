@@ -7,37 +7,37 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {FiberRoot} from './ReactFiberRoot';
+import type {Fiber} from './ReactFiber.js';
+import type {FiberRoot} from './ReactFiberRoot.js';
 import type {
   Instance,
   TextInstance,
   Container,
   PublicInstance,
-} from './ReactFiberHostConfig';
-import type {ReactNodeList} from 'shared/ReactTypes';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+} from './ReactFiberHostConfig.js';
+import type {ReactNodeList} from 'shared/ReactTypes.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
 import {
   findCurrentHostFiber,
   findCurrentHostFiberWithNoPortals,
-} from 'react-reconciler/reflection';
-import {get as getInstance} from 'shared/ReactInstanceMap';
-import {HostComponent, ClassComponent} from 'shared/ReactWorkTags';
-import getComponentName from 'shared/getComponentName';
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+} from 'react-reconciler/reflection.js';
+import {get as getInstance} from 'shared/ReactInstanceMap.js';
+import {HostComponent, ClassComponent} from 'shared/ReactWorkTags.js';
+import getComponentName from 'shared/getComponentName.js';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
-import {getPublicInstance} from './ReactFiberHostConfig';
+import {getPublicInstance} from './ReactFiberHostConfig.js';
 import {
   findCurrentUnmaskedContext,
   processChildContext,
   emptyContextObject,
   isContextProvider as isLegacyContextProvider,
-} from './ReactFiberContext';
-import {createFiberRoot} from './ReactFiberRoot';
-import {injectInternals} from './ReactFiberDevToolsHook';
+} from './ReactFiberContext.js';
+import {createFiberRoot} from './ReactFiberRoot.js';
+import {injectInternals} from './ReactFiberDevToolsHook.js';
 import {
   computeUniqueAsyncExpiration,
   requestCurrentTime,
@@ -54,16 +54,16 @@ import {
   interactiveUpdates,
   flushInteractiveUpdates,
   flushPassiveEffects,
-} from './ReactFiberScheduler';
-import {createUpdate, enqueueUpdate} from './ReactUpdateQueue';
-import ReactFiberInstrumentation from './ReactFiberInstrumentation';
+} from './ReactFiberScheduler.js';
+import {createUpdate, enqueueUpdate} from './ReactUpdateQueue.js';
+import ReactFiberInstrumentation from './ReactFiberInstrumentation.js';
 import {
   getStackByFiberInDevAndProd,
   phase as ReactCurrentFiberPhase,
   current as ReactCurrentFiberCurrent,
-} from './ReactCurrentFiber';
-import {StrictMode} from './ReactTypeOfMode';
-import {Sync} from './ReactFiberExpirationTime';
+} from './ReactCurrentFiber.js';
+import {StrictMode} from './ReactTypeOfMode.js';
+import {Sync} from './ReactFiberExpirationTime.js';
 
 type OpaqueRoot = FiberRoot;
 

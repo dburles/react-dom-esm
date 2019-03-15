@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import invariant from 'shared/invariant';
-import warning from 'shared/warning';
+import invariant from 'shared/invariant.js';
+import warning from 'shared/warning.js';
 // TODO: We can remove this if we add invariantWithStack()
 // or add stack by default to invariants where possible.
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
-import voidElementTags from './voidElementTags';
+import voidElementTags from './voidElementTags.js';
 
 const HTML = '__html';
 

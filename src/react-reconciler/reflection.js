@@ -9,4 +9,4 @@
 
 'use strict';
 
-export * from './src/ReactFiberTreeReflection';
+export * from './src/ReactFiberTreeReflection.js';

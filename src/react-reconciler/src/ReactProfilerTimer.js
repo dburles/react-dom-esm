@@ -7,11 +7,11 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 
-import {enableProfilerTimer} from 'shared/ReactFeatureFlags';
+import {enableProfilerTimer} from 'shared/ReactFeatureFlags.js';
 
-import {now} from './ReactFiberHostConfig';
+import {now} from './ReactFiberHostConfig.js';
 
 export type ProfilerTimer = {
   getCommitTime(): number,

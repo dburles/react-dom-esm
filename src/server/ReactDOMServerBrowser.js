@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import ReactVersion from 'shared/ReactVersion';
-import invariant from 'shared/invariant';
+import ReactVersion from 'shared/ReactVersion.js';
+import invariant from 'shared/invariant.js';
 
-import {renderToString, renderToStaticMarkup} from './ReactDOMStringRenderer';
+import {renderToString, renderToStaticMarkup} from './ReactDOMStringRenderer.js';
 
 function renderToNodeStream() {
   invariant(

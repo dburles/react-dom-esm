@@ -7,16 +7,16 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {Batch, FiberRoot} from './ReactFiberRoot';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {Interaction} from 'scheduler/src/Tracing';
+import type {Fiber} from './ReactFiber.js';
+import type {Batch, FiberRoot} from './ReactFiberRoot.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {Interaction} from 'scheduler/src/Tracing.js';
 
 import {
   __interactionsRef,
   __subscriberRef,
   unstable_wrap as Scheduler_tracing_wrap,
-} from 'scheduler/tracing';
+} from 'scheduler/tracing.js';
 import {
   unstable_next as Scheduler_next,
   unstable_getCurrentPriorityLevel as getCurrentPriorityLevel,
@@ -26,14 +26,14 @@ import {
   unstable_NormalPriority as NormalPriority,
   unstable_LowPriority as LowPriority,
   unstable_IdlePriority as IdlePriority,
-} from 'scheduler';
+} from 'scheduler.js';
 import {
   invokeGuardedCallback,
   hasCaughtError,
   clearCaughtError,
-} from 'shared/ReactErrorUtils';
-import ReactSharedInternals from 'shared/ReactSharedInternals';
-import ReactStrictModeWarnings from './ReactStrictModeWarnings';
+} from 'shared/ReactErrorUtils.js';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
+import ReactStrictModeWarnings from './ReactStrictModeWarnings.js';
 import {
   NoEffect,
   PerformedWork,
@@ -49,7 +49,7 @@ import {
   Incomplete,
   HostEffectMask,
   Passive,
-} from 'shared/ReactSideEffectTags';
+} from 'shared/ReactSideEffectTags.js';
 import {
   ClassComponent,
   HostComponent,
@@ -62,7 +62,7 @@ import {
   SimpleMemoComponent,
   SuspenseComponent,
   DehydratedSuspenseComponent,
-} from 'shared/ReactWorkTags';
+} from 'shared/ReactWorkTags.js';
 import {
   enableSchedulerTracing,
   enableProfilerTimer,
@@ -70,18 +70,18 @@ import {
   replayFailedUnitOfWorkWithInvokeGuardedCallback,
   warnAboutDeprecatedLifecycles,
   enableSuspenseServerRenderer,
-} from 'shared/ReactFeatureFlags';
-import getComponentName from 'shared/getComponentName';
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
+} from 'shared/ReactFeatureFlags.js';
+import getComponentName from 'shared/getComponentName.js';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
-import ReactFiberInstrumentation from './ReactFiberInstrumentation';
+import ReactFiberInstrumentation from './ReactFiberInstrumentation.js';
 import {
   getStackByFiberInDevAndProd,
   phase as ReactCurrentFiberPhase,
   resetCurrentFiber,
   setCurrentFiber,
-} from './ReactCurrentFiber';
+} from './ReactCurrentFiber.js';
 import {
   now,
   scheduleDeferredCallback,
@@ -94,7 +94,7 @@ import {
   noTimeout,
   schedulePassiveEffects,
   cancelPassiveEffects,
-} from './ReactFiberHostConfig';
+} from './ReactFiberHostConfig.js';
 import {
   markPendingPriorityLevel,
   markCommittedPriorityLevels,
@@ -104,7 +104,7 @@ import {
   isPriorityLevelSuspended,
   findEarliestOutstandingPriorityLevel,
   didExpireAtExpirationTime,
-} from './ReactFiberPendingPriority';
+} from './ReactFiberPendingPriority.js';
 import {
   recordEffect,
   recordScheduleUpdate,
@@ -123,9 +123,9 @@ import {
   stopCommitHostEffectsTimer,
   startCommitLifeCyclesTimer,
   stopCommitLifeCyclesTimer,
-} from './ReactDebugFiberPerf';
-import {createWorkInProgress, assignFiberPropertiesInDEV} from './ReactFiber';
-import {onCommitRoot} from './ReactFiberDevToolsHook';
+} from './ReactDebugFiberPerf.js';
+import {createWorkInProgress, assignFiberPropertiesInDEV} from './ReactFiber.js';
+import {onCommitRoot} from './ReactFiberDevToolsHook.js';
 import {
   NoWork,
   Sync,
@@ -134,36 +134,36 @@ import {
   expirationTimeToMs,
   computeAsyncExpiration,
   computeInteractiveExpiration,
-} from './ReactFiberExpirationTime';
-import {ConcurrentMode, ProfileMode, NoContext} from './ReactTypeOfMode';
-import {enqueueUpdate, resetCurrentlyProcessingQueue} from './ReactUpdateQueue';
-import {createCapturedValue} from './ReactCapturedValue';
+} from './ReactFiberExpirationTime.js';
+import {ConcurrentMode, ProfileMode, NoContext} from './ReactTypeOfMode.js';
+import {enqueueUpdate, resetCurrentlyProcessingQueue} from './ReactUpdateQueue.js';
+import {createCapturedValue} from './ReactCapturedValue.js';
 import {
   isContextProvider as isLegacyContextProvider,
   popTopLevelContextObject as popTopLevelLegacyContextObject,
   popContext as popLegacyContext,
-} from './ReactFiberContext';
-import {popProvider, resetContextDependences} from './ReactFiberNewContext';
-import {resetHooks} from './ReactFiberHooks';
-import {popHostContext, popHostContainer} from './ReactFiberHostContext';
+} from './ReactFiberContext.js';
+import {popProvider, resetContextDependences} from './ReactFiberNewContext.js';
+import {resetHooks} from './ReactFiberHooks.js';
+import {popHostContext, popHostContainer} from './ReactFiberHostContext.js';
 import {
   recordCommitTime,
   startProfilerTimer,
   stopProfilerTimerIfRunningAndRecordDelta,
-} from './ReactProfilerTimer';
+} from './ReactProfilerTimer.js';
 import {
   checkThatStackIsEmpty,
   resetStackAfterFatalErrorInDev,
-} from './ReactFiberStack';
-import {beginWork} from './ReactFiberBeginWork';
-import {completeWork} from './ReactFiberCompleteWork';
+} from './ReactFiberStack.js';
+import {beginWork} from './ReactFiberBeginWork.js';
+import {completeWork} from './ReactFiberCompleteWork.js';
 import {
   throwException,
   unwindWork,
   unwindInterruptedWork,
   createRootErrorUpdate,
   createClassErrorUpdate,
-} from './ReactFiberUnwindWork';
+} from './ReactFiberUnwindWork.js';
 import {
   commitBeforeMutationLifeCycles,
   commitResetTextContent,
@@ -174,8 +174,8 @@ import {
   commitAttachRef,
   commitDetachRef,
   commitPassiveHookEffects,
-} from './ReactFiberCommitWork';
-import {ContextOnlyDispatcher} from './ReactFiberHooks';
+} from './ReactFiberCommitWork.js';
+import {ContextOnlyDispatcher} from './ReactFiberHooks.js';
 
 export type Thenable = {
   then(resolve: () => mixed, reject?: () => mixed): mixed,

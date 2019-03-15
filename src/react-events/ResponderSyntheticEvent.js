@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import SyntheticEvent from './SyntheticEvent';
+import SyntheticEvent from './SyntheticEvent.js';
 
 /**
  * `touchHistory` isn't actually on the native event, but putting it in the

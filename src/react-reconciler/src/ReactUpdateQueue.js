@@ -84,26 +84,26 @@
 // regardless of priority. Intermediate state may vary according to system
 // resources, but the final state is always the same.
 
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
-import {NoWork} from './ReactFiberExpirationTime';
+import {NoWork} from './ReactFiberExpirationTime.js';
 import {
   enterDisallowedContextReadInDEV,
   exitDisallowedContextReadInDEV,
-} from './ReactFiberNewContext';
-import {Callback, ShouldCapture, DidCapture} from 'shared/ReactSideEffectTags';
-import {ClassComponent} from 'shared/ReactWorkTags';
+} from './ReactFiberNewContext.js';
+import {Callback, ShouldCapture, DidCapture} from 'shared/ReactSideEffectTags.js';
+import {ClassComponent} from 'shared/ReactWorkTags.js';
 
 import {
   debugRenderPhaseSideEffects,
   debugRenderPhaseSideEffectsForStrictMode,
-} from 'shared/ReactFeatureFlags';
+} from 'shared/ReactFeatureFlags.js';
 
-import {StrictMode} from './ReactTypeOfMode';
+import {StrictMode} from './ReactTypeOfMode.js';
 
-import invariant from 'shared/invariant';
-import warningWithoutStack from 'shared/warningWithoutStack';
+import invariant from 'shared/invariant.js';
+import warningWithoutStack from 'shared/warningWithoutStack.js';
 
 export type Update<State> = {
   expirationTime: ExpirationTime,

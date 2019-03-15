@@ -7,8 +7,8 @@
  * @flow
  */
 
-import React from 'react';
-import invariant from 'shared/invariant';
+import React from 'react.js';
+import invariant from 'shared/invariant.js';
 
 invariant(
   React,

@@ -7,9 +7,9 @@
  * @flow
  */
 
-import React from 'react';
-import warning from 'shared/warning';
-import {getToStringValue, toString} from './ToStringValue';
+import React from 'react.js';
+import warning from 'shared/warning.js';
+import {getToStringValue, toString} from './ToStringValue.js';
 
 let didWarnSelectedSetOnOption = false;
 let didWarnInvalidChild = false;

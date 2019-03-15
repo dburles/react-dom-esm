@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type {TopLevelType} from 'events/TopLevelEventTypes';
+import type {TopLevelType} from 'events/TopLevelEventTypes.js';
 
-import {accumulateTwoPhaseDispatches} from 'events/EventPropagators';
-import {canUseDOM} from 'shared/ExecutionEnvironment';
+import {accumulateTwoPhaseDispatches} from 'events/EventPropagators.js';
+import {canUseDOM} from 'shared/ExecutionEnvironment.js';
 
 import {
   TOP_BLUR,
@@ -21,14 +21,14 @@ import {
   TOP_MOUSE_DOWN,
   TOP_TEXT_INPUT,
   TOP_PASTE,
-} from './DOMTopLevelEventTypes';
+} from './DOMTopLevelEventTypes.js';
 import {
   getData as FallbackCompositionStateGetData,
   initialize as FallbackCompositionStateInitialize,
   reset as FallbackCompositionStateReset,
-} from './FallbackCompositionState';
-import SyntheticCompositionEvent from './SyntheticCompositionEvent';
-import SyntheticInputEvent from './SyntheticInputEvent';
+} from './FallbackCompositionState.js';
+import SyntheticCompositionEvent from './SyntheticCompositionEvent.js';
+import SyntheticInputEvent from './SyntheticInputEvent.js';
 
 const END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 const START_KEYCODE = 229;

@@ -7,7 +7,7 @@
  * @flow
  */
 
-import MAX_SIGNED_31_BIT_INT from './maxSigned31BitInt';
+import MAX_SIGNED_31_BIT_INT from './maxSigned31BitInt.js';
 
 export type ExpirationTime = number;
 

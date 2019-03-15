@@ -7,9 +7,9 @@
  * @flow
  */
 
-import {REACT_PORTAL_TYPE} from 'shared/ReactSymbols';
+import {REACT_PORTAL_TYPE} from 'shared/ReactSymbols.js';
 
-import type {ReactNodeList, ReactPortal} from 'shared/ReactTypes';
+import type {ReactNodeList, ReactPortal} from 'shared/ReactTypes.js';
 
 export function createPortal(
   children: ReactNodeList,

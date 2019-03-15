@@ -7,9 +7,9 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
+import type {Fiber} from './ReactFiber.js';
 
-import ReactSharedInternals from 'shared/ReactSharedInternals';
+import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 import {
   HostRoot,
   HostPortal,
@@ -17,9 +17,9 @@ import {
   Fragment,
   ContextProvider,
   ContextConsumer,
-} from 'shared/ReactWorkTags';
-import describeComponentFrame from 'shared/describeComponentFrame';
-import getComponentName from 'shared/getComponentName';
+} from 'shared/ReactWorkTags.js';
+import describeComponentFrame from 'shared/describeComponentFrame.js';
+import getComponentName from 'shared/getComponentName.js';
 
 const ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 

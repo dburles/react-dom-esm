@@ -7,17 +7,17 @@
  * @flow
  */
 
-import type {Fiber} from './ReactFiber';
-import type {ExpirationTime} from './ReactFiberExpirationTime';
-import type {TimeoutHandle, NoTimeout} from './ReactFiberHostConfig';
-import type {Thenable} from './ReactFiberScheduler';
-import type {Interaction} from 'scheduler/src/Tracing';
+import type {Fiber} from './ReactFiber.js';
+import type {ExpirationTime} from './ReactFiberExpirationTime.js';
+import type {TimeoutHandle, NoTimeout} from './ReactFiberHostConfig.js';
+import type {Thenable} from './ReactFiberScheduler.js';
+import type {Interaction} from 'scheduler/src/Tracing.js';
 
-import {noTimeout} from './ReactFiberHostConfig';
-import {createHostRootFiber} from './ReactFiber';
-import {NoWork} from './ReactFiberExpirationTime';
-import {enableSchedulerTracing} from 'shared/ReactFeatureFlags';
-import {unstable_getThreadID} from 'scheduler/tracing';
+import {noTimeout} from './ReactFiberHostConfig.js';
+import {createHostRootFiber} from './ReactFiber.js';
+import {NoWork} from './ReactFiberExpirationTime.js';
+import {enableSchedulerTracing} from 'shared/ReactFeatureFlags.js';
+import {unstable_getThreadID} from 'scheduler/tracing.js';
 
 // TODO: This should be lifted into the renderer.
 export type Batch = {

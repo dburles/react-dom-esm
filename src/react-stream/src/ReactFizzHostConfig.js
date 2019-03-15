@@ -7,7 +7,7 @@
  * @flow
  */
 
-import invariant from 'shared/invariant';
+import invariant from 'shared/invariant.js';
 
 // We expect that our Rollup, Jest, and Flow configurations
 // always shim this module with the corresponding host config

@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import getActiveElement from './getActiveElement';
+import getActiveElement from './getActiveElement.js';
 
-import {getOffsets, setOffsets} from './ReactDOMSelection';
-import {ELEMENT_NODE, TEXT_NODE} from '../shared/HTMLNodeType';
+import {getOffsets, setOffsets} from './ReactDOMSelection.js';
+import {ELEMENT_NODE, TEXT_NODE} from '../shared/HTMLNodeType.js';
 
 function isTextNode(node) {
   return node && node.nodeType === TEXT_NODE;

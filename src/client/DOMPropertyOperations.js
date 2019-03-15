@@ -14,9 +14,9 @@ import {
   isAttributeNameSafe,
   BOOLEAN,
   OVERLOADED_BOOLEAN,
-} from '../shared/DOMProperty';
+} from '../shared/DOMProperty.js';
 
-import type {PropertyInfo} from '../shared/DOMProperty';
+import type {PropertyInfo} from '../shared/DOMProperty.js';
 
 /**
  * Get the value for a property on a node. Only used in DEV for SSR validation.
