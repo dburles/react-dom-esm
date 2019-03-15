@@ -20,8 +20,8 @@ import type {
   Batch as FiberRootBatch,
 } from 'react-reconciler/src/ReactFiberRoot.js';
 
-import '../shared/checkReact';
-import '../client/ReactDOMClientInjection';
+import '../shared/checkReact.js';
+import '../client/ReactDOMClientInjection.js';
 
 import {
   computeUniqueAsyncExpiration,
