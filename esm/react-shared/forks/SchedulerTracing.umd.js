@@ -6,7 +6,7 @@
  *
  * 
  */
-import React from 'react.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@master/esm/index.js';
 const ReactInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 const {
   __interactionsRef,

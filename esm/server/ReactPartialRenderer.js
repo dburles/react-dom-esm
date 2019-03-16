@@ -6,7 +6,7 @@
  *
  * 
  */
-import React from 'react.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@master/esm/index.js';
 import invariant from "../react-shared/invariant.js";
 import getComponentName from "../react-shared/getComponentName.js";
 import lowPriorityWarning from "../react-shared/lowPriorityWarning.js";

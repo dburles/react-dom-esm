@@ -6,7 +6,7 @@
  *
  * 
  */
-import React from 'react.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@master/esm/index.js';
 import warning from "../react-shared/warning.js";
 import { getToStringValue, toString } from "./ToStringValue.js";
 let didWarnSelectedSetOnOption = false;
