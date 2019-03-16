@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@master/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@2bb619ccca7f6627137cd34933580a16dfb22ae2/esm/index.js';
 import ReactDOM from 'react-dom.js';
 import {findCurrentFiberUsingSlowPath} from 'react-reconciler/reflection.js';
 import {get as getInstance} from 'shared/ReactInstanceMap.js';

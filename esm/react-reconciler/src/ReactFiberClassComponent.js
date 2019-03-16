@@ -6,7 +6,7 @@
  *
  * 
  */
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@master/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@2bb619ccca7f6627137cd34933580a16dfb22ae2/esm/index.js';
 import { Update, Snapshot } from "../../react-shared/ReactSideEffectTags.js";
 import { debugRenderPhaseSideEffects, debugRenderPhaseSideEffectsForStrictMode, warnAboutDeprecatedLifecycles } from "../../react-shared/ReactFeatureFlags.js";
 import ReactStrictModeWarnings from "./ReactStrictModeWarnings.js";

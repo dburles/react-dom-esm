@@ -10,7 +10,7 @@
 import type {Fiber} from './ReactFiber.js';
 import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@master/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@2bb619ccca7f6627137cd34933580a16dfb22ae2/esm/index.js';
 import {Update, Snapshot} from 'shared/ReactSideEffectTags.js';
 import {
   debugRenderPhaseSideEffects,
