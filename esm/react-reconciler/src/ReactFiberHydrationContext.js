@@ -43,7 +43,9 @@ function reenterHydrationStateFromDehydratedSuspenseInstance(fiber) {
 }
 
 function deleteHydratableInstance(returnFiber, instance) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     switch (returnFiber.tag) {
       case HostRoot:
         didNotHydrateContainerInstance(returnFiber.stateNode.containerInfo, instance);
@@ -75,7 +77,9 @@ function deleteHydratableInstance(returnFiber, instance) {
 function insertNonHydratedInstance(returnFiber, fiber) {
   fiber.effectTag |= Placement;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     switch (returnFiber.tag) {
       case HostRoot:
         {
@@ -252,7 +256,9 @@ function prepareToHydrateHostTextInstance(fiber) {
   const textContent = fiber.memoizedProps;
   const shouldUpdate = hydrateTextInstance(textInstance, textContent, fiber);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (shouldUpdate) {
       // We assume that prepareToHydrateHostTextInstance is called in a context where the
       // hydration parent is the parent host component of this host text.

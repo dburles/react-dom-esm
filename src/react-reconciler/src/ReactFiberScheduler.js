@@ -200,7 +200,7 @@ if (enableSchedulerTracing) {
   );
 }
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutStateTransition = false;
   didWarnSetStateChildContext = false;
   const didWarnStateUpdateForUnmountedComponent = {};
@@ -382,7 +382,7 @@ function resetStack() {
     }
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactStrictModeWarnings.discardPendingWarnings();
     checkThatStackIsEmpty();
   }
@@ -396,7 +396,7 @@ function resetStack() {
 
 function commitAllHostEffects() {
   while (nextEffect !== null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       setCurrentFiber(nextEffect);
     }
     recordEffect();
@@ -455,14 +455,14 @@ function commitAllHostEffects() {
     nextEffect = nextEffect.nextEffect;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     resetCurrentFiber();
   }
 }
 
 function commitBeforeMutationLifecycles() {
   while (nextEffect !== null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       setCurrentFiber(nextEffect);
     }
 
@@ -476,7 +476,7 @@ function commitBeforeMutationLifecycles() {
     nextEffect = nextEffect.nextEffect;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     resetCurrentFiber();
   }
 }
@@ -485,7 +485,7 @@ function commitAllLifeCycles(
   finishedRoot: FiberRoot,
   committedExpirationTime: ExpirationTime,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactStrictModeWarnings.flushPendingUnsafeLifecycleWarnings();
     ReactStrictModeWarnings.flushLegacyContextWarning();
 
@@ -494,7 +494,7 @@ function commitAllLifeCycles(
     }
   }
   while (nextEffect !== null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       setCurrentFiber(nextEffect);
     }
     const effectTag = nextEffect.effectTag;
@@ -521,7 +521,7 @@ function commitAllLifeCycles(
 
     nextEffect = nextEffect.nextEffect;
   }
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     resetCurrentFiber();
   }
 }
@@ -537,14 +537,14 @@ function commitPassiveEffects(root: FiberRoot, firstEffect: Fiber): void {
 
   let effect = firstEffect;
   do {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       setCurrentFiber(effect);
     }
 
     if (effect.effectTag & Passive) {
       let didError = false;
       let error;
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         invokeGuardedCallback(null, commitPassiveHookEffects, null, effect);
         if (hasCaughtError()) {
           didError = true;
@@ -564,7 +564,7 @@ function commitPassiveEffects(root: FiberRoot, firstEffect: Fiber): void {
     }
     effect = effect.nextEffect;
   } while (effect !== null);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     resetCurrentFiber();
   }
 
@@ -673,7 +673,7 @@ function commitRoot(root: FiberRoot, finishedWork: Fiber): void {
   while (nextEffect !== null) {
     let didError = false;
     let error;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       invokeGuardedCallback(null, commitBeforeMutationLifecycles, null);
       if (hasCaughtError()) {
         didError = true;
@@ -716,7 +716,7 @@ function commitRoot(root: FiberRoot, finishedWork: Fiber): void {
   while (nextEffect !== null) {
     let didError = false;
     let error;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       invokeGuardedCallback(null, commitAllHostEffects, null);
       if (hasCaughtError()) {
         didError = true;
@@ -762,7 +762,7 @@ function commitRoot(root: FiberRoot, finishedWork: Fiber): void {
   while (nextEffect !== null) {
     let didError = false;
     let error;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       invokeGuardedCallback(
         null,
         commitAllLifeCycles,
@@ -968,7 +968,7 @@ function completeUnitOfWork(workInProgress: Fiber): Fiber | null {
     // means that we don't need an additional field on the work in
     // progress.
     const current = workInProgress.alternate;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       setCurrentFiber(workInProgress);
     }
 
@@ -1009,7 +1009,7 @@ function completeUnitOfWork(workInProgress: Fiber): Fiber | null {
       }
       stopWorkTimer(workInProgress);
       resetChildExpirationTime(workInProgress, nextRenderExpirationTime);
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         resetCurrentFiber();
       }
 
@@ -1097,7 +1097,7 @@ function completeUnitOfWork(workInProgress: Fiber): Fiber | null {
         stopWorkTimer(workInProgress);
       }
 
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         resetCurrentFiber();
       }
 
@@ -1153,7 +1153,7 @@ function performUnitOfWork(workInProgress: Fiber): Fiber | null {
 
   // See if beginning this work spawns more work.
   startWorkTimer(workInProgress);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     setCurrentFiber(workInProgress);
   }
 
@@ -1182,7 +1182,7 @@ function performUnitOfWork(workInProgress: Fiber): Fiber | null {
     workInProgress.memoizedProps = workInProgress.pendingProps;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     resetCurrentFiber();
     if (isReplayingFailedUnitOfWork) {
       // Currently replaying a failed unit of work. This should be unreachable,
@@ -1335,7 +1335,7 @@ function renderRoot(root: FiberRoot, isYieldy: boolean): void {
           stopProfilerTimerIfRunningAndRecordDelta(nextUnitOfWork, true);
         }
 
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           // Reset global debug state
           // We assume this is defined in DEV
           (resetCurrentlyProcessingQueue: any)();
@@ -1402,7 +1402,7 @@ function renderRoot(root: FiberRoot, isYieldy: boolean): void {
     stopWorkLoopTimer(interruptedBy, didCompleteRoot);
     interruptedBy = null;
     // There was a fatal error.
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       resetStackAfterFatalErrorInDev();
     }
     // `nextRoot` points to the in-progress root. A non-null value indicates
@@ -1744,7 +1744,7 @@ function retryTimedOutBoundary(boundaryFiber: Fiber, thenable: Thenable) {
 function scheduleWorkToRoot(fiber: Fiber, expirationTime): FiberRoot | null {
   recordScheduleUpdate();
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (fiber.tag === ClassComponent) {
       const instance = fiber.stateNode;
       warnAboutInvalidUpdates(instance);
@@ -1828,7 +1828,7 @@ function scheduleWorkToRoot(fiber: Fiber, expirationTime): FiberRoot | null {
 }
 
 export function warnIfNotCurrentlyBatchingInDev(fiber: Fiber): void {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (isRendering === false && isBatchingUpdates === false) {
       warningWithoutStack(
         false,
@@ -1851,7 +1851,7 @@ export function warnIfNotCurrentlyBatchingInDev(fiber: Fiber): void {
 function scheduleWork(fiber: Fiber, expirationTime: ExpirationTime) {
   const root = scheduleWorkToRoot(fiber, expirationTime);
   if (root === null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       switch (fiber.tag) {
         case ClassComponent:
           warnAboutUpdateOnUnmounted(fiber, true);

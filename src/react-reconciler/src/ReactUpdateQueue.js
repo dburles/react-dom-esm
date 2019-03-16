@@ -145,7 +145,7 @@ let hasForceUpdate = false;
 let didWarnUpdateInsideUpdate;
 let currentlyProcessingQueue;
 export let resetCurrentlyProcessingQueue;
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnUpdateInsideUpdate = false;
   currentlyProcessingQueue = null;
   resetCurrentlyProcessingQueue = () => {
@@ -273,7 +273,7 @@ export function enqueueUpdate<State>(fiber: Fiber, update: Update<State>) {
     }
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       fiber.tag === ClassComponent &&
       (currentlyProcessingQueue === queue1 ||
@@ -351,7 +351,7 @@ function getStateFromUpdate<State>(
       const payload = update.payload;
       if (typeof payload === 'function') {
         // Updater function
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           enterDisallowedContextReadInDEV();
           if (
             debugRenderPhaseSideEffects ||
@@ -362,7 +362,7 @@ function getStateFromUpdate<State>(
           }
         }
         const nextState = payload.call(instance, prevState, nextProps);
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           exitDisallowedContextReadInDEV();
         }
         return nextState;
@@ -380,7 +380,7 @@ function getStateFromUpdate<State>(
       let partialState;
       if (typeof payload === 'function') {
         // Updater function
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           enterDisallowedContextReadInDEV();
           if (
             debugRenderPhaseSideEffects ||
@@ -391,7 +391,7 @@ function getStateFromUpdate<State>(
           }
         }
         partialState = payload.call(instance, prevState, nextProps);
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           exitDisallowedContextReadInDEV();
         }
       } else {
@@ -424,7 +424,7 @@ export function processUpdateQueue<State>(
 
   queue = ensureWorkInProgressQueueIsAClone(workInProgress, queue);
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     currentlyProcessingQueue = queue;
   }
 
@@ -558,7 +558,7 @@ export function processUpdateQueue<State>(
   workInProgress.expirationTime = newExpirationTime;
   workInProgress.memoizedState = resultState;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     currentlyProcessingQueue = null;
   }
 }

@@ -104,7 +104,7 @@ let canDiffStyleForHydrationWarning;
 let normalizeMarkupForTextOrAttribute;
 let normalizeHTML;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   warnedUnknownTags = {
     // Chrome is the only major browser not shipping <time>. But as of July
     // 2017 it intends to ship it due to widespread usage. We intentionally
@@ -299,7 +299,7 @@ function setInitialDOMProperties(
     }
     const nextProp = nextProps[propKey];
     if (propKey === STYLE) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (nextProp) {
           // Freeze the next style object so that we can assume it won't be
           // mutated. We have already warned for this in the past.
@@ -390,7 +390,7 @@ export function createElement(
     namespaceURI = getIntrinsicNamespace(type);
   }
   if (namespaceURI === HTML_NAMESPACE) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       isCustomComponentTag = isCustomComponent(type, props);
       // Should this check be gated by parent namespace? Not sure we want to
       // allow <SVG> or <mATH>.
@@ -433,7 +433,7 @@ export function createElement(
     domElement = ownerDocument.createElementNS(namespaceURI, type);
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (namespaceURI === HTML_NAMESPACE) {
       if (
         !isCustomComponentTag &&
@@ -472,7 +472,7 @@ export function setInitialProperties(
   rootContainerElement: Element | Document,
 ): void {
   const isCustomComponentTag = isCustomComponent(tag, rawProps);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     validatePropertiesInDevelopment(tag, rawProps);
     if (
       isCustomComponentTag &&
@@ -603,7 +603,7 @@ export function diffProperties(
   nextRawProps: Object,
   rootContainerElement: Element | Document,
 ): null | Array<mixed> {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     validatePropertiesInDevelopment(tag, nextRawProps);
   }
 
@@ -701,7 +701,7 @@ export function diffProperties(
       continue;
     }
     if (propKey === STYLE) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (nextProp) {
           // Freeze the next style object so that we can assume it won't be
           // mutated. We have already warned for this in the past.
@@ -787,7 +787,7 @@ export function diffProperties(
     }
   }
   if (styleUpdates) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       validateShorthandPropertyCollisionInDev(styleUpdates, nextProps[STYLE]);
     }
     (updatePayload = updatePayload || []).push(STYLE, styleUpdates);
@@ -845,7 +845,7 @@ export function updateProperties(
 }
 
 function getPossibleStandardName(propName: string): string | null {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const lowerCasedName = propName.toLowerCase();
     if (!possibleStandardNames.hasOwnProperty(lowerCasedName)) {
       return null;
@@ -865,7 +865,7 @@ export function diffHydratedProperties(
   let isCustomComponentTag;
   let extraAttributeNames: Set<string>;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     suppressHydrationWarning = rawProps[SUPPRESS_HYDRATION_WARNING] === true;
     isCustomComponentTag = isCustomComponent(tag, rawProps);
     validatePropertiesInDevelopment(tag, rawProps);
@@ -941,7 +941,7 @@ export function diffHydratedProperties(
 
   assertValidProps(tag, rawProps);
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     extraAttributeNames = new Set();
     const attributes = domElement.attributes;
     for (let i = 0; i < attributes.length; i++) {
@@ -1105,7 +1105,7 @@ export function diffHydratedProperties(
     }
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // $FlowFixMe - Should be inferred as not undefined.
     if (extraAttributeNames.size > 0 && !suppressHydrationWarning) {
       // $FlowFixMe - Should be inferred as not undefined.
@@ -1151,7 +1151,7 @@ export function diffHydratedText(textNode: Text, text: string): boolean {
 }
 
 export function warnForUnmatchedText(textNode: Text, text: string) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warnForTextDifference(textNode.nodeValue, text);
   }
 }
@@ -1160,7 +1160,7 @@ export function warnForDeletedHydratableElement(
   parentNode: Element | Document,
   child: Element,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (didWarnInvalidHydration) {
       return;
     }
@@ -1178,7 +1178,7 @@ export function warnForDeletedHydratableText(
   parentNode: Element | Document,
   child: Text,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (didWarnInvalidHydration) {
       return;
     }
@@ -1197,7 +1197,7 @@ export function warnForInsertedHydratedElement(
   tag: string,
   props: Object,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (didWarnInvalidHydration) {
       return;
     }
@@ -1215,7 +1215,7 @@ export function warnForInsertedHydratedText(
   parentNode: Element | Document,
   text: string,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (text === '') {
       // We expect to insert empty text nodes since they're not represented in
       // the HTML.

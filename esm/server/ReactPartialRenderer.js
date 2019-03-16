@@ -57,7 +57,9 @@ let popCurrentDebugStack = () => {};
 
 let hasWarnedAboutUsingContextAsConsumer = false;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 
   validatePropertiesInDevelopment = function (type, props) {
@@ -190,7 +192,9 @@ function createMarkupForStyles(styles) {
     const isCustomProperty = styleName.indexOf('--') === 0;
     const styleValue = styles[styleName];
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (!isCustomProperty) {
         warnValidStyle(styleName, styleValue);
       }
@@ -207,7 +211,9 @@ function createMarkupForStyles(styles) {
 }
 
 function warnNoop(publicInstance, callerName) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const constructor = publicInstance.constructor;
     const componentName = constructor && getComponentName(constructor) || 'ReactClass';
     const warningKey = componentName + '.' + callerName;
@@ -279,7 +285,9 @@ function flattenOptionChildren(children) {
 
     content += child;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (!didWarnInvalidOptionChildren && typeof child !== 'string' && typeof child !== 'number') {
         didWarnInvalidOptionChildren = true;
         warning(false, 'Only strings and numbers are supported as <option> children.');
@@ -356,7 +364,9 @@ function resolve(child, context, threadID) {
     let element = child;
     let Component = element.type;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       pushElementToDebugStack(element);
     }
 
@@ -401,7 +411,9 @@ function resolve(child, context, threadID) {
       inst = new Component(element.props, publicContext, updater);
 
       if (typeof Component.getDerivedStateFromProps === 'function') {
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           if (inst.state === null || inst.state === undefined) {
             const componentName = getComponentName(Component) || 'Unknown';
 
@@ -414,7 +426,9 @@ function resolve(child, context, threadID) {
 
         let partialState = Component.getDerivedStateFromProps.call(null, element.props, inst.state);
 
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           if (partialState === undefined) {
             const componentName = getComponentName(Component) || 'Unknown';
 
@@ -430,7 +444,9 @@ function resolve(child, context, threadID) {
         }
       }
     } else {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         if (Component.prototype && typeof Component.prototype.render === 'function') {
           const componentName = getComponentName(Component) || 'Unknown';
 
@@ -464,7 +480,9 @@ function resolve(child, context, threadID) {
 
     if (typeof inst.UNSAFE_componentWillMount === 'function' || typeof inst.componentWillMount === 'function') {
       if (typeof inst.componentWillMount === 'function') {
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           if (warnAboutDeprecatedLifecycles && inst.componentWillMount.__suppressDeprecationWarning !== true) {
             const componentName = getComponentName(Component) || 'Unknown';
 
@@ -523,7 +541,9 @@ function resolve(child, context, threadID) {
 
     child = inst.render();
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (child === undefined && inst.render._isMockFunction) {
         // This is probably bad practice. Consider warning here and
         // deprecating this convenience.
@@ -575,7 +595,9 @@ class ReactDOMServerRenderer {
       footer: ''
     };
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       topFrame.debugElementStack = [];
     }
 
@@ -591,7 +613,9 @@ class ReactDOMServerRenderer {
     this.contextStack = [];
     this.contextValueStack = [];
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       this.contextProviderStack = [];
     }
   }
@@ -624,7 +648,9 @@ class ReactDOMServerRenderer {
     this.contextStack[index] = context;
     this.contextValueStack[index] = previousValue;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       // Only used for push/pop mismatch warnings.
       this.contextProviderStack[index] = provider;
     } // Mutate the current value.
@@ -636,7 +662,9 @@ class ReactDOMServerRenderer {
   popProvider(provider) {
     const index = this.contextIndex;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(index > -1 && provider === this.contextProviderStack[index], 'Unexpected pop.');
     }
 
@@ -648,7 +676,9 @@ class ReactDOMServerRenderer {
     this.contextStack[index] = null;
     this.contextValueStack[index] = null;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       this.contextProviderStack[index] = null;
     }
 
@@ -732,7 +762,9 @@ class ReactDOMServerRenderer {
         const child = frame.children[frame.childIndex++];
         let outBuffer = '';
 
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           pushCurrentDebugStack(this.stack); // We're starting work on this frame, so reset its inner stack.
 
           frame.debugElementStack.length = 0;
@@ -747,7 +779,9 @@ class ReactDOMServerRenderer {
             throw err;
           }
         } finally {
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             popCurrentDebugStack();
           }
         }
@@ -812,7 +846,9 @@ class ReactDOMServerRenderer {
           footer: ''
         };
 
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           frame.debugElementStack = [];
         }
 
@@ -844,7 +880,9 @@ class ReactDOMServerRenderer {
               footer: ''
             };
 
-            if (__DEV__) {
+            if (
+            /* __DEV__ */
+            false) {
               frame.debugElementStack = [];
             }
 
@@ -869,7 +907,9 @@ class ReactDOMServerRenderer {
                   footer: ''
                 };
 
-                if (__DEV__) {
+                if (
+                /* __DEV__ */
+                false) {
                   frame.debugElementStack = [];
                 }
 
@@ -898,7 +938,9 @@ class ReactDOMServerRenderer {
                 footer: '<!--/$-->'
               };
 
-              if (__DEV__) {
+              if (
+              /* __DEV__ */
+              false) {
                 frame.debugElementStack = [];
                 fallbackFrame.debugElementStack = [];
               }
@@ -936,7 +978,9 @@ class ReactDOMServerRenderer {
                 footer: ''
               };
 
-              if (__DEV__) {
+              if (
+              /* __DEV__ */
+              false) {
                 frame.debugElementStack = [];
               }
 
@@ -959,7 +1003,9 @@ class ReactDOMServerRenderer {
                 footer: ''
               };
 
-              if (__DEV__) {
+              if (
+              /* __DEV__ */
+              false) {
                 frame.debugElementStack = [];
               }
 
@@ -981,7 +1027,9 @@ class ReactDOMServerRenderer {
                 footer: ''
               };
 
-              if (__DEV__) {
+              if (
+              /* __DEV__ */
+              false) {
                 frame.debugElementStack = [];
               }
 
@@ -1000,7 +1048,9 @@ class ReactDOMServerRenderer {
               // a property called "_context", which also gives us the ability to check
               // in DEV mode if this property exists or not and warn if it does not.
 
-              if (__DEV__) {
+              if (
+              /* __DEV__ */
+              false) {
                 if (reactContext._context === undefined) {
                   // This may be because it's a Context (rather than a Consumer).
                   // Or it may be because it's older React where they're the same thing.
@@ -1030,7 +1080,9 @@ class ReactDOMServerRenderer {
                 footer: ''
               };
 
-              if (__DEV__) {
+              if (
+              /* __DEV__ */
+              false) {
                 frame.debugElementStack = [];
               }
 
@@ -1045,7 +1097,9 @@ class ReactDOMServerRenderer {
 
       let info = '';
 
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         const owner = nextElement._owner;
 
         if (elementType === undefined || typeof elementType === 'object' && elementType !== null && Object.keys(elementType).length === 0) {
@@ -1071,7 +1125,9 @@ class ReactDOMServerRenderer {
       namespace = getIntrinsicNamespace(tag);
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (namespace === Namespaces.html) {
         // Should this check be gated by parent namespace? Not sure we want to
         // allow <SVG> or <mATH>.
@@ -1083,7 +1139,9 @@ class ReactDOMServerRenderer {
     let props = element.props;
 
     if (tag === 'input') {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         ReactControlledValuePropTypes.checkPropTypes('input', props);
 
         if (props.checked !== undefined && props.defaultChecked !== undefined && !didWarnDefaultChecked) {
@@ -1106,7 +1164,9 @@ class ReactDOMServerRenderer {
         checked: props.checked != null ? props.checked : props.defaultChecked
       });
     } else if (tag === 'textarea') {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         ReactControlledValuePropTypes.checkPropTypes('textarea', props);
 
         if (props.value !== undefined && props.defaultValue !== undefined && !didWarnDefaultTextareaValue) {
@@ -1123,7 +1183,9 @@ class ReactDOMServerRenderer {
         let textareaChildren = props.children;
 
         if (textareaChildren != null) {
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             warning(false, 'Use the `defaultValue` or `value` props instead of setting ' + 'children on <textarea>.');
           }
 
@@ -1149,7 +1211,9 @@ class ReactDOMServerRenderer {
         children: '' + initialValue
       });
     } else if (tag === 'select') {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         ReactControlledValuePropTypes.checkPropTypes('select', props);
 
         for (let i = 0; i < valuePropNames.length; i++) {
@@ -1216,7 +1280,9 @@ class ReactDOMServerRenderer {
       }
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       validatePropertiesInDevelopment(tag, props);
     }
 
@@ -1265,7 +1331,9 @@ class ReactDOMServerRenderer {
       footer: footer
     };
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       frame.debugElementStack = [];
     }
 

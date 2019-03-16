@@ -13,7 +13,9 @@ import voidElementTags from "./voidElementTags.js";
 const HTML = '__html';
 let ReactDebugCurrentFrame = null;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 }
 
@@ -32,7 +34,9 @@ function assertValidProps(tag, props) {
     invariant(typeof props.dangerouslySetInnerHTML === 'object' && HTML in props.dangerouslySetInnerHTML, '`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. ' + 'Please visit https://fb.me/react-invariant-dangerously-set-inner-html ' + 'for more information.');
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(props.suppressContentEditableWarning || !props.contentEditable || props.children == null, 'A component is `contentEditable` and contains `children` managed by ' + 'React. It is now your responsibility to guarantee that none of ' + 'those nodes are unexpectedly modified or duplicated. This is ' + 'probably not intentional.');
   }
 

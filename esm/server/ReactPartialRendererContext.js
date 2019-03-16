@@ -13,14 +13,18 @@ import warningWithoutStack from "../react-shared/warningWithoutStack.js"; // imp
 
 let ReactDebugCurrentFrame;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 }
 
 const didWarnAboutInvalidateContextType = {};
 export const emptyObject = {};
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   Object.freeze(emptyObject);
 }
 
@@ -41,7 +45,9 @@ function maskContext(type, context) {
 }
 
 function checkContextTypes(typeSpecs, values, location) {
-  if (__DEV__) {// checkPropTypes(
+  if (
+  /* __DEV__ */
+  false) {// checkPropTypes(
     //   typeSpecs,
     //   values,
     //   location,
@@ -68,7 +74,9 @@ export function processContext(type, context, threadID) {
   const contextType = type.contextType;
 
   if (typeof contextType === 'object' && contextType !== null) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (contextType.$$typeof !== REACT_CONTEXT_TYPE) {
         let name = getComponentName(type) || 'Component';
 
@@ -84,7 +92,9 @@ export function processContext(type, context, threadID) {
   } else {
     const maskedContext = maskContext(type, context);
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (type.contextTypes) {
         checkContextTypes(type.contextTypes, maskedContext, 'context');
       }

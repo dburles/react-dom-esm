@@ -25,7 +25,9 @@ let ownerHasFunctionTypeWarning;
 
 let warnForMissingKey = child => {};
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnAboutMaps = false;
   didWarnAboutGenerators = false;
   didWarnAboutStringRefInStrictMode = {};
@@ -66,7 +68,9 @@ function coerceRef(returnFiber, current, element) {
   let mixedRef = element.ref;
 
   if (mixedRef !== null && typeof mixedRef !== 'function' && typeof mixedRef !== 'object') {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (returnFiber.mode & StrictMode) {
         const componentName = getComponentName(returnFiber.type) || 'Component';
 
@@ -124,7 +128,9 @@ function throwOnInvalidObjectType(returnFiber, newChild) {
   if (returnFiber.type !== 'textarea') {
     let addendum = '';
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       addendum = ' If you meant to render a collection of children, use an array ' + 'instead.' + getCurrentFiberStackInDev();
     }
 
@@ -277,7 +283,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       existing.ref = coerceRef(returnFiber, current, element);
       existing.return = returnFiber;
 
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         existing._debugSource = element._source;
         existing._debugOwner = element._owner;
       }
@@ -357,7 +365,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -417,7 +427,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -462,7 +474,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -476,7 +490,9 @@ function ChildReconciler(shouldTrackSideEffects) {
 
 
   function warnOnInvalidKey(child, knownKeys) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (typeof child !== 'object' || child === null) {
         return knownKeys;
       }
@@ -529,7 +545,9 @@ function ChildReconciler(shouldTrackSideEffects) {
     // (adding everything to a Map) in for every insert/move.
     // If you change this code, also update reconcileChildrenIterator() which
     // uses the same algorithm.
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       // First, validate keys.
       let knownKeys = null;
 
@@ -668,7 +686,9 @@ function ChildReconciler(shouldTrackSideEffects) {
     const iteratorFn = getIteratorFn(newChildrenIterable);
     invariant(typeof iteratorFn === 'function', 'An object is not an iterable. This error is likely caused by a bug in ' + 'React. Please file an issue.');
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       // We don't support rendering Generators because it's a mutation.
       // See https://github.com/facebook/react/issues/12995
       if (typeof Symbol === 'function' && // $FlowFixMe Flow doesn't know about toStringTag
@@ -858,7 +878,9 @@ function ChildReconciler(shouldTrackSideEffects) {
           existing.ref = coerceRef(returnFiber, child, element);
           existing.return = returnFiber;
 
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             existing._debugSource = element._source;
             existing._debugOwner = element._owner;
           }
@@ -962,7 +984,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -975,7 +999,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       switch (returnFiber.tag) {
         case ClassComponent:
           {
-            if (__DEV__) {
+            if (
+            /* __DEV__ */
+            false) {
               const instance = returnFiber.stateNode;
 
               if (instance.render._isMockFunction) {

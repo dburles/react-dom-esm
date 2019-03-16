@@ -16,7 +16,7 @@ import {getToStringValue, toString} from './ToStringValue.js';
 
 let didWarnValueDefaultValue;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnValueDefaultValue = false;
 }
 
@@ -142,7 +142,7 @@ export function getHostProps(element: Element, props: Object) {
 
 export function initWrapperState(element: Element, props: Object) {
   const node = ((element: any): SelectWithWrapperState);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     checkSelectPropTypes(props);
   }
 
@@ -150,7 +150,7 @@ export function initWrapperState(element: Element, props: Object) {
     wasMultiple: !!props.multiple,
   };
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       props.value !== undefined &&
       props.defaultValue !== undefined &&

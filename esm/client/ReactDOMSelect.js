@@ -13,7 +13,9 @@ import ReactControlledValuePropTypes from "../shared/ReactControlledValuePropTyp
 import { getToStringValue, toString } from "./ToStringValue.js";
 let didWarnValueDefaultValue;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnValueDefaultValue = false;
 }
 
@@ -127,7 +129,9 @@ export function getHostProps(element, props) {
 export function initWrapperState(element, props) {
   const node = element;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     checkSelectPropTypes(props);
   }
 
@@ -135,7 +139,9 @@ export function initWrapperState(element, props) {
     wasMultiple: !!props.multiple
   };
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (props.value !== undefined && props.defaultValue !== undefined && !didWarnValueDefaultValue) {
       warning(false, 'Select elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled select ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components');
       didWarnValueDefaultValue = true;

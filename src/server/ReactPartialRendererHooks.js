@@ -60,7 +60,7 @@ function resolveCurrentlyRenderingComponent(): Object {
     'Hooks can only be called inside the body of a function component. ' +
       '(https://fb.me/react-invalid-hook-call)',
   );
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(
       !isInHookUserCodeInDev,
       'Do not call Hooks inside useEffect(...), useMemo(...), or other built-in Hooks. ' +
@@ -77,7 +77,7 @@ function areHookInputsEqual(
   prevDeps: Array<mixed> | null,
 ) {
   if (prevDeps === null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warning(
         false,
         '%s received a final argument during this render, but not during ' +
@@ -89,7 +89,7 @@ function areHookInputsEqual(
     return false;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // Don't bother comparing lengths in prod because these arrays should be
     // passed inline.
     if (nextDeps.length !== prevDeps.length) {
@@ -152,7 +152,7 @@ function createWorkInProgressHook(): Hook {
 
 export function prepareToUseHooks(componentIdentity: Object): void {
   currentlyRenderingComponent = componentIdentity;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isInHookUserCodeInDev = false;
   }
 
@@ -191,7 +191,7 @@ export function finishHooks(
   numberOfReRenders = 0;
   renderPhaseUpdates = null;
   workInProgressHook = null;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isInHookUserCodeInDev = false;
   }
 
@@ -212,7 +212,7 @@ function readContext<T>(
 ): T {
   let threadID = currentThreadID;
   validateContextBounds(context, threadID);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(
       !isInHookUserCodeInDev,
       'Context can only be read while React is rendering. ' +
@@ -228,7 +228,7 @@ function useContext<T>(
   context: ReactContext<T>,
   observedBits: void | number | boolean,
 ): T {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     currentHookNameInDev = 'useContext';
   }
   resolveCurrentlyRenderingComponent();
@@ -244,7 +244,7 @@ function basicStateReducer<S>(state: S, action: BasicStateAction<S>): S {
 export function useState<S>(
   initialState: (() => S) | S,
 ): [S, Dispatch<BasicStateAction<S>>] {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     currentHookNameInDev = 'useState';
   }
   return useReducer(
@@ -259,7 +259,7 @@ export function useReducer<S, I, A>(
   initialArg: I,
   init?: I => S,
 ): [S, Dispatch<A>] {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (reducer !== basicStateReducer) {
       currentHookNameInDev = 'useReducer';
     }
@@ -283,11 +283,11 @@ export function useReducer<S, I, A>(
           // priority because it will always be the same as the current
           // render's.
           const action = update.action;
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             isInHookUserCodeInDev = true;
           }
           newState = reducer(newState, action);
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             isInHookUserCodeInDev = false;
           }
           update = update.next;
@@ -300,7 +300,7 @@ export function useReducer<S, I, A>(
     }
     return [workInProgressHook.memoizedState, dispatch];
   } else {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       isInHookUserCodeInDev = true;
     }
     let initialState;
@@ -314,7 +314,7 @@ export function useReducer<S, I, A>(
       initialState =
         init !== undefined ? init(initialArg) : ((initialArg: any): S);
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       isInHookUserCodeInDev = false;
     }
     workInProgressHook.memoizedState = initialState;
@@ -349,11 +349,11 @@ function useMemo<T>(nextCreate: () => T, deps: Array<mixed> | void | null): T {
     }
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isInHookUserCodeInDev = true;
   }
   const nextValue = nextCreate();
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isInHookUserCodeInDev = false;
   }
   workInProgressHook.memoizedState = [nextValue, nextDeps];
@@ -366,7 +366,7 @@ function useRef<T>(initialValue: T): {current: T} {
   const previousRef = workInProgressHook.memoizedState;
   if (previousRef === null) {
     const ref = {current: initialValue};
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       Object.seal(ref);
     }
     workInProgressHook.memoizedState = ref;
@@ -380,7 +380,7 @@ export function useLayoutEffect(
   create: () => (() => void) | void,
   inputs: Array<mixed> | void | null,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     currentHookNameInDev = 'useLayoutEffect';
   }
   warning(

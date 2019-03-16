@@ -23,7 +23,7 @@ import possibleStandardNames from './possibleStandardNames.js';
 
 let validateProperty = () => {};
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   const warnedProperties = {};
   const hasOwnProperty = Object.prototype.hasOwnProperty;
   const EVENT_NAME_REGEX = /^on./;

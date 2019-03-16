@@ -18,7 +18,7 @@ export default function(
   if (source) {
     let path = source.fileName;
     let fileName = path.replace(BEFORE_SLASH_RE, '');
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       // In DEV, include code for a common special case:
       // prefer "folder/index.js" instead of just "index.js".
       if (/^index\./.test(fileName)) {

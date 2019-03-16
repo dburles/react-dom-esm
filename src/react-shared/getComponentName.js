@@ -42,7 +42,7 @@ function getComponentName(type: mixed): string | null {
     // Host root, text node or just invalid type.
     return null;
   }
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (typeof (type: any).tag === 'number') {
       warningWithoutStack(
         false,

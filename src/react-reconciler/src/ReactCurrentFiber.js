@@ -60,7 +60,7 @@ export let current: Fiber | null = null;
 export let phase: LifeCyclePhase | null = null;
 
 export function getCurrentFiberOwnerNameInDevOrNull(): string | null {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (current === null) {
       return null;
     }
@@ -73,7 +73,7 @@ export function getCurrentFiberOwnerNameInDevOrNull(): string | null {
 }
 
 export function getCurrentFiberStackInDev(): string {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (current === null) {
       return '';
     }
@@ -85,7 +85,7 @@ export function getCurrentFiberStackInDev(): string {
 }
 
 export function resetCurrentFiber() {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactDebugCurrentFrame.getCurrentStack = null;
     current = null;
     phase = null;
@@ -93,7 +93,7 @@ export function resetCurrentFiber() {
 }
 
 export function setCurrentFiber(fiber: Fiber) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactDebugCurrentFrame.getCurrentStack = getCurrentFiberStackInDev;
     current = fiber;
     phase = null;
@@ -101,7 +101,7 @@ export function setCurrentFiber(fiber: Fiber) {
 }
 
 export function setCurrentPhase(lifeCyclePhase: LifeCyclePhase | null) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     phase = lifeCyclePhase;
   }
 }

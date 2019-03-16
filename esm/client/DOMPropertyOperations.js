@@ -14,7 +14,9 @@ import { getPropertyInfo, shouldIgnoreAttribute, shouldRemoveAttribute, isAttrib
  * Some properties have multiple equivalent values.
  */
 export function getValueForProperty(node, name, expected, propertyInfo) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (propertyInfo.mustUseProperty) {
       const {
         propertyName
@@ -79,7 +81,9 @@ export function getValueForProperty(node, name, expected, propertyInfo) {
  */
 
 export function getValueForAttribute(node, name, expected) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (!isAttributeNameSafe(name)) {
       return;
     }

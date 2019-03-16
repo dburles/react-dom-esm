@@ -71,7 +71,7 @@ export function getHostProps(element: Element, props: Object) {
 }
 
 export function initWrapperState(element: Element, props: Object) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactControlledValuePropTypes.checkPropTypes('input', props);
 
     if (
@@ -135,7 +135,7 @@ export function updateChecked(element: Element, props: Object) {
 
 export function updateWrapper(element: Element, props: Object) {
   const node = ((element: any): InputWithWrapperState);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const controlled = isControlled(props);
 
     if (

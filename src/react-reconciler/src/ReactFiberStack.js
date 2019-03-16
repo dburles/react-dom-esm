@@ -19,7 +19,7 @@ const valueStack: Array<any> = [];
 
 let fiberStack: Array<Fiber | null>;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   fiberStack = [];
 }
 
@@ -37,13 +37,13 @@ function isEmpty(): boolean {
 
 function pop<T>(cursor: StackCursor<T>, fiber: Fiber): void {
   if (index < 0) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(false, 'Unexpected pop.');
     }
     return;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (fiber !== fiberStack[index]) {
       warningWithoutStack(false, 'Unexpected Fiber popped.');
     }
@@ -53,7 +53,7 @@ function pop<T>(cursor: StackCursor<T>, fiber: Fiber): void {
 
   valueStack[index] = null;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     fiberStack[index] = null;
   }
 
@@ -65,7 +65,7 @@ function push<T>(cursor: StackCursor<T>, value: T, fiber: Fiber): void {
 
   valueStack[index] = cursor.current;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     fiberStack[index] = fiber;
   }
 
@@ -73,7 +73,7 @@ function push<T>(cursor: StackCursor<T>, value: T, fiber: Fiber): void {
 }
 
 function checkThatStackIsEmpty() {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (index !== -1) {
       warningWithoutStack(
         false,
@@ -84,7 +84,7 @@ function checkThatStackIsEmpty() {
 }
 
 function resetStackAfterFatalErrorInDev() {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     index = -1;
     valueStack.length = 0;
     fiberStack.length = 0;

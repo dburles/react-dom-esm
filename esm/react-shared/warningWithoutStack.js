@@ -13,7 +13,9 @@
  */
 let warningWithoutStack = () => {};
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   warningWithoutStack = function (condition, format, ...args) {
     if (format === undefined) {
       throw new Error('`warningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');

@@ -140,7 +140,7 @@ let didWarnAboutGetDerivedStateOnFunctionComponent;
 let didWarnAboutFunctionRefs;
 export let didWarnAboutReassigningProps;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutBadClass = {};
   didWarnAboutContextTypeOnFunctionComponent = {};
   didWarnAboutGetDerivedStateOnFunctionComponent = {};
@@ -224,7 +224,7 @@ function updateForwardRef(
   // hasn't yet mounted. This happens after the first render suspends.
   // We'll need to figure out if this is fine or can cause issues.
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (workInProgress.type !== workInProgress.elementType) {
       // Lazy component props can't be validated in createElement
       // because they're only guaranteed to be resolved here.
@@ -247,7 +247,7 @@ function updateForwardRef(
   // The rest is a fork of updateFunctionComponent
   let nextChildren;
   prepareToReadContext(workInProgress, renderExpirationTime);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactCurrentOwner.current = workInProgress;
     setCurrentPhase('render');
     nextChildren = renderWithHooks(
@@ -328,7 +328,7 @@ function updateMemoComponent(
       // to a SimpleMemoComponent to allow fast path updates.
       workInProgress.tag = SimpleMemoComponent;
       workInProgress.type = type;
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         validateFunctionComponentInDev(workInProgress, type);
       }
       return updateSimpleMemoComponent(
@@ -340,7 +340,7 @@ function updateMemoComponent(
         renderExpirationTime,
       );
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       const innerPropTypes = type.propTypes;
       if (innerPropTypes) {
         // Inner memo component props aren't currently validated in createElement.
@@ -367,7 +367,7 @@ function updateMemoComponent(
     workInProgress.child = child;
     return child;
   }
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const type = Component.type;
     const innerPropTypes = type.propTypes;
     if (innerPropTypes) {
@@ -423,7 +423,7 @@ function updateSimpleMemoComponent(
   // hasn't yet mounted. This happens when the inner render suspends.
   // We'll need to figure out if this is fine or can cause issues.
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (workInProgress.type !== workInProgress.elementType) {
       // Lazy component props can't be validated in createElement
       // because they're only guaranteed to be resolved here.
@@ -539,7 +539,7 @@ function updateFunctionComponent(
   nextProps: any,
   renderExpirationTime,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (workInProgress.type !== workInProgress.elementType) {
       // Lazy component props can't be validated in createElement
       // because they're only guaranteed to be resolved here.
@@ -561,7 +561,7 @@ function updateFunctionComponent(
 
   let nextChildren;
   prepareToReadContext(workInProgress, renderExpirationTime);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactCurrentOwner.current = workInProgress;
     setCurrentPhase('render');
     nextChildren = renderWithHooks(
@@ -628,7 +628,7 @@ function updateClassComponent(
   nextProps,
   renderExpirationTime: ExpirationTime,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (workInProgress.type !== workInProgress.elementType) {
       // Lazy component props can't be validated in createElement
       // because they're only guaranteed to be resolved here.
@@ -709,7 +709,7 @@ function updateClassComponent(
     hasContext,
     renderExpirationTime,
   );
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     let inst = workInProgress.stateNode;
     if (inst.props !== nextProps) {
       warning(
@@ -770,7 +770,7 @@ function finishClassComponent(
       stopProfilerTimerIfRunning(workInProgress);
     }
   } else {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       setCurrentPhase('render');
       nextChildren = instance.render();
       if (
@@ -996,7 +996,7 @@ function mountLazyComponent(
   let child;
   switch (resolvedTag) {
     case FunctionComponent: {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         validateFunctionComponentInDev(workInProgress, Component);
       }
       child = updateFunctionComponent(
@@ -1029,7 +1029,7 @@ function mountLazyComponent(
       break;
     }
     case MemoComponent: {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (workInProgress.type !== workInProgress.elementType) {
           const outerPropTypes = Component.propTypes;
           if (outerPropTypes) {
@@ -1055,7 +1055,7 @@ function mountLazyComponent(
     }
     default: {
       let hint = '';
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (
           Component !== null &&
           typeof Component === 'object' &&
@@ -1162,7 +1162,7 @@ function mountIndeterminateComponent(
 
   let value;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       Component.prototype &&
       typeof Component.prototype.render === 'function'
@@ -1256,7 +1256,7 @@ function mountIndeterminateComponent(
   } else {
     // Proceed under the assumption that this is a function component
     workInProgress.tag = FunctionComponent;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (
         debugRenderPhaseSideEffects ||
         (debugRenderPhaseSideEffectsForStrictMode &&
@@ -1276,7 +1276,7 @@ function mountIndeterminateComponent(
       }
     }
     reconcileChildren(null, workInProgress, value, renderExpirationTime);
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       validateFunctionComponentInDev(workInProgress, Component);
     }
     return workInProgress.child;
@@ -1741,7 +1741,7 @@ function updateContextProvider(
 
   const newValue = newProps.value;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const providerPropTypes = workInProgress.type.propTypes;
 
     if (providerPropTypes) {
@@ -1804,7 +1804,7 @@ function updateContextConsumer(
   // reduce size and overhead. The separate object references context via
   // a property called "_context", which also gives us the ability to check
   // in DEV mode if this property exists or not and warn if it does not.
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if ((context: any)._context === undefined) {
       // This may be because it's a Context (rather than a Consumer).
       // Or it may be because it's older React where they're the same thing.
@@ -1826,7 +1826,7 @@ function updateContextConsumer(
   const newProps = workInProgress.pendingProps;
   const render = newProps.children;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warningWithoutStack(
       typeof render === 'function',
       'A context consumer was rendered with multiple children, or a child ' +
@@ -1839,7 +1839,7 @@ function updateContextConsumer(
   prepareToReadContext(workInProgress, renderExpirationTime);
   const newValue = readContext(context, newProps.unstable_observedBits);
   let newChildren;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactCurrentOwner.current = workInProgress;
     setCurrentPhase('render');
     newChildren = render(newValue);
@@ -2111,7 +2111,7 @@ function beginWork(
       const unresolvedProps = workInProgress.pendingProps;
       // Resolve outer props first, then resolve inner props.
       let resolvedProps = resolveDefaultProps(type, unresolvedProps);
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (workInProgress.type !== workInProgress.elementType) {
           const outerPropTypes = type.propTypes;
           if (outerPropTypes) {

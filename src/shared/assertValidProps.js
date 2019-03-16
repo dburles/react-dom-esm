@@ -16,7 +16,7 @@ import voidElementTags from './voidElementTags.js';
 const HTML = '__html';
 
 let ReactDebugCurrentFrame = null;
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 }
 
@@ -47,7 +47,7 @@ function assertValidProps(tag: string, props: ?Object) {
         'for more information.',
     );
   }
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(
       props.suppressContentEditableWarning ||
         !props.contentEditable ||

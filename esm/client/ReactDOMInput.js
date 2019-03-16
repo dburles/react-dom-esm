@@ -55,7 +55,9 @@ export function getHostProps(element, props) {
   return hostProps;
 }
 export function initWrapperState(element, props) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     ReactControlledValuePropTypes.checkPropTypes('input', props);
 
     if (props.checked !== undefined && props.defaultChecked !== undefined && !didWarnCheckedDefaultChecked) {
@@ -88,7 +90,9 @@ export function updateChecked(element, props) {
 export function updateWrapper(element, props) {
   const node = element;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const controlled = isControlled(props);
 
     if (!node._wrapperState.controlled && controlled && !didWarnUncontrolledToControlled) {

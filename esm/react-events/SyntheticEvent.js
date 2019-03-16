@@ -59,7 +59,9 @@ function functionThatReturnsFalse() {
 
 
 function SyntheticEvent(dispatchConfig, targetInst, nativeEvent, nativeEventTarget) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     // these have a getter/setter for warnings
     delete this.nativeEvent;
     delete this.preventDefault;
@@ -78,7 +80,9 @@ function SyntheticEvent(dispatchConfig, targetInst, nativeEvent, nativeEventTarg
       continue;
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       delete this[propName]; // this has a getter/setter for warnings
     }
 
@@ -168,7 +172,9 @@ Object.assign(SyntheticEvent.prototype, {
     const Interface = this.constructor.Interface;
 
     for (const propName in Interface) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         Object.defineProperty(this, propName, getPooledWarningPropertyDefinition(propName, Interface[propName]));
       } else {
         this[propName] = null;
@@ -183,7 +189,9 @@ Object.assign(SyntheticEvent.prototype, {
     this._dispatchListeners = null;
     this._dispatchInstances = null;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       Object.defineProperty(this, 'nativeEvent', getPooledWarningPropertyDefinition('nativeEvent', null));
       Object.defineProperty(this, 'isDefaultPrevented', getPooledWarningPropertyDefinition('isDefaultPrevented', functionThatReturnsFalse));
       Object.defineProperty(this, 'isPropagationStopped', getPooledWarningPropertyDefinition('isPropagationStopped', functionThatReturnsFalse));

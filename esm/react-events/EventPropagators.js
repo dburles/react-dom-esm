@@ -37,7 +37,9 @@ function listenerAtPhase(inst, event, propagationPhase) {
 
 
 function accumulateDirectionalDispatches(inst, phase, event) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warningWithoutStack(inst, 'Dispatching inst must not be null');
   }
 

@@ -35,7 +35,7 @@ const ReactStrictModeWarnings = {
   flushLegacyContextWarning(): void {},
 };
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   const LIFECYCLE_SUGGESTIONS = {
     UNSAFE_componentWillMount: 'componentDidMount',
     UNSAFE_componentWillReceiveProps: 'static getDerivedStateFromProps',

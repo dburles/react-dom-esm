@@ -22,7 +22,9 @@ const {
 } = ReactSharedInternals;
 let didWarnAboutMismatchedHooksForComponent;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnAboutMismatchedHooksForComponent = new Set();
 }
 
@@ -66,7 +68,9 @@ let hookTypesDev = null;
 let hookTypesUpdateIndexDev = -1;
 
 function mountHookTypesDev() {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const hookName = currentHookNameInDev;
 
     if (hookTypesDev === null) {
@@ -78,7 +82,9 @@ function mountHookTypesDev() {
 }
 
 function updateHookTypesDev() {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const hookName = currentHookNameInDev;
 
     if (hookTypesDev !== null) {
@@ -92,7 +98,9 @@ function updateHookTypesDev() {
 }
 
 function warnOnHookMismatchInDev(currentHookName) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const componentName = getComponentName(currentlyRenderingFiber.type);
 
     if (!didWarnAboutMismatchedHooksForComponent.has(componentName)) {
@@ -128,14 +136,18 @@ function throwInvalidHookError() {
 
 function areHookInputsEqual(nextDeps, prevDeps) {
   if (prevDeps === null) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warning(false, '%s received a final argument during this render, but not during ' + 'the previous render. Even though the final argument is optional, ' + 'its type cannot change between renders.', currentHookNameInDev);
     }
 
     return false;
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     // Don't bother comparing lengths in prod because these arrays should be
     // passed inline.
     if (nextDeps.length !== prevDeps.length) {
@@ -159,7 +171,9 @@ export function renderWithHooks(current, workInProgress, Component, props, refOr
   currentlyRenderingFiber = workInProgress;
   nextCurrentHook = current !== null ? current.memoizedState : null;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     hookTypesDev = current !== null ? current._debugHookTypes : null;
     hookTypesUpdateIndexDev = -1;
   } // The following should have already been reset
@@ -179,7 +193,9 @@ export function renderWithHooks(current, workInProgress, Component, props, refOr
   // so nextCurrentHook would be null during updates and mounts.
 
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (nextCurrentHook !== null) {
       ReactCurrentDispatcher.current = HooksDispatcherOnUpdateInDEV;
     } else if (hookTypesDev !== null) {
@@ -209,7 +225,9 @@ export function renderWithHooks(current, workInProgress, Component, props, refOr
       workInProgressHook = null;
       componentUpdateQueue = null;
 
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         // Also validate hook order for cascading updates.
         hookTypesUpdateIndexDev = -1;
       }
@@ -231,7 +249,9 @@ export function renderWithHooks(current, workInProgress, Component, props, refOr
   renderedWork.updateQueue = componentUpdateQueue;
   renderedWork.effectTag |= sideEffectTag;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     renderedWork._debugHookTypes = hookTypesDev;
   } // This check uses currentHook so that it works the same in DEV and prod bundles.
   // hookTypesDev could catch more cases (e.g. context) but only in DEV bundles.
@@ -246,7 +266,9 @@ export function renderWithHooks(current, workInProgress, Component, props, refOr
   workInProgressHook = null;
   nextWorkInProgressHook = null;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     currentHookNameInDev = null;
     hookTypesDev = null;
     hookTypesUpdateIndexDev = -1;
@@ -285,7 +307,9 @@ export function resetHooks() {
   workInProgressHook = null;
   nextWorkInProgressHook = null;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     hookTypesDev = null;
     hookTypesUpdateIndexDev = -1;
     currentHookNameInDev = null;
@@ -582,7 +606,9 @@ function mountRef(initialValue) {
     current: initialValue
   };
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     Object.seal(ref);
   }
 
@@ -652,7 +678,9 @@ function imperativeHandleEffect(create, ref) {
   } else if (ref !== null && ref !== undefined) {
     const refObject = ref;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warning(refObject.hasOwnProperty('current'), 'Expected useImperativeHandle() first argument to either be a ' + 'ref callback or React.createRef() object. Instead received: %s.', 'an object with keys {' + Object.keys(refObject).join(', ') + '}');
     }
 
@@ -665,7 +693,9 @@ function imperativeHandleEffect(create, ref) {
 }
 
 function mountImperativeHandle(ref, create, deps) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(typeof create === 'function', 'Expected useImperativeHandle() second argument to be a function ' + 'that creates a handle. Instead received: %s.', create !== null ? typeof create : 'null');
   } // TODO: If deps are provided, should we skip comparing the ref itself?
 
@@ -675,7 +705,9 @@ function mountImperativeHandle(ref, create, deps) {
 }
 
 function updateImperativeHandle(ref, create, deps) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(typeof create === 'function', 'Expected useImperativeHandle() second argument to be a function ' + 'that creates a handle. Instead received: %s.', create !== null ? typeof create : 'null');
   } // TODO: If deps are provided, should we skip comparing the ref itself?
 
@@ -750,7 +782,9 @@ function updateMemo(nextCreate, deps) {
 
 let shouldWarnForUnbatchedSetState = false;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   // jest isn't a 'global', it's just exposed to tests via a wrapped function
   // further, this isn't a test file, so flow doesn't recognize the symbol. So...
   // $FlowExpectedError - because requirements don't give a damn about your type sigs.
@@ -762,7 +796,9 @@ if (__DEV__) {
 function dispatchAction(fiber, queue, action) {
   invariant(numberOfReRenders < RE_RENDER_LIMIT, 'Too many re-renders. React limits the number of renders to prevent ' + 'an infinite loop.');
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(arguments.length <= 3, "State updates from the useState() and useReducer() Hooks don't support the " + 'second callback argument. To execute a side effect after ' + 'rendering, declare it in the component body with useEffect().');
   }
 
@@ -838,7 +874,9 @@ function dispatchAction(fiber, queue, action) {
       if (eagerReducer !== null) {
         let prevDispatcher;
 
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           prevDispatcher = ReactCurrentDispatcher.current;
           ReactCurrentDispatcher.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
         }
@@ -862,14 +900,18 @@ function dispatchAction(fiber, queue, action) {
           }
         } catch (error) {// Suppress the error. It will throw again in the render phase.
         } finally {
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             ReactCurrentDispatcher.current = prevDispatcher;
           }
         }
       }
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (shouldWarnForUnbatchedSetState === true) {
         warnIfNotCurrentlyBatchingInDev(fiber);
       }
@@ -924,7 +966,9 @@ let HooksDispatcherOnUpdateInDEV = null;
 let InvalidNestedHooksDispatcherOnMountInDEV = null;
 let InvalidNestedHooksDispatcherOnUpdateInDEV = null;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   const warnInvalidContextAccess = () => {
     warning(false, 'Context can only be read while React is rendering. ' + 'In classes, you can read it in the render method or getDerivedStateFromProps. ' + 'In function components, you can read it directly in the function body, but not ' + 'inside Hooks like useReducer() or useMemo().');
   };

@@ -65,7 +65,7 @@ function SyntheticEvent(
   nativeEvent,
   nativeEventTarget,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // these have a getter/setter for warnings
     delete this.nativeEvent;
     delete this.preventDefault;
@@ -83,7 +83,7 @@ function SyntheticEvent(
     if (!Interface.hasOwnProperty(propName)) {
       continue;
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       delete this[propName]; // this has a getter/setter for warnings
     }
     const normalize = Interface[propName];
@@ -169,7 +169,7 @@ Object.assign(SyntheticEvent.prototype, {
   destructor: function() {
     const Interface = this.constructor.Interface;
     for (const propName in Interface) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         Object.defineProperty(
           this,
           propName,
@@ -186,7 +186,7 @@ Object.assign(SyntheticEvent.prototype, {
     this.isPropagationStopped = functionThatReturnsFalse;
     this._dispatchListeners = null;
     this._dispatchInstances = null;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       Object.defineProperty(
         this,
         'nativeEvent',

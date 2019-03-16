@@ -64,7 +64,7 @@ import {
 
 let hasBadMapPolyfill;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   hasBadMapPolyfill = false;
   try {
     const nonExtensibleObject = Object.preventExtensions({});
@@ -212,7 +212,7 @@ export type Fiber = {|
 
 let debugCounter;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   debugCounter = 1;
 }
 
@@ -284,7 +284,7 @@ function FiberNode(
     this.treeBaseDuration = 0;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     this._debugID = debugCounter++;
     this._debugSource = null;
     this._debugOwner = null;
@@ -370,7 +370,7 @@ export function createWorkInProgress(
     workInProgress.type = current.type;
     workInProgress.stateNode = current.stateNode;
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       // DEV-only fields
       workInProgress._debugID = current._debugID;
       workInProgress._debugSource = current._debugSource;
@@ -506,7 +506,7 @@ export function createFiberFromTypeAndProps(
           }
         }
         let info = '';
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           if (
             type === undefined ||
             (typeof type === 'object' &&
@@ -549,7 +549,7 @@ export function createFiberFromElement(
   expirationTime: ExpirationTime,
 ): Fiber {
   let owner = null;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     owner = element._owner;
   }
   const type = element.type;
@@ -563,7 +563,7 @@ export function createFiberFromElement(
     mode,
     expirationTime,
   );
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     fiber._debugSource = element._source;
     fiber._debugOwner = element._owner;
   }
@@ -587,7 +587,7 @@ function createFiberFromProfiler(
   expirationTime: ExpirationTime,
   key: null | string,
 ): Fiber {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       typeof pendingProps.id !== 'string' ||
       typeof pendingProps.onRender !== 'function'

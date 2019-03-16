@@ -89,7 +89,7 @@ let topLevelUpdateWarnings;
 let warnOnInvalidCallback;
 let didWarnAboutUnstableCreatePortal = false;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   if (
     typeof Map !== 'function' ||
     // $FlowIssue Flow incorrectly thinks Map has no prototype
@@ -382,7 +382,7 @@ ReactRoot.prototype.render = function(
   const root = this._internalRoot;
   const work = new ReactWork();
   callback = callback === undefined ? null : callback;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warnOnInvalidCallback(callback, 'render');
   }
   if (callback !== null) {
@@ -395,7 +395,7 @@ ReactRoot.prototype.unmount = function(callback: ?() => mixed): Work {
   const root = this._internalRoot;
   const work = new ReactWork();
   callback = callback === undefined ? null : callback;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warnOnInvalidCallback(callback, 'render');
   }
   if (callback !== null) {
@@ -412,7 +412,7 @@ ReactRoot.prototype.legacy_renderSubtreeIntoContainer = function(
   const root = this._internalRoot;
   const work = new ReactWork();
   callback = callback === undefined ? null : callback;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warnOnInvalidCallback(callback, 'render');
   }
   if (callback !== null) {
@@ -508,7 +508,7 @@ function legacyCreateRootFromDOMContainer(
     let warned = false;
     let rootSibling;
     while ((rootSibling = container.lastChild)) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (
           !warned &&
           rootSibling.nodeType === ELEMENT_NODE &&
@@ -526,7 +526,7 @@ function legacyCreateRootFromDOMContainer(
       container.removeChild(rootSibling);
     }
   }
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (shouldHydrate && !forceHydrate && !warnedAboutHydrateAPI) {
       warnedAboutHydrateAPI = true;
       lowPriorityWarning(
@@ -549,7 +549,7 @@ function legacyRenderSubtreeIntoContainer(
   forceHydrate: boolean,
   callback: ?Function,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     topLevelUpdateWarnings(container);
   }
 
@@ -622,7 +622,7 @@ const ReactDOM: Object = {
   findDOMNode(
     componentOrElement: Element | ?React$Component<any, any>,
   ): null | Element | Text {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       let owner = (ReactCurrentOwner.current: any);
       if (owner !== null && owner.stateNode !== null) {
         const warnedAboutRefsInRender =
@@ -645,7 +645,7 @@ const ReactDOM: Object = {
     if ((componentOrElement: any).nodeType === ELEMENT_NODE) {
       return (componentOrElement: any);
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       return findHostInstanceWithWarning(componentOrElement, 'findDOMNode');
     }
     return findHostInstance(componentOrElement);
@@ -656,7 +656,7 @@ const ReactDOM: Object = {
       isValidContainer(container),
       'Target container is not a DOM element.',
     );
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         !container._reactHasBeenPassedToCreateRootDEV,
         'You are calling ReactDOM.hydrate() on a container that was previously ' +
@@ -684,7 +684,7 @@ const ReactDOM: Object = {
       isValidContainer(container),
       'Target container is not a DOM element.',
     );
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         !container._reactHasBeenPassedToCreateRootDEV,
         'You are calling ReactDOM.render() on a container that was previously ' +
@@ -731,7 +731,7 @@ const ReactDOM: Object = {
       'unmountComponentAtNode(...): Target container is not a DOM element.',
     );
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         !container._reactHasBeenPassedToCreateRootDEV,
         'You are calling ReactDOM.unmountComponentAtNode() on a container that was previously ' +
@@ -741,7 +741,7 @@ const ReactDOM: Object = {
     }
 
     if (container._reactRootContainer) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         const rootEl = getReactRootElementInContainer(container);
         const renderedByDifferentReact = rootEl && !getInstanceFromNode(rootEl);
         warningWithoutStack(
@@ -761,7 +761,7 @@ const ReactDOM: Object = {
       // get `true` twice. That's probably fine?
       return true;
     } else {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         const rootEl = getReactRootElementInContainer(container);
         const hasNonRootReactChild = !!(rootEl && getInstanceFromNode(rootEl));
 
@@ -844,7 +844,7 @@ function createRoot(container: DOMContainer, options?: RootOptions): ReactRoot {
     '%s(...): Target container is not a DOM element.',
     functionName,
   );
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warningWithoutStack(
       !container._reactRootContainer,
       'You are calling ReactDOM.%s() on a container that was previously ' +
@@ -869,7 +869,7 @@ const foundDevTools = injectIntoDevTools({
   rendererPackageName: 'react-dom',
 });
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   if (!foundDevTools && canUseDOM && window.top === window.self) {
     // If we're in Chrome or Firefox, provide a download link if not installed.
     if (

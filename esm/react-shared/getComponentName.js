@@ -21,7 +21,9 @@ function getComponentName(type) {
     return null;
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (typeof type.tag === 'number') {
       warningWithoutStack(false, 'Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');
     }

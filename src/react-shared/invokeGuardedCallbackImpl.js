@@ -28,7 +28,7 @@ let invokeGuardedCallbackImpl = function<A, B, C, D, E, F, Context>(
   }
 };
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   // In DEV mode, we swap out invokeGuardedCallback for a special version
   // that plays more nicely with the browser's DevTools. The idea is to preserve
   // "Pause on exceptions" behavior. Because React wraps all user-provided

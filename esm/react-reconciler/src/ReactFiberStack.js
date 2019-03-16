@@ -10,7 +10,9 @@ import warningWithoutStack from "../../react-shared/warningWithoutStack.js";
 const valueStack = [];
 let fiberStack;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   fiberStack = [];
 }
 
@@ -28,14 +30,18 @@ function isEmpty() {
 
 function pop(cursor, fiber) {
   if (index < 0) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(false, 'Unexpected pop.');
     }
 
     return;
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (fiber !== fiberStack[index]) {
       warningWithoutStack(false, 'Unexpected Fiber popped.');
     }
@@ -44,7 +50,9 @@ function pop(cursor, fiber) {
   cursor.current = valueStack[index];
   valueStack[index] = null;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     fiberStack[index] = null;
   }
 
@@ -55,7 +63,9 @@ function push(cursor, value, fiber) {
   index++;
   valueStack[index] = cursor.current;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     fiberStack[index] = fiber;
   }
 
@@ -63,7 +73,9 @@ function push(cursor, value, fiber) {
 }
 
 function checkThatStackIsEmpty() {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (index !== -1) {
       warningWithoutStack(false, 'Expected an empty stack. Something was not reset properly.');
     }
@@ -71,7 +83,9 @@ function checkThatStackIsEmpty() {
 }
 
 function resetStackAfterFatalErrorInDev() {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     index = -1;
     valueStack.length = 0;
     fiberStack.length = 0;

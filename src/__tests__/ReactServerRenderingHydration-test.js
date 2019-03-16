@@ -403,7 +403,7 @@ describe('ReactDOMServerHydration', () => {
 
     ReactDOM.hydrate(markup, element);
     expect(element.textContent).toBe('Hi');
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       expect(callback).toHaveBeenCalledTimes(1);
       const [id, phase] = callback.mock.calls[0];
       expect(id).toBe('profiler');

@@ -393,7 +393,7 @@ const ReactTestUtils = {
   act(callback: () => void): Thenable {
     if (actContainerElement === null) {
       // warn if we can't actually create the stub element
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         warningWithoutStack(
           typeof document !== 'undefined' &&
             document !== null &&
@@ -410,7 +410,7 @@ const ReactTestUtils = {
     const result = ReactDOM.unstable_batchedUpdates(callback);
     // note: keep these warning messages in sync with
     // createReactNoop.js and ReactTestRenderer.js
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (result !== undefined) {
         let addendum;
         if (result !== null && typeof result.then === 'function') {
@@ -433,7 +433,7 @@ const ReactTestUtils = {
     // but we want to warn if they use it like they can await on it.
     return {
       then() {
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           warningWithoutStack(
             false,
             'Do not await the result of calling ReactTestUtils.act(...), it is not a Promise.',

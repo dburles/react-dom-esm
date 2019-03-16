@@ -81,7 +81,9 @@ function createClassErrorUpdate(fiber, errorInfo, expirationTime) {
         componentStack: stack !== null ? stack : ''
       });
 
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         if (typeof getDerivedStateFromError !== 'function') {
           // If componentDidCatch is the only error boundary method defined,
           // then it needs to call setState to recover from errors.

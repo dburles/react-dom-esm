@@ -47,7 +47,9 @@ export function getHostProps(element, props) {
 export function initWrapperState(element, props) {
   const node = element;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     ReactControlledValuePropTypes.checkPropTypes('textarea', props);
 
     if (props.value !== undefined && props.defaultValue !== undefined && !didWarnValDefaultVal) {
@@ -64,7 +66,9 @@ export function initWrapperState(element, props) {
     let children = props.children;
 
     if (children != null) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         warning(false, 'Use the `defaultValue` or `value` props instead of setting ' + 'children on <textarea>.');
       }
 

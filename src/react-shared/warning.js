@@ -17,7 +17,7 @@ import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
 let warning = warningWithoutStack;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   warning = function(condition, format, ...args) {
     if (condition) {
       return;

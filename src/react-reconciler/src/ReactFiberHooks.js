@@ -106,7 +106,7 @@ export type HookType =
   | 'useDebugValue';
 
 let didWarnAboutMismatchedHooksForComponent;
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutMismatchedHooksForComponent = new Set();
 }
 
@@ -185,7 +185,7 @@ let hookTypesDev: Array<HookType> | null = null;
 let hookTypesUpdateIndexDev: number = -1;
 
 function mountHookTypesDev() {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const hookName = ((currentHookNameInDev: any): HookType);
 
     if (hookTypesDev === null) {
@@ -197,7 +197,7 @@ function mountHookTypesDev() {
 }
 
 function updateHookTypesDev() {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const hookName = ((currentHookNameInDev: any): HookType);
 
     if (hookTypesDev !== null) {
@@ -210,7 +210,7 @@ function updateHookTypesDev() {
 }
 
 function warnOnHookMismatchInDev(currentHookName: HookType) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const componentName = getComponentName(
       ((currentlyRenderingFiber: any): Fiber).type,
     );
@@ -272,7 +272,7 @@ function areHookInputsEqual(
   prevDeps: Array<mixed> | null,
 ) {
   if (prevDeps === null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warning(
         false,
         '%s received a final argument during this render, but not during ' +
@@ -284,7 +284,7 @@ function areHookInputsEqual(
     return false;
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // Don't bother comparing lengths in prod because these arrays should be
     // passed inline.
     if (nextDeps.length !== prevDeps.length) {
@@ -321,7 +321,7 @@ export function renderWithHooks(
   currentlyRenderingFiber = workInProgress;
   nextCurrentHook = current !== null ? current.memoizedState : null;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     hookTypesDev =
       current !== null
         ? ((current._debugHookTypes: any): Array<HookType>)
@@ -348,7 +348,7 @@ export function renderWithHooks(
   // Using nextCurrentHook to differentiate between mount/update only works if at least one stateful hook is used.
   // Non-stateful hooks (e.g. context) don't get added to memoizedState,
   // so nextCurrentHook would be null during updates and mounts.
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (nextCurrentHook !== null) {
       ReactCurrentDispatcher.current = HooksDispatcherOnUpdateInDEV;
     } else if (hookTypesDev !== null) {
@@ -383,7 +383,7 @@ export function renderWithHooks(
       workInProgressHook = null;
       componentUpdateQueue = null;
 
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         // Also validate hook order for cascading updates.
         hookTypesUpdateIndexDev = -1;
       }
@@ -410,7 +410,7 @@ export function renderWithHooks(
   renderedWork.updateQueue = (componentUpdateQueue: any);
   renderedWork.effectTag |= sideEffectTag;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     renderedWork._debugHookTypes = hookTypesDev;
   }
 
@@ -428,7 +428,7 @@ export function renderWithHooks(
   workInProgressHook = null;
   nextWorkInProgressHook = null;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     currentHookNameInDev = null;
     hookTypesDev = null;
     hookTypesUpdateIndexDev = -1;
@@ -481,7 +481,7 @@ export function resetHooks(): void {
   workInProgressHook = null;
   nextWorkInProgressHook = null;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     hookTypesDev = null;
     hookTypesUpdateIndexDev = -1;
 
@@ -794,7 +794,7 @@ function pushEffect(tag, create, destroy, deps) {
 function mountRef<T>(initialValue: T): {current: T} {
   const hook = mountWorkInProgressHook();
   const ref = {current: initialValue};
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     Object.seal(ref);
   }
   hook.memoizedState = ref;
@@ -895,7 +895,7 @@ function imperativeHandleEffect<T>(
     };
   } else if (ref !== null && ref !== undefined) {
     const refObject = ref;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warning(
         refObject.hasOwnProperty('current'),
         'Expected useImperativeHandle() first argument to either be a ' +
@@ -916,7 +916,7 @@ function mountImperativeHandle<T>(
   create: () => T,
   deps: Array<mixed> | void | null,
 ): void {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(
       typeof create === 'function',
       'Expected useImperativeHandle() second argument to be a function ' +
@@ -942,7 +942,7 @@ function updateImperativeHandle<T>(
   create: () => T,
   deps: Array<mixed> | void | null,
 ): void {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(
       typeof create === 'function',
       'Expected useImperativeHandle() second argument to be a function ' +
@@ -1030,7 +1030,7 @@ function updateMemo<T>(
 // is called outside of a batchedUpdates/TestUtils.act(...) call.
 let shouldWarnForUnbatchedSetState = false;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   // jest isn't a 'global', it's just exposed to tests via a wrapped function
   // further, this isn't a test file, so flow doesn't recognize the symbol. So...
   // $FlowExpectedError - because requirements don't give a damn about your type sigs.
@@ -1050,7 +1050,7 @@ function dispatchAction<S, A>(
       'an infinite loop.',
   );
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(
       arguments.length <= 3,
       "State updates from the useState() and useReducer() Hooks don't support the " +
@@ -1128,7 +1128,7 @@ function dispatchAction<S, A>(
       const eagerReducer = queue.eagerReducer;
       if (eagerReducer !== null) {
         let prevDispatcher;
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           prevDispatcher = ReactCurrentDispatcher.current;
           ReactCurrentDispatcher.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
         }
@@ -1151,13 +1151,13 @@ function dispatchAction<S, A>(
         } catch (error) {
           // Suppress the error. It will throw again in the render phase.
         } finally {
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             ReactCurrentDispatcher.current = prevDispatcher;
           }
         }
       }
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (shouldWarnForUnbatchedSetState === true) {
         warnIfNotCurrentlyBatchingInDev(fiber);
       }
@@ -1217,7 +1217,7 @@ let HooksDispatcherOnUpdateInDEV: Dispatcher | null = null;
 let InvalidNestedHooksDispatcherOnMountInDEV: Dispatcher | null = null;
 let InvalidNestedHooksDispatcherOnUpdateInDEV: Dispatcher | null = null;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   const warnInvalidContextAccess = () => {
     warning(
       false,

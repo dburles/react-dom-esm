@@ -52,7 +52,7 @@ let ownerHasKeyUseWarning;
 let ownerHasFunctionTypeWarning;
 let warnForMissingKey = (child: mixed) => {};
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutMaps = false;
   didWarnAboutGenerators = false;
   didWarnAboutStringRefInStrictMode = {};
@@ -111,7 +111,7 @@ function coerceRef(
     typeof mixedRef !== 'function' &&
     typeof mixedRef !== 'object'
   ) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (returnFiber.mode & StrictMode) {
         const componentName = getComponentName(returnFiber.type) || 'Component';
         if (!didWarnAboutStringRefInStrictMode[componentName]) {
@@ -196,7 +196,7 @@ function coerceRef(
 function throwOnInvalidObjectType(returnFiber: Fiber, newChild: Object) {
   if (returnFiber.type !== 'textarea') {
     let addendum = '';
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       addendum =
         ' If you meant to render a collection of children, use an array ' +
         'instead.' +
@@ -383,7 +383,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       const existing = useFiber(current, element.props, expirationTime);
       existing.ref = coerceRef(returnFiber, current, element);
       existing.return = returnFiber;
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         existing._debugSource = element._source;
         existing._debugOwner = element._owner;
       }
@@ -509,7 +509,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -597,7 +597,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -676,7 +676,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -692,7 +692,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     child: mixed,
     knownKeys: Set<string> | null,
   ): Set<string> | null {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (typeof child !== 'object' || child === null) {
         return knownKeys;
       }
@@ -755,7 +755,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     // If you change this code, also update reconcileChildrenIterator() which
     // uses the same algorithm.
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       // First, validate keys.
       let knownKeys = null;
       for (let i = 0; i < newChildren.length; i++) {
@@ -905,7 +905,7 @@ function ChildReconciler(shouldTrackSideEffects) {
         'React. Please file an issue.',
     );
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       // We don't support rendering Generators because it's a mutation.
       // See https://github.com/facebook/react/issues/12995
       if (
@@ -1133,7 +1133,7 @@ function ChildReconciler(shouldTrackSideEffects) {
           );
           existing.ref = coerceRef(returnFiber, child, element);
           existing.return = returnFiber;
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             existing._debugSource = element._source;
             existing._debugOwner = element._owner;
           }
@@ -1298,7 +1298,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       throwOnInvalidObjectType(returnFiber, newChild);
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (typeof newChild === 'function') {
         warnOnFunctionType();
       }
@@ -1309,7 +1309,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       // we already threw above.
       switch (returnFiber.tag) {
         case ClassComponent: {
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             const instance = returnFiber.stateNode;
             if (instance.render._isMockFunction) {
               // We allow auto-mocks to proceed as if they're returning null.

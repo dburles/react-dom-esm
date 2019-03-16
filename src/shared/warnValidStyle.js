@@ -9,7 +9,7 @@ import warning from 'shared/warning.js';
 
 let warnValidStyle = () => {};
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   // 'msTransform' is correct, but the other prefixes should be capitalized
   const badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/;
   const msPattern = /^-ms-/;

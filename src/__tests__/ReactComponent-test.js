@@ -50,7 +50,7 @@ describe('ReactComponent', () => {
       props.children[1] = <p key={1} />; // Mutation is illegal
       return <div>{props.children}</div>;
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       expect(() => {
         ReactTestUtils.renderIntoDocument(
           <Wrapper>
@@ -83,7 +83,7 @@ describe('ReactComponent', () => {
       }
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       expect(() => {
         ReactTestUtils.renderIntoDocument(
           <Wrapper>

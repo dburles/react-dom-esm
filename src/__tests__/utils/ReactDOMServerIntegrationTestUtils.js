@@ -62,7 +62,7 @@ module.exports = function(initModules) {
         }
       }
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       expect(console.error).toHaveBeenCalledTimes(count);
     }
     return result;

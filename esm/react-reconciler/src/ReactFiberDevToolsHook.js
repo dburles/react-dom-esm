@@ -41,7 +41,9 @@ export function injectInternals(internals) {
   }
 
   if (!hook.supportsFiber) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(false, 'The installed version of React DevTools is too old and will not work ' + 'with the current version of React. Please update React DevTools. ' + 'https://fb.me/react-devtools');
     } // DevTools exists, even though it doesn't support Fiber.
 
@@ -56,7 +58,9 @@ export function injectInternals(internals) {
     onCommitFiberUnmount = catchErrors(fiber => hook.onCommitFiberUnmount(rendererID, fiber));
   } catch (err) {
     // Catch all errors because it is unsafe to throw during initialization.
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(false, 'React DevTools encountered an error: %s.', err);
     }
   } // DevTools exists

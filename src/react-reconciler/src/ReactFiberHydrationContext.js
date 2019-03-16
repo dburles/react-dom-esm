@@ -88,7 +88,7 @@ function deleteHydratableInstance(
   returnFiber: Fiber,
   instance: HydratableInstance,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     switch (returnFiber.tag) {
       case HostRoot:
         didNotHydrateContainerInstance(
@@ -127,7 +127,7 @@ function deleteHydratableInstance(
 
 function insertNonHydratedInstance(returnFiber: Fiber, fiber: Fiber) {
   fiber.effectTag |= Placement;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     switch (returnFiber.tag) {
       case HostRoot: {
         const parentContainer = returnFiber.stateNode.containerInfo;
@@ -308,7 +308,7 @@ function prepareToHydrateHostTextInstance(fiber: Fiber): boolean {
   const textInstance: TextInstance = fiber.stateNode;
   const textContent: string = fiber.memoizedProps;
   const shouldUpdate = hydrateTextInstance(textInstance, textContent, fiber);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (shouldUpdate) {
       // We assume that prepareToHydrateHostTextInstance is called in a context where the
       // hydration parent is the parent host component of this host text.

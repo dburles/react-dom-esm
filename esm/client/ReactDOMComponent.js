@@ -56,7 +56,9 @@ let canDiffStyleForHydrationWarning;
 let normalizeMarkupForTextOrAttribute;
 let normalizeHTML;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   warnedUnknownTags = {
     // Chrome is the only major browser not shipping <time>. But as of July
     // 2017 it intends to ship it due to widespread usage. We intentionally
@@ -203,7 +205,9 @@ function setInitialDOMProperties(tag, domElement, rootContainerElement, nextProp
     const nextProp = nextProps[propKey];
 
     if (propKey === STYLE) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         if (nextProp) {
           // Freeze the next style object so that we can assume it won't be
           // mutated. We have already warned for this in the past.
@@ -283,7 +287,9 @@ export function createElement(type, props, rootContainerElement, parentNamespace
   }
 
   if (namespaceURI === HTML_NAMESPACE) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       isCustomComponentTag = isCustomComponent(type, props); // Should this check be gated by parent namespace? Not sure we want to
       // allow <SVG> or <mATH>.
 
@@ -323,7 +329,9 @@ export function createElement(type, props, rootContainerElement, parentNamespace
     domElement = ownerDocument.createElementNS(namespaceURI, type);
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (namespaceURI === HTML_NAMESPACE) {
       if (!isCustomComponentTag && Object.prototype.toString.call(domElement) === '[object HTMLUnknownElement]' && !Object.prototype.hasOwnProperty.call(warnedUnknownTags, type)) {
         warnedUnknownTags[type] = true;
@@ -340,7 +348,9 @@ export function createTextNode(text, rootContainerElement) {
 export function setInitialProperties(domElement, tag, rawProps, rootContainerElement) {
   const isCustomComponentTag = isCustomComponent(tag, rawProps);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     validatePropertiesInDevelopment(tag, rawProps);
 
     if (isCustomComponentTag && !didWarnShadyDOM && domElement.shadyRoot) {
@@ -466,7 +476,9 @@ export function setInitialProperties(domElement, tag, rawProps, rootContainerEle
 } // Calculate the diff between the two objects.
 
 export function diffProperties(domElement, tag, lastRawProps, nextRawProps, rootContainerElement) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     validatePropertiesInDevelopment(tag, nextRawProps);
   }
 
@@ -559,7 +571,9 @@ export function diffProperties(domElement, tag, lastRawProps, nextRawProps, root
     }
 
     if (propKey === STYLE) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         if (nextProp) {
           // Freeze the next style object so that we can assume it won't be
           // mutated. We have already warned for this in the past.
@@ -641,7 +655,9 @@ export function diffProperties(domElement, tag, lastRawProps, nextRawProps, root
   }
 
   if (styleUpdates) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       validateShorthandPropertyCollisionInDev(styleUpdates, nextProps[STYLE]);
     }
 
@@ -686,7 +702,9 @@ export function updateProperties(domElement, updatePayload, tag, lastRawProps, n
 }
 
 function getPossibleStandardName(propName) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const lowerCasedName = propName.toLowerCase();
 
     if (!possibleStandardNames.hasOwnProperty(lowerCasedName)) {
@@ -703,7 +721,9 @@ export function diffHydratedProperties(domElement, tag, rawProps, parentNamespac
   let isCustomComponentTag;
   let extraAttributeNames;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     suppressHydrationWarning = rawProps[SUPPRESS_HYDRATION_WARNING] === true;
     isCustomComponentTag = isCustomComponent(tag, rawProps);
     validatePropertiesInDevelopment(tag, rawProps);
@@ -781,7 +801,9 @@ export function diffHydratedProperties(domElement, tag, rawProps, parentNamespac
 
   assertValidProps(tag, rawProps);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     extraAttributeNames = new Set();
     const attributes = domElement.attributes;
 
@@ -939,7 +961,9 @@ export function diffHydratedProperties(domElement, tag, rawProps, parentNamespac
     }
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     // $FlowFixMe - Should be inferred as not undefined.
     if (extraAttributeNames.size > 0 && !suppressHydrationWarning) {
       // $FlowFixMe - Should be inferred as not undefined.
@@ -987,12 +1011,16 @@ export function diffHydratedText(textNode, text) {
   return isDifferent;
 }
 export function warnForUnmatchedText(textNode, text) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnForTextDifference(textNode.nodeValue, text);
   }
 }
 export function warnForDeletedHydratableElement(parentNode, child) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (didWarnInvalidHydration) {
       return;
     }
@@ -1002,7 +1030,9 @@ export function warnForDeletedHydratableElement(parentNode, child) {
   }
 }
 export function warnForDeletedHydratableText(parentNode, child) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (didWarnInvalidHydration) {
       return;
     }
@@ -1012,7 +1042,9 @@ export function warnForDeletedHydratableText(parentNode, child) {
   }
 }
 export function warnForInsertedHydratedElement(parentNode, tag, props) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (didWarnInvalidHydration) {
       return;
     }
@@ -1022,7 +1054,9 @@ export function warnForInsertedHydratedElement(parentNode, tag, props) {
   }
 }
 export function warnForInsertedHydratedText(parentNode, text) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (text === '') {
       // We expect to insert empty text nodes since they're not represented in
       // the HTML.

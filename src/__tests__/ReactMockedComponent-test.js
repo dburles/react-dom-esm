@@ -32,7 +32,7 @@ describe('ReactMockedComponent', () => {
 
   it('should allow a mocked component to be rendered in dev', () => {
     const container = document.createElement('container');
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ReactDOM.render(<MockedComponent />, container);
     } else {
       expect(() => ReactDOM.render(<MockedComponent />, container)).toThrow(
@@ -43,14 +43,14 @@ describe('ReactMockedComponent', () => {
 
   it('should allow a mocked component to be updated in dev', () => {
     const container = document.createElement('container');
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ReactDOM.render(<MockedComponent />, container);
     } else {
       expect(() => ReactDOM.render(<MockedComponent />, container)).toThrow(
         'Nothing was returned from render.',
       );
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ReactDOM.render(<MockedComponent />, container);
     } else {
       expect(() => ReactDOM.render(<MockedComponent />, container)).toThrow(
@@ -60,7 +60,7 @@ describe('ReactMockedComponent', () => {
   });
 
   it('should allow a mocked component to be rendered in dev (SSR)', () => {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ReactDOMServer.renderToString(<MockedComponent />);
     } else {
       expect(() => ReactDOMServer.renderToString(<MockedComponent />)).toThrow(

@@ -41,7 +41,9 @@ let didWarnAboutDirectlyAssigningPropsToState;
 let didWarnAboutContextTypeAndContextTypes;
 let didWarnAboutInvalidateContextType;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnAboutStateAssignmentForComponent = new Set();
   didWarnAboutUninitializedState = new Set();
   didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = new Set();
@@ -93,7 +95,9 @@ if (__DEV__) {
 export function applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromProps, nextProps) {
   const prevState = workInProgress.memoizedState;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
       // Invoke the function an extra time to help detect side-effects.
       getDerivedStateFromProps(nextProps, prevState);
@@ -102,7 +106,9 @@ export function applyDerivedStateFromProps(workInProgress, ctor, getDerivedState
 
   const partialState = getDerivedStateFromProps(nextProps, prevState);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnOnUndefinedDerivedState(ctor, partialState);
   } // Merge the partial state and the previous state.
 
@@ -128,7 +134,9 @@ const classComponentUpdater = {
     update.payload = payload;
 
     if (callback !== undefined && callback !== null) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         warnOnInvalidCallback(callback, 'setState');
       }
 
@@ -149,7 +157,9 @@ const classComponentUpdater = {
     update.payload = payload;
 
     if (callback !== undefined && callback !== null) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         warnOnInvalidCallback(callback, 'replaceState');
       }
 
@@ -169,7 +179,9 @@ const classComponentUpdater = {
     update.tag = ForceUpdate;
 
     if (callback !== undefined && callback !== null) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         warnOnInvalidCallback(callback, 'forceUpdate');
       }
 
@@ -191,7 +203,9 @@ function checkShouldComponentUpdate(workInProgress, ctor, oldProps, newProps, ol
     const shouldUpdate = instance.shouldComponentUpdate(newProps, newState, nextContext);
     stopPhaseTimer();
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(shouldUpdate !== undefined, '%s.shouldComponentUpdate(): Returned undefined instead of a ' + 'boolean value. Make sure to return true or false.', getComponentName(ctor) || 'Component');
     }
 
@@ -208,7 +222,9 @@ function checkShouldComponentUpdate(workInProgress, ctor, oldProps, newProps, ol
 function checkClassInstance(workInProgress, ctor, newProps) {
   const instance = workInProgress.stateNode;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const name = getComponentName(ctor) || 'Component';
     const renderPresent = instance.render;
 
@@ -285,7 +301,9 @@ function adoptClassInstance(workInProgress, instance) {
 
   setInstance(instance, workInProgress);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     instance._reactInternalInstance = fakeInternalInstance;
   }
 }
@@ -297,7 +315,9 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
   const contextType = ctor.contextType;
 
   if (typeof contextType === 'object' && contextType !== null) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (contextType.$$typeof !== REACT_CONTEXT_TYPE && !didWarnAboutInvalidateContextType.has(ctor)) {
         didWarnAboutInvalidateContextType.add(ctor);
         warningWithoutStack(false, '%s defines an invalid contextType. ' + 'contextType should point to the Context object returned by React.createContext(). ' + 'Did you accidentally pass the Context.Provider instead?', getComponentName(ctor) || 'Component');
@@ -313,7 +333,9 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
   } // Instantiate twice to help detect side-effects.
 
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
       new ctor(props, context); // eslint-disable-line no-new
     }
@@ -323,7 +345,9 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
   const state = workInProgress.memoizedState = instance.state !== null && instance.state !== undefined ? instance.state : null;
   adoptClassInstance(workInProgress, instance);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (typeof ctor.getDerivedStateFromProps === 'function' && state === null) {
       const componentName = getComponentName(ctor) || 'Component';
 
@@ -395,7 +419,9 @@ function callComponentWillMount(workInProgress, instance) {
   stopPhaseTimer();
 
   if (oldState !== instance.state) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(false, '%s.componentWillMount(): Assigning directly to this.state is ' + "deprecated (except inside a component's " + 'constructor). Use setState instead.', getComponentName(workInProgress.type) || 'Component');
     }
 
@@ -418,7 +444,9 @@ function callComponentWillReceiveProps(workInProgress, instance, newProps, nextC
   stopPhaseTimer();
 
   if (instance.state !== oldState) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       const componentName = getComponentName(workInProgress.type) || 'Component';
 
       if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
@@ -433,7 +461,9 @@ function callComponentWillReceiveProps(workInProgress, instance, newProps, nextC
 
 
 function mountClassInstance(workInProgress, ctor, newProps, renderExpirationTime) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     checkClassInstance(workInProgress, ctor, newProps);
   }
 
@@ -450,7 +480,9 @@ function mountClassInstance(workInProgress, ctor, newProps, renderExpirationTime
     instance.context = getMaskedContext(workInProgress, unmaskedContext);
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (instance.state === newProps) {
       const componentName = getComponentName(ctor) || 'Component';
 

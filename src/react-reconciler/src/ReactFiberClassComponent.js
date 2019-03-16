@@ -73,7 +73,7 @@ let didWarnAboutDirectlyAssigningPropsToState;
 let didWarnAboutContextTypeAndContextTypes;
 let didWarnAboutInvalidateContextType;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutStateAssignmentForComponent = new Set();
   didWarnAboutUninitializedState = new Set();
   didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = new Set();
@@ -147,7 +147,7 @@ export function applyDerivedStateFromProps(
 ) {
   const prevState = workInProgress.memoizedState;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       debugRenderPhaseSideEffects ||
       (debugRenderPhaseSideEffectsForStrictMode &&
@@ -160,7 +160,7 @@ export function applyDerivedStateFromProps(
 
   const partialState = getDerivedStateFromProps(nextProps, prevState);
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warnOnUndefinedDerivedState(ctor, partialState);
   }
   // Merge the partial state and the previous state.
@@ -188,7 +188,7 @@ const classComponentUpdater = {
     const update = createUpdate(expirationTime);
     update.payload = payload;
     if (callback !== undefined && callback !== null) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         warnOnInvalidCallback(callback, 'setState');
       }
       update.callback = callback;
@@ -208,7 +208,7 @@ const classComponentUpdater = {
     update.payload = payload;
 
     if (callback !== undefined && callback !== null) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         warnOnInvalidCallback(callback, 'replaceState');
       }
       update.callback = callback;
@@ -227,7 +227,7 @@ const classComponentUpdater = {
     update.tag = ForceUpdate;
 
     if (callback !== undefined && callback !== null) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         warnOnInvalidCallback(callback, 'forceUpdate');
       }
       update.callback = callback;
@@ -258,7 +258,7 @@ function checkShouldComponentUpdate(
     );
     stopPhaseTimer();
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         shouldUpdate !== undefined,
         '%s.shouldComponentUpdate(): Returned undefined instead of a ' +
@@ -281,7 +281,7 @@ function checkShouldComponentUpdate(
 
 function checkClassInstance(workInProgress: Fiber, ctor: any, newProps: any) {
   const instance = workInProgress.stateNode;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const name = getComponentName(ctor) || 'Component';
     const renderPresent = instance.render;
 
@@ -498,7 +498,7 @@ function adoptClassInstance(workInProgress: Fiber, instance: any): void {
   workInProgress.stateNode = instance;
   // The instance needs access to the fiber so that it can schedule updates
   setInstance(instance, workInProgress);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     instance._reactInternalInstance = fakeInternalInstance;
   }
 }
@@ -514,7 +514,7 @@ function constructClassInstance(
   let context = null;
   const contextType = ctor.contextType;
   if (typeof contextType === 'object' && contextType !== null) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (
         contextType.$$typeof !== REACT_CONTEXT_TYPE &&
         !didWarnAboutInvalidateContextType.has(ctor)
@@ -542,7 +542,7 @@ function constructClassInstance(
   }
 
   // Instantiate twice to help detect side-effects.
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       debugRenderPhaseSideEffects ||
       (debugRenderPhaseSideEffectsForStrictMode &&
@@ -559,7 +559,7 @@ function constructClassInstance(
       : null);
   adoptClassInstance(workInProgress, instance);
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (typeof ctor.getDerivedStateFromProps === 'function' && state === null) {
       const componentName = getComponentName(ctor) || 'Component';
       if (!didWarnAboutUninitializedState.has(componentName)) {
@@ -667,7 +667,7 @@ function callComponentWillMount(workInProgress, instance) {
   stopPhaseTimer();
 
   if (oldState !== instance.state) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         false,
         '%s.componentWillMount(): Assigning directly to this.state is ' +
@@ -697,7 +697,7 @@ function callComponentWillReceiveProps(
   stopPhaseTimer();
 
   if (instance.state !== oldState) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       const componentName =
         getComponentName(workInProgress.type) || 'Component';
       if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
@@ -722,7 +722,7 @@ function mountClassInstance(
   newProps: any,
   renderExpirationTime: ExpirationTime,
 ): void {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     checkClassInstance(workInProgress, ctor, newProps);
   }
 
@@ -739,7 +739,7 @@ function mountClassInstance(
     instance.context = getMaskedContext(workInProgress, unmaskedContext);
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (instance.state === newProps) {
       const componentName = getComponentName(ctor) || 'Component';
       if (!didWarnAboutDirectlyAssigningPropsToState.has(componentName)) {

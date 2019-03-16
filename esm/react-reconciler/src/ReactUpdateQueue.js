@@ -102,7 +102,9 @@ let didWarnUpdateInsideUpdate;
 let currentlyProcessingQueue;
 export let resetCurrentlyProcessingQueue;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnUpdateInsideUpdate = false;
   currentlyProcessingQueue = null;
 
@@ -222,7 +224,9 @@ export function enqueueUpdate(fiber, update) {
     }
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (fiber.tag === ClassComponent && (currentlyProcessingQueue === queue1 || queue2 !== null && currentlyProcessingQueue === queue2) && !didWarnUpdateInsideUpdate) {
       warningWithoutStack(false, 'An update (setState, replaceState, or forceUpdate) was scheduled ' + 'from inside an update function. Update functions should be pure, ' + 'with zero side-effects. Consider using componentDidUpdate or a ' + 'callback.');
       didWarnUpdateInsideUpdate = true;
@@ -275,7 +279,9 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
 
         if (typeof payload === 'function') {
           // Updater function
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             enterDisallowedContextReadInDEV();
 
             if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
@@ -285,7 +291,9 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
 
           const nextState = payload.call(instance, prevState, nextProps);
 
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             exitDisallowedContextReadInDEV();
           }
 
@@ -309,7 +317,9 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
 
         if (typeof payload === 'function') {
           // Updater function
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             enterDisallowedContextReadInDEV();
 
             if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
@@ -319,7 +329,9 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
 
           partialState = payload.call(instance, prevState, nextProps);
 
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             exitDisallowedContextReadInDEV();
           }
         } else {
@@ -350,7 +362,9 @@ export function processUpdateQueue(workInProgress, queue, props, instance, rende
   hasForceUpdate = false;
   queue = ensureWorkInProgressQueueIsAClone(workInProgress, queue);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     currentlyProcessingQueue = queue;
   } // These values may change as we process the queue.
 
@@ -482,7 +496,9 @@ export function processUpdateQueue(workInProgress, queue, props, instance, rende
   workInProgress.expirationTime = newExpirationTime;
   workInProgress.memoizedState = resultState;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     currentlyProcessingQueue = null;
   }
 }

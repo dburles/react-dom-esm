@@ -21,7 +21,7 @@ export function logCapturedError(capturedError: CapturedError): void {
   }
 
   const error = (capturedError.error: any);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const {
       componentName,
       componentStack,

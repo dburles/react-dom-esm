@@ -2965,7 +2965,7 @@ describe('ReactIncremental', () => {
     // that passes Fibers as keys to Maps.
     // Note that we only expect them to be non-extensible
     // in development.
-    expect(receivedNonExtensibleObjects).toBe(__DEV__);
+    expect(receivedNonExtensibleObjects).toBe(/* __DEV__ */ false);
 
     // Next, verify that a Map polyfill that "writes" to keys
     // doesn't cause a failure.

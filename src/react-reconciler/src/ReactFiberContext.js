@@ -23,12 +23,12 @@ import {createCursor, push, pop} from './ReactFiberStack.js';
 
 let warnedAboutMissingGetChildContext;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   warnedAboutMissingGetChildContext = {};
 }
 
 export const emptyContextObject = {};
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   Object.freeze(emptyContextObject);
 }
 
@@ -92,7 +92,7 @@ function getMaskedContext(
     context[key] = unmaskedContext[key];
   }
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const name = getComponentName(type) || 'Unknown';
     // checkPropTypes(
     //   contextTypes,
@@ -157,7 +157,7 @@ function processChildContext(
   // TODO (bvaughn) Replace this behavior with an invariant() in the future.
   // It has only been added in Fiber to match the (unintentional) behavior in Stack.
   if (typeof instance.getChildContext !== 'function') {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       const componentName = getComponentName(type) || 'Unknown';
 
       if (!warnedAboutMissingGetChildContext[componentName]) {
@@ -176,13 +176,13 @@ function processChildContext(
   }
 
   let childContext;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     setCurrentPhase('getChildContext');
   }
   startPhaseTimer(fiber, 'getChildContext');
   childContext = instance.getChildContext();
   stopPhaseTimer();
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     setCurrentPhase(null);
   }
   for (let contextKey in childContext) {
@@ -193,7 +193,7 @@ function processChildContext(
       contextKey,
     );
   }
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const name = getComponentName(type) || 'Unknown';
     // checkPropTypes(
     //   childContextTypes,

@@ -40,7 +40,9 @@ let topLevelUpdateWarnings;
 let warnOnInvalidCallback;
 let didWarnAboutUnstableCreatePortal = false;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   if (typeof Map !== 'function' || // $FlowIssue Flow incorrectly thinks Map has no prototype
   Map.prototype == null || typeof Map.prototype.forEach !== 'function' || typeof Set !== 'function' || // $FlowIssue Flow incorrectly thinks Set has no prototype
   Set.prototype == null || typeof Set.prototype.clear !== 'function' || typeof Set.prototype.forEach !== 'function') {
@@ -236,7 +238,9 @@ ReactRoot.prototype.render = function (children, callback) {
   const work = new ReactWork();
   callback = callback === undefined ? null : callback;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnOnInvalidCallback(callback, 'render');
   }
 
@@ -253,7 +257,9 @@ ReactRoot.prototype.unmount = function (callback) {
   const work = new ReactWork();
   callback = callback === undefined ? null : callback;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnOnInvalidCallback(callback, 'render');
   }
 
@@ -270,7 +276,9 @@ ReactRoot.prototype.legacy_renderSubtreeIntoContainer = function (parentComponen
   const work = new ReactWork();
   callback = callback === undefined ? null : callback;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnOnInvalidCallback(callback, 'render');
   }
 
@@ -351,7 +359,9 @@ function legacyCreateRootFromDOMContainer(container, forceHydrate) {
     let rootSibling;
 
     while (rootSibling = container.lastChild) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         if (!warned && rootSibling.nodeType === ELEMENT_NODE && rootSibling.hasAttribute(ROOT_ATTRIBUTE_NAME)) {
           warned = true;
           warningWithoutStack(false, 'render(): Target node has markup rendered by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-rendered markup.');
@@ -362,7 +372,9 @@ function legacyCreateRootFromDOMContainer(container, forceHydrate) {
     }
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (shouldHydrate && !forceHydrate && !warnedAboutHydrateAPI) {
       warnedAboutHydrateAPI = true;
       lowPriorityWarning(false, 'render(): Calling ReactDOM.render() to hydrate server-rendered markup ' + 'will stop working in React v17. Replace the ReactDOM.render() call ' + 'with ReactDOM.hydrate() if you want React to attach to the server HTML.');
@@ -375,7 +387,9 @@ function legacyCreateRootFromDOMContainer(container, forceHydrate) {
 }
 
 function legacyRenderSubtreeIntoContainer(parentComponent, children, container, forceHydrate, callback) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     topLevelUpdateWarnings(container);
   } // TODO: Without `any` type, Flow says "Property cannot be accessed on any
   // member of intersection type." Whyyyyyy.
@@ -435,7 +449,9 @@ const ReactDOM = {
   createPortal,
 
   findDOMNode(componentOrElement) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       let owner = ReactCurrentOwner.current;
 
       if (owner !== null && owner.stateNode !== null) {
@@ -453,7 +469,9 @@ const ReactDOM = {
       return componentOrElement;
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       return findHostInstanceWithWarning(componentOrElement, 'findDOMNode');
     }
 
@@ -463,7 +481,9 @@ const ReactDOM = {
   hydrate(element, container, callback) {
     invariant(isValidContainer(container), 'Target container is not a DOM element.');
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(!container._reactHasBeenPassedToCreateRootDEV, 'You are calling ReactDOM.hydrate() on a container that was previously ' + 'passed to ReactDOM.%s(). This is not supported. ' + 'Did you mean to call createRoot(container, {hydrate: true}).render(element)?', enableStableConcurrentModeAPIs ? 'createRoot' : 'unstable_createRoot');
     } // TODO: throw or warn if we couldn't hydrate?
 
@@ -474,7 +494,9 @@ const ReactDOM = {
   render(element, container, callback) {
     invariant(isValidContainer(container), 'Target container is not a DOM element.');
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(!container._reactHasBeenPassedToCreateRootDEV, 'You are calling ReactDOM.render() on a container that was previously ' + 'passed to ReactDOM.%s(). This is not supported. ' + 'Did you mean to call root.render(element)?', enableStableConcurrentModeAPIs ? 'createRoot' : 'unstable_createRoot');
     }
 
@@ -490,12 +512,16 @@ const ReactDOM = {
   unmountComponentAtNode(container) {
     invariant(isValidContainer(container), 'unmountComponentAtNode(...): Target container is not a DOM element.');
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warningWithoutStack(!container._reactHasBeenPassedToCreateRootDEV, 'You are calling ReactDOM.unmountComponentAtNode() on a container that was previously ' + 'passed to ReactDOM.%s(). This is not supported. Did you mean to call root.unmount()?', enableStableConcurrentModeAPIs ? 'createRoot' : 'unstable_createRoot');
     }
 
     if (container._reactRootContainer) {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         const rootEl = getReactRootElementInContainer(container);
         const renderedByDifferentReact = rootEl && !getInstanceFromNode(rootEl);
         warningWithoutStack(!renderedByDifferentReact, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.');
@@ -511,7 +537,9 @@ const ReactDOM = {
 
       return true;
     } else {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         const rootEl = getReactRootElementInContainer(container);
         const hasNonRootReactChild = !!(rootEl && getInstanceFromNode(rootEl)); // Check if the container itself is a React root node.
 
@@ -550,7 +578,9 @@ function createRoot(container, options) {
   const functionName = enableStableConcurrentModeAPIs ? 'createRoot' : 'unstable_createRoot';
   invariant(isValidContainer(container), '%s(...): Target container is not a DOM element.', functionName);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warningWithoutStack(!container._reactRootContainer, 'You are calling ReactDOM.%s() on a container that was previously ' + 'passed to ReactDOM.render(). This is not supported.', enableStableConcurrentModeAPIs ? 'createRoot' : 'unstable_createRoot');
     container._reactHasBeenPassedToCreateRootDEV = true;
   }
@@ -571,7 +601,9 @@ const foundDevTools = injectIntoDevTools({
   rendererPackageName: 'react-dom'
 });
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   if (!foundDevTools && canUseDOM && window.top === window.self) {
     // If we're in Chrome or Firefox, provide a download link if not installed.
     if (navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Edge') === -1 || navigator.userAgent.indexOf('Firefox') > -1) {

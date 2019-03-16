@@ -20,7 +20,9 @@
  */
 let lowPriorityWarning = function () {};
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   const printWarning = function (format, ...args) {
     let argIndex = 0;
     const message = 'Warning: ' + format.replace(/%s/g, () => args[argIndex++]);

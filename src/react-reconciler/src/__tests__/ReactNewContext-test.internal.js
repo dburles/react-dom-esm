@@ -1104,7 +1104,7 @@ describe('ReactNewContext', () => {
       ReactNoop.render(<App value={1} />);
       ReactNoop.flush();
 
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         expect(console.error.calls.argsFor(0)[0]).toContain(
           'Detected multiple renderers concurrently rendering the same ' +
             'context provider. This is currently unsupported',
@@ -1222,7 +1222,7 @@ describe('ReactNewContext', () => {
       const Context = React.createContext(0);
       ReactNoop.render(<Context.Consumer />);
       expect(ReactNoop.flush).toThrow('render is not a function');
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         expect(console.error.calls.argsFor(0)[0]).toContain(
           'A context consumer was rendered with multiple children, or a child ' +
             "that isn't a function",

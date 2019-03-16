@@ -141,7 +141,7 @@ describe('ReactDOMComponent', () => {
       }
 
       ReactTestUtils.renderIntoDocument(<App />);
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         expect(() => (style.position = 'absolute')).toThrow();
       }
     });
@@ -1118,7 +1118,7 @@ describe('ReactDOMComponent', () => {
       errorEvent.initEvent('error', false, false);
       container.getElementsByTagName('source')[0].dispatchEvent(errorEvent);
 
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         expect(console.log).toHaveBeenCalledTimes(1);
         expect(console.log.calls.argsFor(0)[0]).toContain('onError called');
       }
@@ -1449,7 +1449,7 @@ describe('ReactDOMComponent', () => {
       container.getElementsByTagName('image')[0].dispatchEvent(errorEvent);
       container.getElementsByTagName('image')[0].dispatchEvent(loadEvent);
 
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         expect(console.log).toHaveBeenCalledTimes(2);
         expect(console.log.calls.argsFor(0)[0]).toContain('onError called');
         expect(console.log.calls.argsFor(1)[0]).toContain('onLoad called');

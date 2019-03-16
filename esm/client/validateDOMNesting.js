@@ -12,7 +12,9 @@ let validateDOMNesting = () => {};
 
 let updatedAncestorInfo = () => {};
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   // This validation code was written based on the HTML5 parsing spec:
   // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
   //

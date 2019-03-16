@@ -51,7 +51,7 @@ export function injectInternals(internals: Object): boolean {
     return true;
   }
   if (!hook.supportsFiber) {
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         false,
         'The installed version of React DevTools is too old and will not work ' +
@@ -73,7 +73,7 @@ export function injectInternals(internals: Object): boolean {
     );
   } catch (err) {
     // Catch all errors because it is unsafe to throw during initialization.
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         false,
         'React DevTools encountered an error: %s.',

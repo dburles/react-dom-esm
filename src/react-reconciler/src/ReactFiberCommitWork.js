@@ -109,7 +109,7 @@ import {
 import {didWarnAboutReassigningProps} from './ReactFiberBeginWork.js';
 
 let didWarnAboutUndefinedSnapshotBeforeUpdate: Set<mixed> | null = null;
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutUndefinedSnapshotBeforeUpdate = new Set();
 }
 
@@ -162,7 +162,7 @@ const callComponentWillUnmountWithTimer = function(current, instance) {
 
 // Capture errors so they don't interrupt unmounting.
 function safelyCallComponentWillUnmount(current, instance) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     invokeGuardedCallback(
       null,
       callComponentWillUnmountWithTimer,
@@ -187,7 +187,7 @@ function safelyDetachRef(current: Fiber) {
   const ref = current.ref;
   if (ref !== null) {
     if (typeof ref === 'function') {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         invokeGuardedCallback(null, ref, null, null);
         if (hasCaughtError()) {
           const refError = clearCaughtError();
@@ -207,7 +207,7 @@ function safelyDetachRef(current: Fiber) {
 }
 
 function safelyCallDestroy(current, destroy) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     invokeGuardedCallback(null, destroy, null);
     if (hasCaughtError()) {
       const error = clearCaughtError();
@@ -243,7 +243,7 @@ function commitBeforeMutationLifeCycles(
           // We could update instance props and state here,
           // but instead we rely on them being set during last render.
           // TODO: revisit this when we implement resuming.
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             if (
               finishedWork.type === finishedWork.elementType &&
               !didWarnAboutReassigningProps
@@ -274,7 +274,7 @@ function commitBeforeMutationLifeCycles(
               : resolveDefaultProps(finishedWork.type, prevProps),
             prevState,
           );
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             const didWarnSet = ((didWarnAboutUndefinedSnapshotBeforeUpdate: any): Set<
               mixed,
             >);
@@ -335,7 +335,7 @@ function commitHookEffectList(
         const create = effect.create;
         effect.destroy = create();
 
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           const destroy = effect.destroy;
           if (destroy !== undefined && typeof destroy !== 'function') {
             let addendum;
@@ -400,7 +400,7 @@ function commitLifeCycles(
           // We could update instance props and state here,
           // but instead we rely on them being set during last render.
           // TODO: revisit this when we implement resuming.
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             if (
               finishedWork.type === finishedWork.elementType &&
               !didWarnAboutReassigningProps
@@ -437,7 +437,7 @@ function commitLifeCycles(
           // We could update instance props and state here,
           // but instead we rely on them being set during last render.
           // TODO: revisit this when we implement resuming.
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             if (
               finishedWork.type === finishedWork.elementType &&
               !didWarnAboutReassigningProps
@@ -472,7 +472,7 @@ function commitLifeCycles(
       }
       const updateQueue = finishedWork.updateQueue;
       if (updateQueue !== null) {
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           if (
             finishedWork.type === finishedWork.elementType &&
             !didWarnAboutReassigningProps
@@ -661,7 +661,7 @@ function commitAttachRef(finishedWork: Fiber) {
     if (typeof ref === 'function') {
       ref(instanceToUse);
     } else {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (!ref.hasOwnProperty('current')) {
           warningWithoutStack(
             false,

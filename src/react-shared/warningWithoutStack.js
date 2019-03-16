@@ -14,7 +14,7 @@
 
 let warningWithoutStack = () => {};
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   warningWithoutStack = function(condition, format, ...args) {
     if (format === undefined) {
       throw new Error(

@@ -64,7 +64,7 @@ export function getHostProps(element: Element, props: Object) {
 
 export function initWrapperState(element: Element, props: Object) {
   const node = ((element: any): TextAreaWithWrapperState);
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     ReactControlledValuePropTypes.checkPropTypes('textarea', props);
     if (
       props.value !== undefined &&
@@ -93,7 +93,7 @@ export function initWrapperState(element: Element, props: Object) {
     // TODO (yungsters): Remove support for children content in <textarea>.
     let children = props.children;
     if (children != null) {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         warning(
           false,
           'Use the `defaultValue` or `value` props instead of setting ' +

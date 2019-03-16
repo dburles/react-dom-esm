@@ -402,7 +402,7 @@ describe('ReactDOM', () => {
       return <div />;
     };
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ReactDOM.render(<App />, container);
     }
   });
@@ -431,7 +431,7 @@ describe('ReactDOM', () => {
       // in DEV is used 1) to replay a failed begin phase, or 2) when calling
       // lifecycle methods. We're triggering the second case here.
       const fn = () => instance.setState({x: 2});
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         expect(fn).toThrow(
           'The `document` global was defined when React was initialized, but is not ' +
             'defined anymore. This can happen in a test environment if a component ' +

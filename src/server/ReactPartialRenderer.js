@@ -97,7 +97,7 @@ let pushElementToDebugStack = (element: ReactElement) => {};
 let popCurrentDebugStack = () => {};
 let hasWarnedAboutUsingContextAsConsumer = false;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 
   validatePropertiesInDevelopment = function(type, props) {
@@ -220,7 +220,7 @@ function createMarkupForStyles(styles): string | null {
     }
     const isCustomProperty = styleName.indexOf('--') === 0;
     const styleValue = styles[styleName];
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (!isCustomProperty) {
         warnValidStyle(styleName, styleValue);
       }
@@ -243,7 +243,7 @@ function warnNoop(
   publicInstance: React$Component<any, any>,
   callerName: string,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const constructor = publicInstance.constructor;
     const componentName =
       (constructor && getComponentName(constructor)) || 'ReactClass';
@@ -312,7 +312,7 @@ function flattenOptionChildren(children: mixed): ?string {
       return;
     }
     content += child;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (
         !didWarnInvalidOptionChildren &&
         typeof child !== 'string' &&
@@ -408,7 +408,7 @@ function resolve(
     // Safe because we just checked it's an element.
     let element: ReactElement = (child: any);
     let Component = element.type;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       pushElementToDebugStack(element);
     }
     if (typeof Component !== 'function') {
@@ -451,7 +451,7 @@ function resolve(
       inst = new Component(element.props, publicContext, updater);
 
       if (typeof Component.getDerivedStateFromProps === 'function') {
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           if (inst.state === null || inst.state === undefined) {
             const componentName = getComponentName(Component) || 'Unknown';
             if (!didWarnAboutUninitializedState[componentName]) {
@@ -476,7 +476,7 @@ function resolve(
           inst.state,
         );
 
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           if (partialState === undefined) {
             const componentName = getComponentName(Component) || 'Unknown';
             if (!didWarnAboutUndefinedDerivedState[componentName]) {
@@ -496,7 +496,7 @@ function resolve(
         }
       }
     } else {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         if (
           Component.prototype &&
           typeof Component.prototype.render === 'function'
@@ -540,7 +540,7 @@ function resolve(
       typeof inst.componentWillMount === 'function'
     ) {
       if (typeof inst.componentWillMount === 'function') {
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           if (
             warnAboutDeprecatedLifecycles &&
             inst.componentWillMount.__suppressDeprecationWarning !== true
@@ -612,7 +612,7 @@ function resolve(
     }
     child = inst.render();
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (child === undefined && inst.render._isMockFunction) {
         // This is probably bad practice. Consider warning here and
         // deprecating this convenience.
@@ -692,7 +692,7 @@ class ReactDOMServerRenderer {
       context: emptyObject,
       footer: '',
     };
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ((topFrame: any): FrameDev).debugElementStack = [];
     }
     this.threadID = allocThreadID();
@@ -707,7 +707,7 @@ class ReactDOMServerRenderer {
     this.contextIndex = -1;
     this.contextStack = [];
     this.contextValueStack = [];
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       this.contextProviderStack = [];
     }
   }
@@ -740,7 +740,7 @@ class ReactDOMServerRenderer {
     // Remember which value to restore this context to on our way up.
     this.contextStack[index] = context;
     this.contextValueStack[index] = previousValue;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       // Only used for push/pop mismatch warnings.
       (this.contextProviderStack: any)[index] = provider;
     }
@@ -751,7 +751,7 @@ class ReactDOMServerRenderer {
 
   popProvider<T>(provider: ReactProvider<T>): void {
     const index = this.contextIndex;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         index > -1 && provider === (this.contextProviderStack: any)[index],
         'Unexpected pop.',
@@ -766,7 +766,7 @@ class ReactDOMServerRenderer {
     // promise to never access values beyond `this.contextIndex`.
     this.contextStack[index] = (null: any);
     this.contextValueStack[index] = (null: any);
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       (this.contextProviderStack: any)[index] = (null: any);
     }
     this.contextIndex--;
@@ -849,7 +849,7 @@ class ReactDOMServerRenderer {
         const child = frame.children[frame.childIndex++];
 
         let outBuffer = '';
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           pushCurrentDebugStack(this.stack);
           // We're starting work on this frame, so reset its inner stack.
           ((frame: any): FrameDev).debugElementStack.length = 0;
@@ -863,7 +863,7 @@ class ReactDOMServerRenderer {
             throw err;
           }
         } finally {
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             popCurrentDebugStack();
           }
         }
@@ -928,7 +928,7 @@ class ReactDOMServerRenderer {
           context: context,
           footer: '',
         };
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           ((frame: any): FrameDev).debugElementStack = [];
         }
         this.stack.push(frame);
@@ -958,7 +958,7 @@ class ReactDOMServerRenderer {
             context: context,
             footer: '',
           };
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             ((frame: any): FrameDev).debugElementStack = [];
           }
           this.stack.push(frame);
@@ -980,7 +980,7 @@ class ReactDOMServerRenderer {
                 context: context,
                 footer: '',
               };
-              if (__DEV__) {
+              if (/* __DEV__ */ false) {
                 ((frame: any): FrameDev).debugElementStack = [];
               }
               this.stack.push(frame);
@@ -1008,7 +1008,7 @@ class ReactDOMServerRenderer {
               context: context,
               footer: '<!--/$-->',
             };
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               ((frame: any): FrameDev).debugElementStack = [];
               ((fallbackFrame: any): FrameDev).debugElementStack = [];
             }
@@ -1046,7 +1046,7 @@ class ReactDOMServerRenderer {
               context: context,
               footer: '',
             };
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               ((frame: any): FrameDev).debugElementStack = [];
             }
             this.stack.push(frame);
@@ -1068,7 +1068,7 @@ class ReactDOMServerRenderer {
               context: context,
               footer: '',
             };
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               ((frame: any): FrameDev).debugElementStack = [];
             }
             this.stack.push(frame);
@@ -1086,7 +1086,7 @@ class ReactDOMServerRenderer {
               context: context,
               footer: '',
             };
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               ((frame: any): FrameDev).debugElementStack = [];
             }
 
@@ -1104,7 +1104,7 @@ class ReactDOMServerRenderer {
             // reduce size and overhead. The separate object references context via
             // a property called "_context", which also gives us the ability to check
             // in DEV mode if this property exists or not and warn if it does not.
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               if ((reactContext: any)._context === undefined) {
                 // This may be because it's a Context (rather than a Consumer).
                 // Or it may be because it's older React where they're the same thing.
@@ -1137,7 +1137,7 @@ class ReactDOMServerRenderer {
               context: context,
               footer: '',
             };
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               ((frame: any): FrameDev).debugElementStack = [];
             }
             this.stack.push(frame);
@@ -1152,7 +1152,7 @@ class ReactDOMServerRenderer {
       }
 
       let info = '';
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         const owner = nextElement._owner;
         if (
           elementType === undefined ||
@@ -1193,7 +1193,7 @@ class ReactDOMServerRenderer {
       namespace = getIntrinsicNamespace(tag);
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (namespace === Namespaces.html) {
         // Should this check be gated by parent namespace? Not sure we want to
         // allow <SVG> or <mATH>.
@@ -1211,7 +1211,7 @@ class ReactDOMServerRenderer {
 
     let props = element.props;
     if (tag === 'input') {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         ReactControlledValuePropTypes.checkPropTypes('input', props);
 
         if (
@@ -1265,7 +1265,7 @@ class ReactDOMServerRenderer {
         },
       );
     } else if (tag === 'textarea') {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         ReactControlledValuePropTypes.checkPropTypes('textarea', props);
         if (
           props.value !== undefined &&
@@ -1290,7 +1290,7 @@ class ReactDOMServerRenderer {
         // TODO (yungsters): Remove support for children content in <textarea>.
         let textareaChildren = props.children;
         if (textareaChildren != null) {
-          if (__DEV__) {
+          if (/* __DEV__ */ false) {
             warning(
               false,
               'Use the `defaultValue` or `value` props instead of setting ' +
@@ -1322,7 +1322,7 @@ class ReactDOMServerRenderer {
         children: '' + initialValue,
       });
     } else if (tag === 'select') {
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         ReactControlledValuePropTypes.checkPropTypes('select', props);
 
         for (let i = 0; i < valuePropNames.length; i++) {
@@ -1407,7 +1407,7 @@ class ReactDOMServerRenderer {
       }
     }
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       validatePropertiesInDevelopment(tag, props);
     }
 
@@ -1457,7 +1457,7 @@ class ReactDOMServerRenderer {
       context: context,
       footer: footer,
     };
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       ((frame: any): FrameDev).debugElementStack = [];
     }
     this.stack.push(frame);

@@ -38,7 +38,7 @@ export const enableSuspenseServerRenderer = true;
 
 let refCount = 0;
 export function addUserTimingListener() {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // Noop.
     return () => {};
   }

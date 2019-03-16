@@ -48,7 +48,7 @@ import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags.js';
 const valueCursor: StackCursor<mixed> = createCursor(null);
 
 let rendererSigil;
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   // Use this to detect multiple renderers using the same context
   rendererSigil = {};
 }
@@ -65,19 +65,19 @@ export function resetContextDependences(): void {
   currentlyRenderingFiber = null;
   lastContextDependency = null;
   lastContextWithAllBitsObserved = null;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isDisallowedContextReadInDEV = false;
   }
 }
 
 export function enterDisallowedContextReadInDEV(): void {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isDisallowedContextReadInDEV = true;
   }
 }
 
 export function exitDisallowedContextReadInDEV(): void {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     isDisallowedContextReadInDEV = false;
   }
 }
@@ -89,7 +89,7 @@ export function pushProvider<T>(providerFiber: Fiber, nextValue: T): void {
     push(valueCursor, context._currentValue, providerFiber);
 
     context._currentValue = nextValue;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         context._currentRenderer === undefined ||
           context._currentRenderer === null ||
@@ -103,7 +103,7 @@ export function pushProvider<T>(providerFiber: Fiber, nextValue: T): void {
     push(valueCursor, context._currentValue2, providerFiber);
 
     context._currentValue2 = nextValue;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warningWithoutStack(
         context._currentRenderer2 === undefined ||
           context._currentRenderer2 === null ||
@@ -143,7 +143,7 @@ export function calculateChangedBits<T>(
         ? context._calculateChangedBits(oldValue, newValue)
         : MAX_SIGNED_31_BIT_INT;
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       warning(
         (changedBits & MAX_SIGNED_31_BIT_INT) === changedBits,
         'calculateChangedBits: Expected the return value to be a ' +
@@ -332,7 +332,7 @@ export function readContext<T>(
   context: ReactContext<T>,
   observedBits: void | number | boolean,
 ): T {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // This warning would fire if you read context inside a Hook like useMemo.
     // Unlike the class check below, it's not enforced in production for perf.
     warning(

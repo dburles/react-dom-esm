@@ -304,7 +304,7 @@ const SimpleEventPlugin: PluginModule<MouseEvent> & {
         EventConstructor = SyntheticPointerEvent;
         break;
       default:
-        if (__DEV__) {
+        if (/* __DEV__ */ false) {
           if (knownHTMLTopLevelTypes.indexOf(topLevelType) === -1) {
             warningWithoutStack(
               false,

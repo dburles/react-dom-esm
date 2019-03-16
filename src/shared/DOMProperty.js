@@ -82,7 +82,7 @@ export function isAttributeNameSafe(attributeName: string): boolean {
     return true;
   }
   illegalAttributeNameCache[attributeName] = true;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warning(false, 'Invalid attribute name: `%s`', attributeName);
   }
   return false;

@@ -29,7 +29,9 @@ import { NoEffect as NoHookEffect, UnmountSnapshot, UnmountMutation, MountMutati
 import { didWarnAboutReassigningProps } from "./ReactFiberBeginWork.js";
 let didWarnAboutUndefinedSnapshotBeforeUpdate = null;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnAboutUndefinedSnapshotBeforeUpdate = new Set();
 }
 
@@ -82,7 +84,9 @@ const callComponentWillUnmountWithTimer = function (current, instance) {
 
 
 function safelyCallComponentWillUnmount(current, instance) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     invokeGuardedCallback(null, callComponentWillUnmountWithTimer, null, current, instance);
 
     if (hasCaughtError()) {
@@ -103,7 +107,9 @@ function safelyDetachRef(current) {
 
   if (ref !== null) {
     if (typeof ref === 'function') {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         invokeGuardedCallback(null, ref, null, null);
 
         if (hasCaughtError()) {
@@ -124,7 +130,9 @@ function safelyDetachRef(current) {
 }
 
 function safelyCallDestroy(current, destroy) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     invokeGuardedCallback(null, destroy, null);
 
     if (hasCaughtError()) {
@@ -161,7 +169,9 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
             // but instead we rely on them being set during last render.
             // TODO: revisit this when we implement resuming.
 
-            if (__DEV__) {
+            if (
+            /* __DEV__ */
+            false) {
               if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                 warning(instance.props === finishedWork.memoizedProps, 'Expected %s props to match memoized props before ' + 'getSnapshotBeforeUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
                 warning(instance.state === finishedWork.memoizedState, 'Expected %s state to match memoized state before ' + 'getSnapshotBeforeUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
@@ -170,7 +180,9 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
 
             const snapshot = instance.getSnapshotBeforeUpdate(finishedWork.elementType === finishedWork.type ? prevProps : resolveDefaultProps(finishedWork.type, prevProps), prevState);
 
-            if (__DEV__) {
+            if (
+            /* __DEV__ */
+            false) {
               const didWarnSet = didWarnAboutUndefinedSnapshotBeforeUpdate;
 
               if (snapshot === undefined && !didWarnSet.has(finishedWork.type)) {
@@ -226,7 +238,9 @@ function commitHookEffectList(unmountTag, mountTag, finishedWork) {
         const create = effect.create;
         effect.destroy = create();
 
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           const destroy = effect.destroy;
 
           if (destroy !== undefined && typeof destroy !== 'function') {
@@ -275,7 +289,9 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedExpirati
             // but instead we rely on them being set during last render.
             // TODO: revisit this when we implement resuming.
 
-            if (__DEV__) {
+            if (
+            /* __DEV__ */
+            false) {
               if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                 warning(instance.props === finishedWork.memoizedProps, 'Expected %s props to match memoized props before ' + 'componentDidMount. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
                 warning(instance.state === finishedWork.memoizedState, 'Expected %s state to match memoized state before ' + 'componentDidMount. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
@@ -291,7 +307,9 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedExpirati
             // but instead we rely on them being set during last render.
             // TODO: revisit this when we implement resuming.
 
-            if (__DEV__) {
+            if (
+            /* __DEV__ */
+            false) {
               if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                 warning(instance.props === finishedWork.memoizedProps, 'Expected %s props to match memoized props before ' + 'componentDidUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
                 warning(instance.state === finishedWork.memoizedState, 'Expected %s state to match memoized state before ' + 'componentDidUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
@@ -306,7 +324,9 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedExpirati
         const updateQueue = finishedWork.updateQueue;
 
         if (updateQueue !== null) {
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
               warning(instance.props === finishedWork.memoizedProps, 'Expected %s props to match memoized props before ' + 'processing the update queue. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
               warning(instance.state === finishedWork.memoizedState, 'Expected %s state to match memoized state before ' + 'processing the update queue. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance');
@@ -474,7 +494,9 @@ function commitAttachRef(finishedWork) {
     if (typeof ref === 'function') {
       ref(instanceToUse);
     } else {
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         if (!ref.hasOwnProperty('current')) {
           warningWithoutStack(false, 'Unexpected ref object provided for %s. ' + 'Use either a ref-setter function or React.createRef().%s', getComponentName(finishedWork.type), getStackByFiberInDevAndProd(finishedWork));
         }

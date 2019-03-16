@@ -15,13 +15,17 @@ export function setComponentTree(getFiberCurrentPropsFromNodeImpl, getInstanceFr
   getInstanceFromNode = getInstanceFromNodeImpl;
   getNodeFromInstance = getNodeFromInstanceImpl;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warningWithoutStack(getNodeFromInstance && getInstanceFromNode, 'EventPluginUtils.setComponentTree(...): Injected ' + 'module is missing getNodeFromInstance or getInstanceFromNode.');
   }
 }
 let validateEventDispatches;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   validateEventDispatches = function (event) {
     const dispatchListeners = event._dispatchListeners;
     const dispatchInstances = event._dispatchInstances;
@@ -55,7 +59,9 @@ export function executeDispatchesInOrder(event) {
   const dispatchListeners = event._dispatchListeners;
   const dispatchInstances = event._dispatchInstances;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     validateEventDispatches(event);
   }
 
@@ -87,7 +93,9 @@ function executeDispatchesInOrderStopAtTrueImpl(event) {
   const dispatchListeners = event._dispatchListeners;
   const dispatchInstances = event._dispatchInstances;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     validateEventDispatches(event);
   }
 
@@ -132,7 +140,9 @@ export function executeDispatchesInOrderStopAtTrue(event) {
  */
 
 export function executeDirectDispatch(event) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     validateEventDispatches(event);
   }
 

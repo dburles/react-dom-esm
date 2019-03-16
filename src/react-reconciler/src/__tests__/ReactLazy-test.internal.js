@@ -167,7 +167,7 @@ describe('ReactLazy', () => {
 
     await Promise.resolve();
 
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       expect(console.error).toHaveBeenCalledTimes(1);
       expect(console.error.calls.argsFor(0)[0]).toContain(
         'Expected the result of a dynamic import() call',

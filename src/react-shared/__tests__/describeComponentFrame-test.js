@@ -93,7 +93,7 @@ describe('Component stack trace displaying', () => {
         container,
       );
     });
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       let i = 0;
       expect(console.error.calls.count()).toBe(Object.keys(fileNames).length);
       for (let fileName in fileNames) {

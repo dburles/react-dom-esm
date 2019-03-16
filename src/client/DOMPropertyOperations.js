@@ -29,7 +29,7 @@ export function getValueForProperty(
   expected: mixed,
   propertyInfo: PropertyInfo,
 ): mixed {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (propertyInfo.mustUseProperty) {
       const {propertyName} = propertyInfo;
       return (node: any)[propertyName];
@@ -91,7 +91,7 @@ export function getValueForAttribute(
   name: string,
   expected: mixed,
 ): mixed {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (!isAttributeNameSafe(name)) {
       return;
     }

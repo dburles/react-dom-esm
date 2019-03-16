@@ -26,7 +26,9 @@ import { Sync } from "./ReactFiberExpirationTime.js";
 let didWarnAboutNestedUpdates;
 let didWarnAboutFindNodeInStrictMode;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   didWarnAboutNestedUpdates = false;
   didWarnAboutFindNodeInStrictMode = {};
 }
@@ -51,7 +53,9 @@ function getContextForSubtree(parentComponent) {
 }
 
 function scheduleRootUpdate(current, element, expirationTime, callback) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (ReactCurrentFiberPhase === 'render' && ReactCurrentFiberCurrent !== null && !didWarnAboutNestedUpdates) {
       didWarnAboutNestedUpdates = true;
       warningWithoutStack(false, 'Render methods should be a pure function of props and state; ' + 'triggering nested component updates from render is not allowed. ' + 'If necessary, trigger nested updates in componentDidUpdate.\n\n' + 'Check the render method of %s.', getComponentName(ReactCurrentFiberCurrent.type) || 'Unknown');
@@ -81,7 +85,9 @@ export function updateContainerAtExpirationTime(element, container, parentCompon
   // TODO: If this is a nested container, this won't be the root.
   const current = container.current;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (ReactFiberInstrumentation.debugTool) {
       if (current.alternate === null) {
         ReactFiberInstrumentation.debugTool.onMountContainer(container);
@@ -125,7 +131,9 @@ function findHostInstance(component) {
 }
 
 function findHostInstanceWithWarning(component, methodName) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const fiber = getInstance(component);
 
     if (fiber === undefined) {
@@ -200,7 +208,9 @@ export function findHostInstanceWithNoPortals(fiber) {
 }
 let overrideProps = null;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   const copyWithSetImpl = (obj, path, idx, value) => {
     if (idx >= path.length) {
       return value;

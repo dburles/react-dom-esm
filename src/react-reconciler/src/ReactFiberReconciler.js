@@ -87,7 +87,7 @@ type DevToolsConfig = {|
 let didWarnAboutNestedUpdates;
 let didWarnAboutFindNodeInStrictMode;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   didWarnAboutNestedUpdates = false;
   didWarnAboutFindNodeInStrictMode = {};
 }
@@ -118,7 +118,7 @@ function scheduleRootUpdate(
   expirationTime: ExpirationTime,
   callback: ?Function,
 ) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (
       ReactCurrentFiberPhase === 'render' &&
       ReactCurrentFiberCurrent !== null &&
@@ -169,7 +169,7 @@ export function updateContainerAtExpirationTime(
   // TODO: If this is a nested container, this won't be the root.
   const current = container.current;
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     if (ReactFiberInstrumentation.debugTool) {
       if (current.alternate === null) {
         ReactFiberInstrumentation.debugTool.onMountContainer(container);
@@ -215,7 +215,7 @@ function findHostInstanceWithWarning(
   component: Object,
   methodName: string,
 ): PublicInstance | null {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     const fiber = getInstance(component);
     if (fiber === undefined) {
       if (typeof component.render === 'function') {
@@ -343,7 +343,7 @@ export function findHostInstanceWithNoPortals(
 
 let overrideProps = null;
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   const copyWithSetImpl = (
     obj: Object | Array<any>,
     path: Array<string | number>,

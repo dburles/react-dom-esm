@@ -18,7 +18,9 @@ import { NoContext, ConcurrentMode, ProfileMode, StrictMode } from "./ReactTypeO
 import { REACT_FORWARD_REF_TYPE, REACT_FRAGMENT_TYPE, REACT_STRICT_MODE_TYPE, REACT_PROFILER_TYPE, REACT_PROVIDER_TYPE, REACT_CONTEXT_TYPE, REACT_CONCURRENT_MODE_TYPE, REACT_SUSPENSE_TYPE, REACT_MEMO_TYPE, REACT_LAZY_TYPE } from "../../react-shared/ReactSymbols.js";
 let hasBadMapPolyfill;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   hasBadMapPolyfill = false;
 
   try {
@@ -40,7 +42,9 @@ if (__DEV__) {
 
 let debugCounter;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   debugCounter = 1;
 }
 
@@ -98,7 +102,9 @@ function FiberNode(tag, pendingProps, key, mode) {
     this.treeBaseDuration = 0;
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     this._debugID = debugCounter++;
     this._debugSource = null;
     this._debugOwner = null;
@@ -169,7 +175,9 @@ export function createWorkInProgress(current, pendingProps, expirationTime) {
     workInProgress.type = current.type;
     workInProgress.stateNode = current.stateNode;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       // DEV-only fields
       workInProgress._debugID = current._debugID;
       workInProgress._debugSource = current._debugSource;
@@ -290,7 +298,9 @@ key, pendingProps, owner, mode, expirationTime) {
 
           let info = '';
 
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {
               info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default and " + 'named imports.';
             }
@@ -316,7 +326,9 @@ key, pendingProps, owner, mode, expirationTime) {
 export function createFiberFromElement(element, mode, expirationTime) {
   let owner = null;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     owner = element._owner;
   }
 
@@ -325,7 +337,9 @@ export function createFiberFromElement(element, mode, expirationTime) {
   const pendingProps = element.props;
   const fiber = createFiberFromTypeAndProps(type, key, pendingProps, owner, mode, expirationTime);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     fiber._debugSource = element._source;
     fiber._debugOwner = element._owner;
   }
@@ -339,7 +353,9 @@ export function createFiberFromFragment(elements, mode, expirationTime, key) {
 }
 
 function createFiberFromProfiler(pendingProps, mode, expirationTime, key) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (typeof pendingProps.id !== 'string' || typeof pendingProps.onRender !== 'function') {
       warningWithoutStack(false, 'Profiler must specify an "id" string and "onRender" function as props');
     }

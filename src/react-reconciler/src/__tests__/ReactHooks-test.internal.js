@@ -32,7 +32,7 @@ describe('ReactHooks', () => {
     act = ReactTestRenderer.act;
   });
 
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // useDebugValue is a DEV-only hook
     it('useDebugValue throws when used in a class component', () => {
       class Example extends React.Component {
@@ -1080,7 +1080,7 @@ describe('ReactHooks', () => {
       React.useCallback(() => {});
       React.useRef();
       React.useImperativeHandle(() => {}, () => {});
-      if (__DEV__) {
+      if (/* __DEV__ */ false) {
         React.useDebugValue();
       }
       return null;

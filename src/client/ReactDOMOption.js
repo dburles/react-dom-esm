@@ -40,7 +40,7 @@ function flattenChildren(children) {
  */
 
 export function validateProps(element: Element, props: Object) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     // This mirrors the codepath above, but runs for hydration too.
     // Warn about invalid children here so that client and hydration are consistent.
     // TODO: this seems like it could cause a DEV-only throw for hydration

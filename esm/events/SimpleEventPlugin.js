@@ -184,7 +184,9 @@ const SimpleEventPlugin = {
         break;
 
       default:
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           if (knownHTMLTopLevelTypes.indexOf(topLevelType) === -1) {
             warningWithoutStack(false, 'SimpleEventPlugin: Unhandled event type, `%s`. This warning ' + 'is likely caused by a bug in React. Please file an issue.', topLevelType);
           }

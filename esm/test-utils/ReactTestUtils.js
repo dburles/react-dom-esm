@@ -340,7 +340,9 @@ const ReactTestUtils = {
   act(callback) {
     if (actContainerElement === null) {
       // warn if we can't actually create the stub element
-      if (__DEV__) {
+      if (
+      /* __DEV__ */
+      false) {
         warningWithoutStack(typeof document !== 'undefined' && document !== null && typeof document.createElement === 'function', 'It looks like you called TestUtils.act(...) in a non-browser environment. ' + "If you're using TestRenderer for your tests, you should call " + 'TestRenderer.act(...) instead of TestUtils.act(...).');
       } // then make it
 
@@ -351,7 +353,9 @@ const ReactTestUtils = {
     const result = ReactDOM.unstable_batchedUpdates(callback); // note: keep these warning messages in sync with
     // createReactNoop.js and ReactTestRenderer.js
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (result !== undefined) {
         let addendum;
 
@@ -370,7 +374,9 @@ const ReactTestUtils = {
 
     return {
       then() {
-        if (__DEV__) {
+        if (
+        /* __DEV__ */
+        false) {
           warningWithoutStack(false, 'Do not await the result of calling ReactTestUtils.act(...), it is not a Promise.');
         }
       }

@@ -19,7 +19,7 @@
 
 let validateFormat = () => {};
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   validateFormat = function(format) {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');

@@ -56,7 +56,9 @@ export function isFiberMounted(fiber) {
   return isFiberMountedImpl(fiber) === MOUNTED;
 }
 export function isMounted(component) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const owner = ReactCurrentOwner.current;
 
     if (owner !== null && owner.tag === ClassComponent) {

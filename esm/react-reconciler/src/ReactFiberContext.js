@@ -17,13 +17,17 @@ import { startPhaseTimer, stopPhaseTimer } from "./ReactDebugFiberPerf.js";
 import { createCursor, push, pop } from "./ReactFiberStack.js";
 let warnedAboutMissingGetChildContext;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   warnedAboutMissingGetChildContext = {};
 }
 
 export const emptyContextObject = {};
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   Object.freeze(emptyContextObject);
 } // A cursor to the current merged context object on the stack.
 
@@ -77,7 +81,9 @@ function getMaskedContext(workInProgress, unmaskedContext) {
     context[key] = unmaskedContext[key];
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const name = getComponentName(type) || 'Unknown'; // checkPropTypes(
     //   contextTypes,
     //   context,
@@ -127,7 +133,9 @@ function processChildContext(fiber, type, parentContext) {
   // It has only been added in Fiber to match the (unintentional) behavior in Stack.
 
   if (typeof instance.getChildContext !== 'function') {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       const componentName = getComponentName(type) || 'Unknown';
 
       if (!warnedAboutMissingGetChildContext[componentName]) {
@@ -141,7 +149,9 @@ function processChildContext(fiber, type, parentContext) {
 
   let childContext;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     setCurrentPhase('getChildContext');
   }
 
@@ -149,7 +159,9 @@ function processChildContext(fiber, type, parentContext) {
   childContext = instance.getChildContext();
   stopPhaseTimer();
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     setCurrentPhase(null);
   }
 
@@ -157,7 +169,9 @@ function processChildContext(fiber, type, parentContext) {
     invariant(contextKey in childContextTypes, '%s.getChildContext(): key "%s" is not defined in childContextTypes.', getComponentName(type) || 'Unknown', contextKey);
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const name = getComponentName(type) || 'Unknown'; // checkPropTypes(
     //   childContextTypes,
     //   childContext,

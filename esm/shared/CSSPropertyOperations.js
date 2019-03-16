@@ -22,7 +22,9 @@ import { warnAboutShorthandPropertyCollision } from "../react-shared/ReactFeatur
  */
 
 export function createDangerousStringForStyles(styles) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     let serialized = '';
     let delimiter = '';
 
@@ -62,7 +64,9 @@ export function setValueForStyles(node, styles) {
 
     const isCustomProperty = styleName.indexOf('--') === 0;
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       if (!isCustomProperty) {
         warnValidStyle(styleName, styles[styleName]);
       }

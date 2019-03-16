@@ -21,7 +21,7 @@ export function setComponentTree(
   getFiberCurrentPropsFromNode = getFiberCurrentPropsFromNodeImpl;
   getInstanceFromNode = getInstanceFromNodeImpl;
   getNodeFromInstance = getNodeFromInstanceImpl;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     warningWithoutStack(
       getNodeFromInstance && getInstanceFromNode,
       'EventPluginUtils.setComponentTree(...): Injected ' +
@@ -31,7 +31,7 @@ export function setComponentTree(
 }
 
 let validateEventDispatches;
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   validateEventDispatches = function(event) {
     const dispatchListeners = event._dispatchListeners;
     const dispatchInstances = event._dispatchInstances;
@@ -76,7 +76,7 @@ function executeDispatch(event, listener, inst) {
 export function executeDispatchesInOrder(event) {
   const dispatchListeners = event._dispatchListeners;
   const dispatchInstances = event._dispatchInstances;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     validateEventDispatches(event);
   }
   if (Array.isArray(dispatchListeners)) {
@@ -104,7 +104,7 @@ export function executeDispatchesInOrder(event) {
 function executeDispatchesInOrderStopAtTrueImpl(event) {
   const dispatchListeners = event._dispatchListeners;
   const dispatchInstances = event._dispatchInstances;
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     validateEventDispatches(event);
   }
   if (Array.isArray(dispatchListeners)) {
@@ -145,7 +145,7 @@ export function executeDispatchesInOrderStopAtTrue(event) {
  * @return {*} The return value of executing the single dispatch.
  */
 export function executeDirectDispatch(event) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     validateEventDispatches(event);
   }
   const dispatchListener = event._dispatchListeners;

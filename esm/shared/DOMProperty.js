@@ -61,7 +61,9 @@ export function isAttributeNameSafe(attributeName) {
 
   illegalAttributeNameCache[attributeName] = true;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(false, 'Invalid attribute name: `%s`', attributeName);
   }
 

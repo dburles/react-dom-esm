@@ -20,7 +20,9 @@ import { enableSuspenseServerRenderer } from "../react-shared/ReactFeatureFlags.
 export { unstable_now as now, unstable_scheduleCallback as scheduleDeferredCallback, unstable_shouldYield as shouldYield, unstable_cancelCallback as cancelDeferredCallback } from "../react-scheduler/index.js";
 let SUPPRESS_HYDRATION_WARNING;
 
-if (__DEV__) {
+if (
+/* __DEV__ */
+false) {
   SUPPRESS_HYDRATION_WARNING = 'suppressHydrationWarning';
 }
 
@@ -68,7 +70,9 @@ export function getRootHostContext(rootContainerInstance) {
       }
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const validatedTag = type.toLowerCase();
     const ancestorInfo = updatedAncestorInfo(null, validatedTag);
     return {
@@ -80,7 +84,9 @@ export function getRootHostContext(rootContainerInstance) {
   return namespace;
 }
 export function getChildHostContext(parentHostContext, type, rootContainerInstance) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const parentHostContextDev = parentHostContext;
     const namespace = getChildNamespace(parentHostContextDev.namespace, type);
     const ancestorInfo = updatedAncestorInfo(parentHostContextDev.ancestorInfo, type);
@@ -110,7 +116,9 @@ export function resetAfterCommit(containerInfo) {
 export function createInstance(type, props, rootContainerInstance, hostContext, internalInstanceHandle) {
   let parentNamespace;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     // TODO: take namespace into account when validating.
     const hostContextDev = hostContext;
     validateDOMNesting(type, null, hostContextDev.ancestorInfo);
@@ -139,7 +147,9 @@ export function finalizeInitialChildren(domElement, type, props, rootContainerIn
   return shouldAutoFocusHostComponent(type, props);
 }
 export function prepareUpdate(domElement, type, oldProps, newProps, rootContainerInstance, hostContext) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const hostContextDev = hostContext;
 
     if (typeof newProps.children !== typeof oldProps.children && (typeof newProps.children === 'string' || typeof newProps.children === 'number')) {
@@ -158,7 +168,9 @@ export function shouldDeprioritizeSubtree(type, props) {
   return !!props.hidden;
 }
 export function createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const hostContextDev = hostContext;
     validateDOMNesting(null, text, hostContextDev.ancestorInfo);
   }
@@ -364,7 +376,9 @@ export function hydrateInstance(instance, type, props, rootContainerInstance, ho
   updateFiberProps(instance, props);
   let parentNamespace;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     const hostContextDev = hostContext;
     parentNamespace = hostContextDev.namespace;
   } else {
@@ -406,7 +420,9 @@ export function getNextHydratableInstanceAfterSuspenseInstance(suspenseInstance)
   return null;
 }
 export function didNotMatchHydratedContainerTextInstance(parentContainer, textInstance, text) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnForUnmatchedText(textInstance, text);
   }
 }
@@ -416,7 +432,9 @@ export function didNotMatchHydratedTextInstance(parentType, parentProps, parentI
   }
 }
 export function didNotHydrateContainerInstance(parentContainer, instance) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (instance.nodeType === ELEMENT_NODE) {
       warnForDeletedHydratableElement(parentContainer, instance);
     } else if (instance.nodeType === COMMENT_NODE) {// TODO: warnForDeletedHydratableSuspenseBoundary
@@ -436,17 +454,23 @@ export function didNotHydrateInstance(parentType, parentProps, parentInstance, i
   }
 }
 export function didNotFindHydratableContainerInstance(parentContainer, type, props) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnForInsertedHydratedElement(parentContainer, type, props);
   }
 }
 export function didNotFindHydratableContainerTextInstance(parentContainer, text) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warnForInsertedHydratedText(parentContainer, text);
   }
 }
 export function didNotFindHydratableContainerSuspenseInstance(parentContainer) {
-  if (__DEV__) {// TODO: warnForInsertedHydratedSupsense(parentContainer);
+  if (
+  /* __DEV__ */
+  false) {// TODO: warnForInsertedHydratedSupsense(parentContainer);
   }
 }
 export function didNotFindHydratableInstance(parentType, parentProps, parentInstance, type, props) {

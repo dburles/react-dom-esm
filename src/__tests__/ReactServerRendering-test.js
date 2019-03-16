@@ -682,7 +682,7 @@ describe('ReactDOMServer', () => {
       props.children[1] = <p key={1} />; // Mutation is illegal
       return <div>{props.children}</div>;
     }
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       expect(() => {
         ReactDOMServer.renderToStaticMarkup(
           <Wrapper>

@@ -29,7 +29,9 @@ let currentHookNameInDev;
 function resolveCurrentlyRenderingComponent() {
   invariant(currentlyRenderingComponent !== null, 'Hooks can only be called inside the body of a function component. ' + '(https://fb.me/react-invalid-hook-call)');
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(!isInHookUserCodeInDev, 'Do not call Hooks inside useEffect(...), useMemo(...), or other built-in Hooks. ' + 'You can only call Hooks at the top level of your React function. ' + 'For more information, see ' + 'https://fb.me/rules-of-hooks');
   }
 
@@ -38,14 +40,18 @@ function resolveCurrentlyRenderingComponent() {
 
 function areHookInputsEqual(nextDeps, prevDeps) {
   if (prevDeps === null) {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       warning(false, '%s received a final argument during this render, but not during ' + 'the previous render. Even though the final argument is optional, ' + 'its type cannot change between renders.', currentHookNameInDev);
     }
 
     return false;
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     // Don't bother comparing lengths in prod because these arrays should be
     // passed inline.
     if (nextDeps.length !== prevDeps.length) {
@@ -105,7 +111,9 @@ function createWorkInProgressHook() {
 export function prepareToUseHooks(componentIdentity) {
   currentlyRenderingComponent = componentIdentity;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     isInHookUserCodeInDev = false;
   } // The following should have already been reset
   // didScheduleRenderPhaseUpdate = false;
@@ -136,7 +144,9 @@ export function finishHooks(Component, props, children, refOrContext) {
   renderPhaseUpdates = null;
   workInProgressHook = null;
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     isInHookUserCodeInDev = false;
   } // These were reset above
   // currentlyRenderingComponent = null;
@@ -154,7 +164,9 @@ function readContext(context, observedBits) {
   let threadID = currentThreadID;
   validateContextBounds(context, threadID);
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     warning(!isInHookUserCodeInDev, 'Context can only be read while React is rendering. ' + 'In classes, you can read it in the render method or getDerivedStateFromProps. ' + 'In function components, you can read it directly in the function body, but not ' + 'inside Hooks like useReducer() or useMemo().');
   }
 
@@ -162,7 +174,9 @@ function readContext(context, observedBits) {
 }
 
 function useContext(context, observedBits) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     currentHookNameInDev = 'useContext';
   }
 
@@ -177,7 +191,9 @@ function basicStateReducer(state, action) {
 }
 
 export function useState(initialState) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     currentHookNameInDev = 'useState';
   }
 
@@ -185,7 +201,9 @@ export function useState(initialState) {
   initialState);
 }
 export function useReducer(reducer, initialArg, init) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     if (reducer !== basicStateReducer) {
       currentHookNameInDev = 'useReducer';
     }
@@ -214,13 +232,17 @@ export function useReducer(reducer, initialArg, init) {
           // render's.
           const action = update.action;
 
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             isInHookUserCodeInDev = true;
           }
 
           newState = reducer(newState, action);
 
-          if (__DEV__) {
+          if (
+          /* __DEV__ */
+          false) {
             isInHookUserCodeInDev = false;
           }
 
@@ -234,7 +256,9 @@ export function useReducer(reducer, initialArg, init) {
 
     return [workInProgressHook.memoizedState, dispatch];
   } else {
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       isInHookUserCodeInDev = true;
     }
 
@@ -247,7 +271,9 @@ export function useReducer(reducer, initialArg, init) {
       initialState = init !== undefined ? init(initialArg) : initialArg;
     }
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       isInHookUserCodeInDev = false;
     }
 
@@ -280,13 +306,17 @@ function useMemo(nextCreate, deps) {
     }
   }
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     isInHookUserCodeInDev = true;
   }
 
   const nextValue = nextCreate();
 
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     isInHookUserCodeInDev = false;
   }
 
@@ -304,7 +334,9 @@ function useRef(initialValue) {
       current: initialValue
     };
 
-    if (__DEV__) {
+    if (
+    /* __DEV__ */
+    false) {
       Object.seal(ref);
     }
 
@@ -316,7 +348,9 @@ function useRef(initialValue) {
 }
 
 export function useLayoutEffect(create, inputs) {
-  if (__DEV__) {
+  if (
+  /* __DEV__ */
+  false) {
     currentHookNameInDev = 'useLayoutEffect';
   }
 

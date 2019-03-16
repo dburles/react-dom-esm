@@ -14,7 +14,7 @@ const ReactControlledValuePropTypes = {
   checkPropTypes: null,
 };
 
-if (__DEV__) {
+if (/* __DEV__ */ false) {
   ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
 
   const hasReadOnlyValue = {

@@ -25,7 +25,7 @@ import {warnAboutShorthandPropertyCollision} from 'shared/ReactFeatureFlags.js';
  * comparison. It is only used in DEV for SSR validation.
  */
 export function createDangerousStringForStyles(styles) {
-  if (__DEV__) {
+  if (/* __DEV__ */ false) {
     let serialized = '';
     let delimiter = '';
     for (const styleName in styles) {
@@ -63,7 +63,7 @@ export function setValueForStyles(node, styles) {
       continue;
     }
     const isCustomProperty = styleName.indexOf('--') === 0;
-    if (__DEV__) {
+    if (/* __DEV__ */ false) {
       if (!isCustomProperty) {
         warnValidStyle(styleName, styles[styleName]);
       }

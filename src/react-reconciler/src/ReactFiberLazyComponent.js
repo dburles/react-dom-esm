@@ -51,7 +51,7 @@ export function readLazyComponentType<T>(lazyComponent: LazyComponent<T>): T {
         moduleObject => {
           if (lazyComponent._status === Pending) {
             const defaultExport = moduleObject.default;
-            if (__DEV__) {
+            if (/* __DEV__ */ false) {
               if (defaultExport === undefined) {
                 warning(
                   false,
