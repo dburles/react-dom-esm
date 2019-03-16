@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+// import checkPropTypes from 'prop-types/checkPropTypes.js';
 import ReactSharedInternals from "../react-shared/ReactSharedInternals.js";
 let ReactDebugCurrentFrame = null;
 const ReactControlledValuePropTypes = {
@@ -43,8 +43,13 @@ if (__DEV__) {
    * this outside of the ReactDOM controlled form components.
    */
 
-  ReactControlledValuePropTypes.checkPropTypes = function (tagName, props) {
-    checkPropTypes(propTypes, props, 'prop', tagName, ReactDebugCurrentFrame.getStackAddendum);
+  ReactControlledValuePropTypes.checkPropTypes = function (tagName, props) {// checkPropTypes(
+    //   propTypes,
+    //   props,
+    //   'prop',
+    //   tagName,
+    //   ReactDebugCurrentFrame.getStackAddendum,
+    // );
   };
 }
 

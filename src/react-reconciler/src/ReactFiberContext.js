@@ -15,7 +15,7 @@ import {ClassComponent, HostRoot} from 'shared/ReactWorkTags.js';
 import getComponentName from 'shared/getComponentName.js';
 import invariant from 'shared/invariant.js';
 import warningWithoutStack from 'shared/warningWithoutStack.js';
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+// import checkPropTypes from 'prop-types/checkPropTypes.js';
 
 import {setCurrentPhase, getCurrentFiberStackInDev} from './ReactCurrentFiber.js';
 import {startPhaseTimer, stopPhaseTimer} from './ReactDebugFiberPerf.js';
@@ -94,13 +94,13 @@ function getMaskedContext(
 
   if (__DEV__) {
     const name = getComponentName(type) || 'Unknown';
-    checkPropTypes(
-      contextTypes,
-      context,
-      'context',
-      name,
-      getCurrentFiberStackInDev,
-    );
+    // checkPropTypes(
+    //   contextTypes,
+    //   context,
+    //   'context',
+    //   name,
+    //   getCurrentFiberStackInDev,
+    // );
   }
 
   // Cache unmasked context so we can avoid recreating masked context unless necessary.
@@ -195,18 +195,18 @@ function processChildContext(
   }
   if (__DEV__) {
     const name = getComponentName(type) || 'Unknown';
-    checkPropTypes(
-      childContextTypes,
-      childContext,
-      'child context',
-      name,
-      // In practice, there is one case in which we won't get a stack. It's when
-      // somebody calls unstable_renderSubtreeIntoContainer() and we process
-      // context from the parent component instance. The stack will be missing
-      // because it's outside of the reconciliation, and so the pointer has not
-      // been set. This is rare and doesn't matter. We'll also remove that API.
-      getCurrentFiberStackInDev,
-    );
+    // checkPropTypes(
+    //   childContextTypes,
+    //   childContext,
+    //   'child context',
+    //   name,
+    //   // In practice, there is one case in which we won't get a stack. It's when
+    //   // somebody calls unstable_renderSubtreeIntoContainer() and we process
+    //   // context from the parent component instance. The stack will be missing
+    //   // because it's outside of the reconciliation, and so the pointer has not
+    //   // been set. This is rare and doesn't matter. We'll also remove that API.
+    //   getCurrentFiberStackInDev,
+    // );
   }
 
   return {...parentContext, ...childContext};

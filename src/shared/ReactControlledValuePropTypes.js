@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+// import checkPropTypes from 'prop-types/checkPropTypes.js';
 import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 
 let ReactDebugCurrentFrame = null;
@@ -68,13 +68,13 @@ if (__DEV__) {
    * this outside of the ReactDOM controlled form components.
    */
   ReactControlledValuePropTypes.checkPropTypes = function(tagName, props) {
-    checkPropTypes(
-      propTypes,
-      props,
-      'prop',
-      tagName,
-      ReactDebugCurrentFrame.getStackAddendum,
-    );
+    // checkPropTypes(
+    //   propTypes,
+    //   props,
+    //   'prop',
+    //   tagName,
+    //   ReactDebugCurrentFrame.getStackAddendum,
+    // );
   };
 }
 

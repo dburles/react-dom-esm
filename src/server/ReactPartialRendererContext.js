@@ -14,7 +14,7 @@ import {REACT_CONTEXT_TYPE} from 'shared/ReactSymbols.js';
 import ReactSharedInternals from 'shared/ReactSharedInternals.js';
 import getComponentName from 'shared/getComponentName.js';
 import warningWithoutStack from 'shared/warningWithoutStack.js';
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+// import checkPropTypes from 'prop-types/checkPropTypes.js';
 
 let ReactDebugCurrentFrame;
 if (__DEV__) {
@@ -42,13 +42,13 @@ function maskContext(type, context) {
 
 function checkContextTypes(typeSpecs, values, location: string) {
   if (__DEV__) {
-    checkPropTypes(
-      typeSpecs,
-      values,
-      location,
-      'Component',
-      ReactDebugCurrentFrame.getCurrentStack,
-    );
+    // checkPropTypes(
+    //   typeSpecs,
+    //   values,
+    //   location,
+    //   'Component',
+    //   ReactDebugCurrentFrame.getCurrentStack,
+    // );
   }
 }
 

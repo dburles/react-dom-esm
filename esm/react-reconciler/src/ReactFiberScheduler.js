@@ -7,7 +7,7 @@
  * 
  */
 import { __interactionsRef, __subscriberRef, unstable_wrap as Scheduler_tracing_wrap } from "../../react-scheduler/tracing.js";
-import { unstable_next as Scheduler_next, unstable_getCurrentPriorityLevel as getCurrentPriorityLevel, unstable_runWithPriority as runWithPriority, unstable_ImmediatePriority as ImmediatePriority, unstable_UserBlockingPriority as UserBlockingPriority, unstable_NormalPriority as NormalPriority, unstable_LowPriority as LowPriority, unstable_IdlePriority as IdlePriority } from 'scheduler.js';
+import { unstable_next as Scheduler_next, unstable_getCurrentPriorityLevel as getCurrentPriorityLevel, unstable_runWithPriority as runWithPriority, unstable_ImmediatePriority as ImmediatePriority, unstable_UserBlockingPriority as UserBlockingPriority, unstable_NormalPriority as NormalPriority, unstable_LowPriority as LowPriority, unstable_IdlePriority as IdlePriority } from "../../react-scheduler/index.js";
 import { invokeGuardedCallback, hasCaughtError, clearCaughtError } from "../../react-shared/ReactErrorUtils.js";
 import ReactSharedInternals from "../../react-shared/ReactSharedInternals.js";
 import ReactStrictModeWarnings from "./ReactStrictModeWarnings.js";

@@ -73,14 +73,14 @@ export type NoTimeout = -1;
 import {
   unstable_scheduleCallback as scheduleDeferredCallback,
   unstable_cancelCallback as cancelDeferredCallback,
-} from 'scheduler.js';
+} from '../react-scheduler/index.js';
 import {enableSuspenseServerRenderer} from 'shared/ReactFeatureFlags.js';
 export {
   unstable_now as now,
   unstable_scheduleCallback as scheduleDeferredCallback,
   unstable_shouldYield as shouldYield,
   unstable_cancelCallback as cancelDeferredCallback,
-} from 'scheduler.js';
+} from '../react-scheduler/index.js';
 
 let SUPPRESS_HYDRATION_WARNING;
 if (__DEV__) {

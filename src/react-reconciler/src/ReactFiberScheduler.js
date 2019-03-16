@@ -26,7 +26,7 @@ import {
   unstable_NormalPriority as NormalPriority,
   unstable_LowPriority as LowPriority,
   unstable_IdlePriority as IdlePriority,
-} from 'scheduler.js';
+} from '../../react-scheduler/index.js';
 import {
   invokeGuardedCallback,
   hasCaughtError,

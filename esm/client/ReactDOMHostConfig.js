@@ -15,9 +15,9 @@ import { isEnabled as ReactBrowserEventEmitterIsEnabled, setEnabled as ReactBrow
 import { getChildNamespace } from "../shared/DOMNamespaces.js";
 import { ELEMENT_NODE, TEXT_NODE, COMMENT_NODE, DOCUMENT_NODE, DOCUMENT_FRAGMENT_NODE } from "../shared/HTMLNodeType.js";
 import dangerousStyleValue from "../shared/dangerousStyleValue.js";
-import { unstable_scheduleCallback as scheduleDeferredCallback, unstable_cancelCallback as cancelDeferredCallback } from 'scheduler.js';
+import { unstable_scheduleCallback as scheduleDeferredCallback, unstable_cancelCallback as cancelDeferredCallback } from "../react-scheduler/index.js";
 import { enableSuspenseServerRenderer } from "../react-shared/ReactFeatureFlags.js";
-export { unstable_now as now, unstable_scheduleCallback as scheduleDeferredCallback, unstable_shouldYield as shouldYield, unstable_cancelCallback as cancelDeferredCallback } from 'scheduler.js';
+export { unstable_now as now, unstable_scheduleCallback as scheduleDeferredCallback, unstable_shouldYield as shouldYield, unstable_cancelCallback as cancelDeferredCallback } from "../react-scheduler/index.js";
 let SUPPRESS_HYDRATION_WARNING;
 
 if (__DEV__) {

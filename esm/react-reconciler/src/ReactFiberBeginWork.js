@@ -6,7 +6,7 @@
  *
  * 
  */
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+// import checkPropTypes from 'prop-types/checkPropTypes.js';
 import { IndeterminateComponent, FunctionComponent, ClassComponent, HostRoot, HostComponent, HostText, HostPortal, ForwardRef, Fragment, Mode, ContextProvider, ContextConsumer, Profiler, SuspenseComponent, DehydratedSuspenseComponent, MemoComponent, SimpleMemoComponent, LazyComponent, IncompleteClassComponent } from "../../react-shared/ReactWorkTags.js";
 import { NoEffect, PerformedWork, Placement, ContentReset, DidCapture, Update, Ref, Deletion } from "../../react-shared/ReactSideEffectTags.js";
 import ReactSharedInternals from "../../react-shared/ReactSharedInternals.js";
@@ -95,9 +95,13 @@ function updateForwardRef(current, workInProgress, Component, nextProps, renderE
       // because they're only guaranteed to be resolved here.
       const innerPropTypes = Component.propTypes;
 
-      if (innerPropTypes) {
-        checkPropTypes(innerPropTypes, nextProps, // Resolved props
-        'prop', getComponentName(Component), getCurrentFiberStackInDev);
+      if (innerPropTypes) {// checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(Component),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
   }
@@ -158,11 +162,15 @@ function updateMemoComponent(current, workInProgress, Component, nextProps, upda
     if (__DEV__) {
       const innerPropTypes = type.propTypes;
 
-      if (innerPropTypes) {
-        // Inner memo component props aren't currently validated in createElement.
+      if (innerPropTypes) {// Inner memo component props aren't currently validated in createElement.
         // We could move it there, but we'd still need this for lazy code path.
-        checkPropTypes(innerPropTypes, nextProps, // Resolved props
-        'prop', getComponentName(type), getCurrentFiberStackInDev);
+        // checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(type),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
 
@@ -177,11 +185,15 @@ function updateMemoComponent(current, workInProgress, Component, nextProps, upda
     const type = Component.type;
     const innerPropTypes = type.propTypes;
 
-    if (innerPropTypes) {
-      // Inner memo component props aren't currently validated in createElement.
+    if (innerPropTypes) {// Inner memo component props aren't currently validated in createElement.
       // We could move it there, but we'd still need this for lazy code path.
-      checkPropTypes(innerPropTypes, nextProps, // Resolved props
-      'prop', getComponentName(type), getCurrentFiberStackInDev);
+      // checkPropTypes(
+      //   innerPropTypes,
+      //   nextProps, // Resolved props
+      //   'prop',
+      //   getComponentName(type),
+      //   getCurrentFiberStackInDev,
+      // );
     }
   }
 
@@ -228,10 +240,14 @@ function updateSimpleMemoComponent(current, workInProgress, Component, nextProps
 
       const outerPropTypes = outerMemoType && outerMemoType.propTypes;
 
-      if (outerPropTypes) {
-        checkPropTypes(outerPropTypes, nextProps, // Resolved (SimpleMemoComponent has no defaultProps)
-        'prop', getComponentName(outerMemoType), getCurrentFiberStackInDev);
-      } // Inner propTypes will be validated in the function component path.
+      if (outerPropTypes) {} // checkPropTypes(
+      //   outerPropTypes,
+      //   nextProps, // Resolved (SimpleMemoComponent has no defaultProps)
+      //   'prop',
+      //   getComponentName(outerMemoType),
+      //   getCurrentFiberStackInDev,
+      // );
+      // Inner propTypes will be validated in the function component path.
 
     }
   }
@@ -290,9 +306,13 @@ function updateFunctionComponent(current, workInProgress, Component, nextProps, 
       // because they're only guaranteed to be resolved here.
       const innerPropTypes = Component.propTypes;
 
-      if (innerPropTypes) {
-        checkPropTypes(innerPropTypes, nextProps, // Resolved props
-        'prop', getComponentName(Component), getCurrentFiberStackInDev);
+      if (innerPropTypes) {// checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(Component),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
   }
@@ -337,9 +357,13 @@ function updateClassComponent(current, workInProgress, Component, nextProps, ren
       // because they're only guaranteed to be resolved here.
       const innerPropTypes = Component.propTypes;
 
-      if (innerPropTypes) {
-        checkPropTypes(innerPropTypes, nextProps, // Resolved props
-        'prop', getComponentName(Component), getCurrentFiberStackInDev);
+      if (innerPropTypes) {// checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(Component),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
   } // Push context providers early to prevent context stack mismatches.
@@ -625,9 +649,13 @@ function mountLazyComponent(_current, workInProgress, elementType, updateExpirat
           if (workInProgress.type !== workInProgress.elementType) {
             const outerPropTypes = Component.propTypes;
 
-            if (outerPropTypes) {
-              checkPropTypes(outerPropTypes, resolvedProps, // Resolved for outer only
-              'prop', getComponentName(Component), getCurrentFiberStackInDev);
+            if (outerPropTypes) {// checkPropTypes(
+              //   outerPropTypes,
+              //   resolvedProps, // Resolved for outer only
+              //   'prop',
+              //   getComponentName(Component),
+              //   getCurrentFiberStackInDev,
+              // );
             }
           }
         }
@@ -1136,8 +1164,13 @@ function updateContextProvider(current, workInProgress, renderExpirationTime) {
   if (__DEV__) {
     const providerPropTypes = workInProgress.type.propTypes;
 
-    if (providerPropTypes) {
-      checkPropTypes(providerPropTypes, newProps, 'prop', 'Context.Provider', getCurrentFiberStackInDev);
+    if (providerPropTypes) {// checkPropTypes(
+      //   providerPropTypes,
+      //   newProps,
+      //   'prop',
+      //   'Context.Provider',
+      //   getCurrentFiberStackInDev,
+      // );
     }
   }
 
@@ -1438,9 +1471,13 @@ function beginWork(current, workInProgress, renderExpirationTime) {
           if (workInProgress.type !== workInProgress.elementType) {
             const outerPropTypes = type.propTypes;
 
-            if (outerPropTypes) {
-              checkPropTypes(outerPropTypes, resolvedProps, // Resolved for outer only
-              'prop', getComponentName(type), getCurrentFiberStackInDev);
+            if (outerPropTypes) {// checkPropTypes(
+              //   outerPropTypes,
+              //   resolvedProps, // Resolved for outer only
+              //   'prop',
+              //   getComponentName(type),
+              //   getCurrentFiberStackInDev,
+              // );
             }
           }
         }

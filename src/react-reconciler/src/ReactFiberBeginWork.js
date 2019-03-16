@@ -13,7 +13,7 @@ import type {FiberRoot} from './ReactFiberRoot.js';
 import type {ExpirationTime} from './ReactFiberExpirationTime.js';
 import type {SuspenseState} from './ReactFiberSuspenseComponent.js';
 
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+// import checkPropTypes from 'prop-types/checkPropTypes.js';
 
 import {
   IndeterminateComponent,
@@ -230,13 +230,13 @@ function updateForwardRef(
       // because they're only guaranteed to be resolved here.
       const innerPropTypes = Component.propTypes;
       if (innerPropTypes) {
-        checkPropTypes(
-          innerPropTypes,
-          nextProps, // Resolved props
-          'prop',
-          getComponentName(Component),
-          getCurrentFiberStackInDev,
-        );
+        // checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(Component),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
   }
@@ -345,13 +345,13 @@ function updateMemoComponent(
       if (innerPropTypes) {
         // Inner memo component props aren't currently validated in createElement.
         // We could move it there, but we'd still need this for lazy code path.
-        checkPropTypes(
-          innerPropTypes,
-          nextProps, // Resolved props
-          'prop',
-          getComponentName(type),
-          getCurrentFiberStackInDev,
-        );
+        // checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(type),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
     let child = createFiberFromTypeAndProps(
@@ -373,13 +373,13 @@ function updateMemoComponent(
     if (innerPropTypes) {
       // Inner memo component props aren't currently validated in createElement.
       // We could move it there, but we'd still need this for lazy code path.
-      checkPropTypes(
-        innerPropTypes,
-        nextProps, // Resolved props
-        'prop',
-        getComponentName(type),
-        getCurrentFiberStackInDev,
-      );
+      // checkPropTypes(
+      //   innerPropTypes,
+      //   nextProps, // Resolved props
+      //   'prop',
+      //   getComponentName(type),
+      //   getCurrentFiberStackInDev,
+      // );
     }
   }
   let currentChild = ((current.child: any): Fiber); // This is always exactly one child
@@ -436,13 +436,13 @@ function updateSimpleMemoComponent(
       }
       const outerPropTypes = outerMemoType && (outerMemoType: any).propTypes;
       if (outerPropTypes) {
-        checkPropTypes(
-          outerPropTypes,
-          nextProps, // Resolved (SimpleMemoComponent has no defaultProps)
-          'prop',
-          getComponentName(outerMemoType),
-          getCurrentFiberStackInDev,
-        );
+        // checkPropTypes(
+        //   outerPropTypes,
+        //   nextProps, // Resolved (SimpleMemoComponent has no defaultProps)
+        //   'prop',
+        //   getComponentName(outerMemoType),
+        //   getCurrentFiberStackInDev,
+        // );
       }
       // Inner propTypes will be validated in the function component path.
     }
@@ -545,13 +545,13 @@ function updateFunctionComponent(
       // because they're only guaranteed to be resolved here.
       const innerPropTypes = Component.propTypes;
       if (innerPropTypes) {
-        checkPropTypes(
-          innerPropTypes,
-          nextProps, // Resolved props
-          'prop',
-          getComponentName(Component),
-          getCurrentFiberStackInDev,
-        );
+        // checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(Component),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
   }
@@ -634,13 +634,13 @@ function updateClassComponent(
       // because they're only guaranteed to be resolved here.
       const innerPropTypes = Component.propTypes;
       if (innerPropTypes) {
-        checkPropTypes(
-          innerPropTypes,
-          nextProps, // Resolved props
-          'prop',
-          getComponentName(Component),
-          getCurrentFiberStackInDev,
-        );
+        // checkPropTypes(
+        //   innerPropTypes,
+        //   nextProps, // Resolved props
+        //   'prop',
+        //   getComponentName(Component),
+        //   getCurrentFiberStackInDev,
+        // );
       }
     }
   }
@@ -1033,13 +1033,13 @@ function mountLazyComponent(
         if (workInProgress.type !== workInProgress.elementType) {
           const outerPropTypes = Component.propTypes;
           if (outerPropTypes) {
-            checkPropTypes(
-              outerPropTypes,
-              resolvedProps, // Resolved for outer only
-              'prop',
-              getComponentName(Component),
-              getCurrentFiberStackInDev,
-            );
+            // checkPropTypes(
+            //   outerPropTypes,
+            //   resolvedProps, // Resolved for outer only
+            //   'prop',
+            //   getComponentName(Component),
+            //   getCurrentFiberStackInDev,
+            // );
           }
         }
       }
@@ -1745,13 +1745,13 @@ function updateContextProvider(
     const providerPropTypes = workInProgress.type.propTypes;
 
     if (providerPropTypes) {
-      checkPropTypes(
-        providerPropTypes,
-        newProps,
-        'prop',
-        'Context.Provider',
-        getCurrentFiberStackInDev,
-      );
+      // checkPropTypes(
+      //   providerPropTypes,
+      //   newProps,
+      //   'prop',
+      //   'Context.Provider',
+      //   getCurrentFiberStackInDev,
+      // );
     }
   }
 
@@ -2115,13 +2115,13 @@ function beginWork(
         if (workInProgress.type !== workInProgress.elementType) {
           const outerPropTypes = type.propTypes;
           if (outerPropTypes) {
-            checkPropTypes(
-              outerPropTypes,
-              resolvedProps, // Resolved for outer only
-              'prop',
-              getComponentName(type),
-              getCurrentFiberStackInDev,
-            );
+            // checkPropTypes(
+            //   outerPropTypes,
+            //   resolvedProps, // Resolved for outer only
+            //   'prop',
+            //   getComponentName(type),
+            //   getCurrentFiberStackInDev,
+            // );
           }
         }
       }

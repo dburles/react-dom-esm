@@ -10,8 +10,8 @@ import { isFiberMounted } from "../reflection.js";
 import { ClassComponent, HostRoot } from "../../react-shared/ReactWorkTags.js";
 import getComponentName from "../../react-shared/getComponentName.js";
 import invariant from "../../react-shared/invariant.js";
-import warningWithoutStack from "../../react-shared/warningWithoutStack.js";
-import checkPropTypes from 'prop-types/checkPropTypes.js';
+import warningWithoutStack from "../../react-shared/warningWithoutStack.js"; // import checkPropTypes from 'prop-types/checkPropTypes.js';
+
 import { setCurrentPhase, getCurrentFiberStackInDev } from "./ReactCurrentFiber.js";
 import { startPhaseTimer, stopPhaseTimer } from "./ReactDebugFiberPerf.js";
 import { createCursor, push, pop } from "./ReactFiberStack.js";
@@ -78,8 +78,13 @@ function getMaskedContext(workInProgress, unmaskedContext) {
   }
 
   if (__DEV__) {
-    const name = getComponentName(type) || 'Unknown';
-    checkPropTypes(contextTypes, context, 'context', name, getCurrentFiberStackInDev);
+    const name = getComponentName(type) || 'Unknown'; // checkPropTypes(
+    //   contextTypes,
+    //   context,
+    //   'context',
+    //   name,
+    //   getCurrentFiberStackInDev,
+    // );
   } // Cache unmasked context so we can avoid recreating masked context unless necessary.
   // Context is created before the class component is instantiated so check for instance.
 
@@ -153,13 +158,18 @@ function processChildContext(fiber, type, parentContext) {
   }
 
   if (__DEV__) {
-    const name = getComponentName(type) || 'Unknown';
-    checkPropTypes(childContextTypes, childContext, 'child context', name, // In practice, there is one case in which we won't get a stack. It's when
-    // somebody calls unstable_renderSubtreeIntoContainer() and we process
-    // context from the parent component instance. The stack will be missing
-    // because it's outside of the reconciliation, and so the pointer has not
-    // been set. This is rare and doesn't matter. We'll also remove that API.
-    getCurrentFiberStackInDev);
+    const name = getComponentName(type) || 'Unknown'; // checkPropTypes(
+    //   childContextTypes,
+    //   childContext,
+    //   'child context',
+    //   name,
+    //   // In practice, there is one case in which we won't get a stack. It's when
+    //   // somebody calls unstable_renderSubtreeIntoContainer() and we process
+    //   // context from the parent component instance. The stack will be missing
+    //   // because it's outside of the reconciliation, and so the pointer has not
+    //   // been set. This is rare and doesn't matter. We'll also remove that API.
+    //   getCurrentFiberStackInDev,
+    // );
   }
 
   return { ...parentContext,
