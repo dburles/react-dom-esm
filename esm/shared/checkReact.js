@@ -6,6 +6,6 @@
  *
  * 
  */
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@f85dd081028e55cb8edd94509f577bed26e6a964/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@9550079bed5d45dccb40678ff451bdeda3c1414f/esm/index.js';
 import invariant from "../react-shared/invariant.js";
 invariant(React, 'ReactDOM was loaded before React. Make sure you load ' + 'the React package before loading ReactDOM.');

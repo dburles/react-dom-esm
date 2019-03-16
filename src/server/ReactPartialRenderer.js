@@ -11,7 +11,7 @@ import type {ThreadID} from './ReactThreadIDAllocator.js';
 import type {ReactElement} from 'shared/ReactElementType.js';
 import type {ReactProvider, ReactContext} from 'shared/ReactTypes.js';
 
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@f85dd081028e55cb8edd94509f577bed26e6a964/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@9550079bed5d45dccb40678ff451bdeda3c1414f/esm/index.js';
 import invariant from 'shared/invariant.js';
 import getComponentName from 'shared/getComponentName.js';
 import lowPriorityWarning from 'shared/lowPriorityWarning.js';

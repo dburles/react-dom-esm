@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@f85dd081028e55cb8edd94509f577bed26e6a964/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@9550079bed5d45dccb40678ff451bdeda3c1414f/esm/index.js';
 const ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
 // Current owner and dispatcher used to share the same ref,
 // but PR #14548 split them out to better support the react-debug-tools package.
