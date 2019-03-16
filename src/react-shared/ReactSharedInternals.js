@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@9550079bed5d45dccb40678ff451bdeda3c1414f/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@4ddb5979ee4c62d86aff12500e076068e702c39e/esm/index.js';
 
 const ReactSharedInternals =
   React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
