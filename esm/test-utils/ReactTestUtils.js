@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@f5401d23d552225c4243673d83d7a8dbe48c3a46/esm/index.js';
+import React from 'https://cdn.jsdelivr.net/gh/dburles/react-esm@f85dd081028e55cb8edd94509f577bed26e6a964/esm/index.js';
 import ReactDOM from 'react-dom.js';
 import { findCurrentFiberUsingSlowPath } from "../react-reconciler/reflection.js";
 import { get as getInstance } from "../react-shared/ReactInstanceMap.js";
